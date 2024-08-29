@@ -25,15 +25,6 @@
                 <title>Polres Cianjur</title>
                 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
                 <style>
-                     .app-sidebar.bg-light-brown {
-                         background-color: #ffffff !important; 
-                    }
-                    .sidebar-menu .nav-link p {
-                        color: #000000; 
-                    }
-                    .sidebar-menu .nav-link {
-                        color: #000000;
-                    }
                     .navbar-bg-brown {
                         background-color: #682109; 
                     }
@@ -54,7 +45,7 @@
                     }
                     body {
                         font-family: Arial, sans-serif;
-                        background-color: #ffffff;
+                        background-color: #f0f0f0;
                         margin: 0;
                         padding: 0;
                     }
@@ -68,14 +59,14 @@
                         margin-top: 20px;
                         background-color: #fff;
                         width: 80%;
-                        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
                     }
 
                     .small-box {
                         position: relative;
                         display: block;
                         margin-bottom: 20px;
-                        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                     
                         width: 400px; /* Sesuaikan lebar card sesuai kebutuhan */
                         height: 170px; /* Sesuaikan tinggi card sesuai kebutuhan */
                         margin-top: 20px; /* Menambahkan jarak di bagian atas card */
@@ -258,102 +249,7 @@
                     .small-box .small-box-footer {
                         color: #fff; 
                     }
-
-                    /* Styling progress bars */
-                    .progress-container {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px; /* Jarak antara progress bars */
-                        max-width: 300px; /* Maksimal lebar progress container sesuai dengan card */
-                        width: 100%; /* Memastikan progress container memiliki lebar penuh */
-                    }
-
-                    .progress {
-                        height: 20px; /* Mengatur tinggi progress bar */
-                        border-radius: 10px; /* Menambah kelengkungan progress bar */
-                        background-color: #e9ecef; /* Warna latar belakang progress bar */
-                        overflow: hidden; /* Pastikan isi tidak keluar dari progress bar */
-                    }
-
-                    .progress-bar {
-                        line-height: 20px; /* Menyelaraskan teks di dalam progress bar */
-                        color: #fff; /* Warna teks di dalam progress bar */
-                        height: 100%; /* Mengambil seluruh tinggi dari progress bar */
-                        border-radius: 10px; /* Menambah kelengkungan pada progress bar isi */
-                        transition: width 0.6s ease; /* Transisi halus saat perubahan lebar */
-                    }
-
-                    /* Warna Progress Bars */
-                    .bg-success {
-                        background-color: #28a745; /* Warna hijau untuk success */
-                    }
-
-                    .bg-info {
-                        background-color: #17a2b8; /* Warna biru untuk info */
-                    }
-
-                    .bg-warning {
-                        background-color: #ffc107; /* Warna kuning untuk warning */
-                    }
-
-                    .bg-danger {
-                        background-color: #dc3545; /* Warna merah untuk danger */
-                    }
-
-                    /* Styling progress bars */
-                    .progress-container {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 25px; /* Jarak antara progress bars */
-                        max-width: 900px; /* Maksimal lebar progress container sesuai dengan card */
-                    }
-
-                    .progress {
-                        height: 30px; /* Mengatur tinggi progress bar */
-                        border-radius: 20px; /* Menambah kelengkungan progress bar */
-                        background-color: #ffffff; /* Warna latar belakang progress bar */
-                        overflow: hidden; /* Pastikan isi tidak keluar dari progress bar */
-                        width: 100%;
-                    }
-
-                    .progress-bar {
-                        line-height: 25px; /* Menyelaraskan teks di dalam progress bar */
-                        color: #fff; /* Warna teks di dalam progress bar */
-                        height: 100%; /* Mengambil seluruh tinggi dari progress bar */
-                        border-radius: 10px; /* Menambah kelengkungan pada progress bar isi */
-                        transition: width 0.6s ease; /* Transisi halus saat perubahan lebar */
-                        width: 100%;
-                    }
-                    /* Styling untuk tombol logout */
-                    .logout-btn-danger .btn {
-                        font-size: 18px; /* Ukuran font lebih besar */
-                        padding: 10px 20px; /* Padding lebih besar di sekitar teks tombol */
-                        border-radius: 8px; /* Sudut tombol yang membulat */
-                        width: auto; /* Biarkan lebar tombol otomatis sesuai dengan konten */
-                        height: auto; /* Biarkan tinggi tombol otomatis sesuai dengan konten */
-                        display: inline-flex; /* Memastikan tombol menggunakan flexbox untuk penyelarasan */
-                        align-items: center; /* Menyelaraskan konten tombol secara vertikal */
-                        justify-content: center; /* Menyelaraskan konten tombol secara horizontal */
-                    }
-                    .logout-btn-danger .btn-lg {
-                        font-size: 20px; /* Ukuran font lebih besar */
-                        padding: 15px 30px; /* Padding lebih besar untuk tombol lebih besar */
-                    }
-                    .logout-btn-danger .btn-danger {
-                        background-color: #dc3545; /* Warna latar belakang tombol */
-                        border: none; /* Menghapus border tombol jika diperlukan */
-                        color: #fff; /* Warna teks tombol */
-                    }
-                    .logout-btn-danger:hover{
-                        background-color: #c82333;
-                        transform: scale(1.05); 
-                        border-radius: 20%;
-                    }
-                    .logout-btn-danger:focus {
-                        outline: none; /* Menghilangkan outline default */
-                        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Menambahkan shadow saat fokus */
-                    }
-
+        
                     .comment-list {
             width: 55%; /* Sesuaikan lebar daftar komentar */
             margin-right: 20px; /* Menambahkan jarak antara daftar komentar dan form */
@@ -362,6 +258,7 @@
         .form-container {
             width: 40%; /* Sesuaikan lebar form sesuai kebutuhan */
             margin-left: 20%;
+
         }
 
         .comment {
@@ -465,14 +362,15 @@
             cursor: none;
         }
         .card.transparent-card {
-    background: rgba(255, 255, 255, 0.8); /* Latar belakang transparan */
+    background: #A91D3A; /* Latar belakang transparan */
     border-radius: 15px; /* Sudut membulat */
-    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.4); /* Bayangan lembut */
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4); /* Bayangan lembut */
     overflow: hidden; /* Menghindari konten melampaui border-radius */
     margin: 20px; /* Jarak dari elemen lain */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk efek hover */
     width: 80%; /* Lebar responsif berdasarkan kontainer induk */
     max-width: 350px; /* Lebar maksimum */
+    position: relative; /* Menetapkan posisi relatif untuk pseudo-element */
+    overflow: hidden; /* Menyembunyikan bagian yang melampaui batas card */
 }
 
 .card .card-body {
@@ -489,11 +387,6 @@
     max-width: 60%; /* Maksimal lebar teks */
 }
 
-.card .small-image {
-    width: 100px; /* Ukuran gambar */
-    height: auto; /* Menjaga rasio gambar */
-}
-
 .card .icon {
     margin-top: 20px; /* Jarak atas ikon */
     text-align: center; /* Menyelaraskan ikon di tengah */
@@ -503,72 +396,7 @@
     display: block; /* Menyusun footer sebagai blok */
     text-align: center; /* Menyelaraskan teks di tengah */
     margin-top: 20px; /* Jarak atas footer */
-    color: #007bff; /* Warna teks */
     font-weight: bold; /* Membuat teks menjadi tebal */
-}
-
-.card:hover {
-    transform: scale(1.05); /* Zoom saat hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
-}
-.progress-container {
-    width: 100%;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut di sekitar container */
-    border-radius: 10px; /* Sudut membulat untuk container */
-    background: rgba(255, 255, 255, 0.9); /* Latar belakang transparan untuk container */
-}
-
-.progress {
-    background-color: rgba(0, 0, 0, 0.1); /* Latar belakang transparan untuk progress bar */
-    border-radius: 10px; /* Sudut membulat */
-    height: 20px; /* Tinggi progress bar */
-    margin-bottom: 10px; /* Jarak antar progress bar */
-    margin-top: 10px;
-    overflow: hidden; /* Menghindari overflow konten */
-}
-
-.progress-bar {
-    border-radius: 10px; /* Sudut membulat untuk progress bar */
-    height: 100%; /* Mengisi tinggi container */
-    color: #fff; /* Warna teks di atas progress bar */
-    font-size: 0.75rem; /* Ukuran font untuk persen */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Menyelaraskan teks di tengah */
-    transition: width 0.4s ease; /* Transisi halus untuk perubahan lebar */
-}
-/* Efek hover */
-.progress:hover {
-    background-color: rgba(0, 0, 0, 0.2); /* Latar belakang sedikit lebih gelap saat hover */
-}
-
-/* Efek hover pada progress-bar */
-.progress:hover .progress-bar {
-    background-color: rgba(0, 0, 0, 0.1); /* Warna latar belakang progress bar saat hover */
-    transform: scale(1.05); /* Zoom saat hover */
-}
-
-/* Efek aktif (ketika diklik) */
-.progress:active .progress-bar {
-    background-color: rgba(0, 0, 0, 0.15); /* Warna latar belakang progress bar saat diklik */
-    transform: scale(1.02); /* Zoom sedikit saat diklik */
-}
-
-.bg-success {
-    background: rgba(40, 167, 69, 0.7); /* Warna hijau dengan transparansi */
-}
-
-.bg-info {
-    background: rgba(23, 162, 184, 0.7); /* Warna biru dengan transparansi */
-}
-
-.bg-warning {
-    background: rgba(255, 193, 7, 0.7); /* Warna kuning dengan transparansi */
-}
-
-.bg-danger {
-    background: rgba(220, 53, 69, 0.7); /* Warna merah dengan transparansi */
 }
 .container-fluid {
     background: rgba(255, 255, 255, 0.8); /* Background putih transparan */
@@ -590,10 +418,8 @@
 }
 
 .small-image {
-    width: 120px; /* Ukuran gambar yang konsisten */
+    width: 150px; /* Ukuran gambar yang konsisten */
     height: auto; /* Menjaga rasio aspek */
-    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut pada gambar */
     margin-right: 15px; /* Jarak antara gambar dan teks */
 }
 
@@ -618,19 +444,6 @@ h6 {
     font-size: 1.2rem; /* Ukuran font untuk heading sekunder */
     color: #666; /* Warna teks */
 }
-.small-image {
-    width: 120px; /* Ukuran gambar yang konsisten */
-    height: auto; /* Menjaga rasio aspek */
-    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan lembut pada gambar */
-    margin-right: 15px; /* Jarak antara gambar dan teks */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk transformasi dan bayangan */
-}
-
-.small-image:hover {
-    transform: scale(1.2); /* Memperbesar gambar 10% */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Bayangan lebih pekat saat hover */
-}
 .small-box-footer {
     display: inline-flex; /* Menjadikan elemen inline dan fleksibel */
     align-items: center; /* Memastikan ikon dan teks sejajar secara vertikal */
@@ -638,11 +451,9 @@ h6 {
     font-size: 1rem; /* Ukuran font */
     font-weight: 600; /* Menebalkan teks */
     color: #fff; /* Warna teks putih */
-    background-color: #3a943c;
+    background-color: #682109;
     border-radius: 8px; /* Sudut membulat */
     text-decoration: none; /* Menghapus garis bawah default */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transisi halus untuk latar belakang, warna, bayangan, dan transformasi */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
 }
 
 .small-box-footer:hover, .small-box-footer:focus {
@@ -714,54 +525,52 @@ h6 {
 .nav-item {
     margin-right: 30px; /* Atur jarak antara item-menu */
 }
+.btn-orange {
+    background-color: #f0a401; /* Warna oranye */
+    border: none; /* Menghilangkan border default */
+    color: #fff; /* Warna teks putih */
+    padding: 8px 30px; /* Padding diperbesar secara horizontal (samping) */
+    font-size: 16px; /* Ukuran font dalam tombol */
+    border-radius: 4px; /* Sudut tombol yang sedikit melengkung */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    display: inline-flex; /* Agar konten di dalam tombol dapat disejajarkan dengan flexbox */
+    align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
+    min-width: 120px; /* Lebar minimum tombol */
+    justify-content: center; /* Menyelaraskan konten di tengah tombol */
+}
+
+.nav-link p {
+    margin-bottom: 0; /* Menghilangkan margin bawah pada paragraf */
+}
+
 .dropdown-menu-custom {
-    background-color: transparent; /* Warna latar belakang dropdown */
+    background-color: #ffffff; /* Warna latar belakang dropdown */
     border: 1px solid #6c757d; /* Warna border */
     border-radius: 0.5rem; /* Radius border */
-    padding: 10px; /* Padding dalam dropdown */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan dropdown */
+    min-width: 300px; /* Atur lebar minimal dropdown, ubah sesuai kebutuhan */
+    width: auto; /* Memungkinkan dropdown menyesuaikan lebar konten */
+    padding: 10px; /* Tambahkan padding untuk memberi ruang lebih di dalam dropdown */
+    left: auto;
+    right: 0;
+    transform: translateX(-1%); /* Geser dropdown ke kiri */
 }
-
-/* Styling untuk divider di dropdown */
-.dropdown-divider {
-    border-color: #6c757d; /* Warna garis pemisah */
-}
-
 /* Styling untuk item dalam dropdown */
 .dropdown-item-custom {
-    color: #ffffff; /* Warna teks item */
-    padding: 8px 12px; /* Padding item */
-    border-radius: 0.3rem; /* Radius border item */
-    transition: background-color 0.2s ease, color 0.2s ease; /* Animasi transisi */
-}
-.dropdown-item-custom {
-    color: #ffffff;
-    padding: 8px 12px;
+    padding: 12px 16px;
     border-radius: 0.3rem;
     transition: background-color 0.2s ease, color 0.2s ease;
-    background-color: #dc3545; /* Warna background default */
+    background-color: #ffffff; /* Warna background default */
     text-align: center; /* Menengahkan teks */
     margin-bottom: 8px; /* Jarak antar item */
     font-weight: 500; /* Tebal font */
-}
-
-/* Hover effect untuk dropdown item */
-.dropdown-item-custom:hover {
-    background-color: #6c757d; /* Warna saat di-hover */
-    color: #ffffff;
-}
-
-/* Active effect untuk dropdown item */
-.dropdown-item-custom:active {
-    background-color: #adb5bd; /* Warna saat aktif */
-    color: #ffffff;
-}
-.dropdown-item{
-    border-radius: 20px; /* Atur nilai sesuai kebutuhan */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara ikon dan teks */
 }
 .dropdown-item-custom i {
-    margin-right: 8px; /* Jarak antara ikon dan teks */
-    font-size: 16px; /* Ukuran ikon */
+    margin-right: 8px;
+    font-size: 20px; /* Ukuran ikon */
 }
 .nav-link i {
         margin-right: 8px; /* Sesuaikan jarak sesuai kebutuhan */
@@ -769,6 +578,325 @@ h6 {
     .search-form {
             margin-right: 30px; /* Jarak antara form pencarian dan ikon profil */
         }
+        .custom-container {
+    background-color: #ffffff; /* Warna latar belakang sedikit berbeda */
+    padding: 10px; /* Padding dalam container */
+    border-radius: 5px; /* Sudut yang melengkung */
+}
+.dashboard-container {
+    width: 100%; /* Lebar sesuai dengan navbar */
+    background-color: #f0f0f0; /* Warna latar belakang sedikit berbeda dari navbar */
+    padding: 10px 0; /* Padding atas dan bawah */
+    border-top: 2px solid #e7e7e7; /* Garis atas untuk memisahkan dari navbar */
+    margin-top: 60px; /* Menambahkan margin-top untuk menghindari tumpang tindih dengan navbar */
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: flex-start; /* Memastikan teks rata kiri */
+}
+
+.dashboard-text {
+    margin: 5px; /* Menghilangkan margin default */
+    font-size: 23px; /* Ukuran font untuk teks Dashboard */
+    color: #333; /* Warna teks */
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+}
+.custom-progress-bar {
+    height: 300px; /* Tinggi progress bar yang lebih besar */
+}
+
+.progress {
+    width: 600px; /* Lebar progress bar yang lebih besar */
+    margin-bottom: 20px; /* Jarak bawah antar progress bars */
+    background-color: #e9ecef; /* Warna latar belakang progress bar */
+    margin-right: 600px; /* Jarak antara progress bar dan teks persentase */
+}
+
+.progress-bar {
+    background-color: #007bff; /* Warna progress bar */
+    height: 100%; /* Mengisi tinggi dari progress container */
+}
+
+.progress-wrapper {
+    display: flex; /* Mengatur kontainer untuk menampilkan elemen secara horizontal */
+    flex-direction: column; /* Menyusun elemen progress secara vertikal */
+    gap: 15px; /* Jarak antara baris progress bar */
+}
+
+.progress-container {
+    display: flex; /* Mengatur kontainer untuk menampilkan elemen secara horizontal */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+}
+
+.progress-wrapper p {
+    margin-bottom: 10px; /* Jarak antara teks dan progress bar */
+    font-weight: bold; /* Mengatur teks menjadi tebal */
+    color: #666;
+}
+
+.progress-percentage {
+    font-weight: bold; /* Mengatur teks menjadi tebal */
+    white-space: nowrap; /* Menghindari teks membungkus ke baris berikutnya */
+    font-size: 20px;
+}
+.text-content h3 {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.text-content p {
+    color: #fff;
+}
+.card-body .content img {
+    width: 30%;
+    height: 30%;
+}
+.dashboard-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+.dashboard-container {
+    display: flex;
+    justify-content: space-between; /* Menyebarkan elemen ke kiri dan kanan */
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.search-dropdown-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* Memastikan dropdown-content terletak dengan benar relatif terhadap kontainer ini */
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 173px 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #bd2130;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #aaa;
+    font-size: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Pastikan dropdown berada di bawah form field */
+    left: 0;
+    background-color: #ffffff;
+    width: 100%; /* Memastikan dropdown sesuai dengan lebar input field */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    border-top: 2px solid #bd2130; /* Warna border sesuai dengan yang diinginkan */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.search-dropdown-container:focus-within .dropdown-content {
+    display: block;
+}
+.box-container {
+    width: 200px; /* Lebar kotak */
+    height: 200px; /* Tinggi kotak */
+    background-color: #3844e7; /* Warna latar belakang kotak */
+    color: #fff; /* Warna teks putih */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Membuat sudut kotak melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    margin: 140px; /* Jarak di sekitar kotak */
+    text-align: center;
+}
+
+.box-title {
+    font-size: 24px; /* Ukuran font untuk judul */
+    margin-bottom: 10px; /* Jarak bawah judul */
+}
+
+.box-number {
+    font-size: 36px; /* Ukuran font untuk angka */
+    font-weight: bold; /* Tebal font */
+}
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Jarak antar section progress */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 650px; /* Batasi lebar container */
+    margin: auto; /* Pusatkan container */
+}
+
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Jarak antar elemen dalam satu section */
+}
+
+.progress-title {
+    font-weight: bold;
+    margin: 0; /* Menghapus margin default */
+}
+
+.progress-percentage {
+    font-size: 14px;
+    color: #555; /* Warna teks untuk persentase */
+}
+
+.progress {
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.custom-progress-bar {
+    background-color: #007bff;
+    height: 100%;
+}
+.box-container {
+    position: relative; /* Membuat container relatif untuk pseudo-elemen */
+    flex: 1;
+    min-height: 200px; /* Tinggi minimal */
+    height: auto; /* Tinggi menyesuaikan konten jika lebih besar dari min-height */
+    padding: 20px;
+    background-color: #6670f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: 180px;
+    overflow: hidden; /* Memastikan logo tidak keluar dari container */
+}
+
+.box-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('{{ asset('assets/dist/assets/img/lambangpolri.png') }}'); /* Path ke logo */
+    background-size: 250px; /* Ukuran logo */
+    background-position: center; /* Posisikan di tengah */
+    background-repeat: no-repeat; /* Jangan ulangi logo */
+    opacity: 0.3; /* Atur opasitas agar logo memudar */
+    z-index: 0; /* Tempatkan di belakang konten */
+}
+.title-container {
+    height: 40px;
+    width: 220px;
+    padding: 10px;
+    background-color: #58a4f7;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.box-title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.box-number {
+    font-size: 55px;
+    color: #fff;
+}
+.box-container h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+.queue-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Disesuaikan agar tidak terlalu besar */
+    margin: 20px 0;
+    padding-top: 115px;
+    margin-left: 30px;
+}
+
+.queue-box {
+    background-color: #A91D3A; /* Warna semi-transparan sesuai tema Polri */
+    border-radius: 10px;
+    padding: 15px 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.queue-box p {
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+    color: #f5c518; /* Warna emas untuk menonjolkan angka */
+}
+
+.queue-box button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #682109; /* Warna oranye sesuai dengan aksen Polri */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.queue-box button:hover {
+    background-color: #682109; /* Warna lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek naik saat hover */
+}
+.custom-margin-top {
+        margin-top: 80px; /* Kamu bisa sesuaikan nilai ini */
+    }
+
                 </style>
             </head>
             <body>
@@ -777,7 +905,6 @@ h6 {
                         <img src="{{ asset('assets/dist/assets/img/lambangpolri.png') }}" class="navbar-logo d-inline-block align-top" alt="">
                         <div class="text-logo">ZONA INTEGRITAS POLRI</div>
                     </a>
-                    
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
@@ -787,116 +914,157 @@ h6 {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="history" class="nav-link text-white">
-                                    <i class="bi bi-clock-history me-4"></i>
-                                    <p class="d-inline ms-0">History</p>
+                                <a href="history" class="nav-link btn btn-orange text-white d-flex align-items-center">
+                                    <i class="bi bi-clock-history me-2"></i>
+                                    <p class="mb-0">Data Input Anda</p>
                                 </a>
-                            </li>                                     
+                            </li>                               
                         </ul>
-                        <form class="d-flex search-form" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-light" type="submit">Search</button>
-                        </form>
                         <div class="dropdown ms-auto">
                             <!-- Tombol Dropdown -->
                             <a class="dropdown-toggle d-flex align-items-center text-white text-decoration-none" href="#" role="button" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
                                 <!-- Ikon Profil -->
                                 <i class="bi bi-person-circle profile-icon me-2"></i>
                                 <!-- Teks Profil -->
-                                <span class="profile-text">Polres Cianjur</span>
+                                <span class="profile-text">POLRES CIANJUR</span>
                             </a>
                         
                             <!-- Menu Dropdown -->
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom" aria-labelledby="dropdownProfile">
                                 <!-- Tombol Logout -->
                                 <li>
+                                    <a class="dropdown-item dropdown-item-custom" href="logout-url">
+                                        <i class="bi bi-person"></i> Profil
+                                    </a>
                                     <a class="dropdown-item dropdown-item-custom" href="/sesi/logout">
                                         <i class="bi bi-box-arrow-right"></i> Logout
-                                    </a>
-                                    <a class="dropdown-item dropdown-item-custom" href="logout-url">
-                                        <i class="bi bi-box-arrow-right"></i> Custom
-                                    </a>
-                                    <a class="dropdown-item dropdown-item-custom" href="logout-url">
-                                        <i class="bi bi-box-arrow-right"></i> Custom
-                                    </a>
-                                    <a class="dropdown-item dropdown-item-custom" href="logout-url">
-                                        <i class="bi bi-box-arrow-right"></i> Custom
                                     </a>
                                 </li>
                             </ul>
                         </div>
                             
                     </div>
-                </nav>                     
-                <div class="layout-container" style="padding-top: 100px;">
-                    <div class="card transparent-card">
-                        <div class="card-body">
-                            <div class="content">
-                                <div class="text-content">
-                                    <h3>296341</h3>
-                                    <p>Daftarkan Sekarang!</p>
-                                </div>
-                                <img src="{{ asset('assets/dist/assets/img/sim.png') }}" alt="Small Image" class="small-image">
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href="/" class="small-box-footer">Pelayanan Sim <i class="fas fa-arrow-circle-right"></i></a>
+                </nav>
+                <div class="dashboard-container bg-light" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+                    <div class="dashboard-text">Dashboard</div>
+                    <div class="search-dropdown-container">
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="POLRES CIANJUR" class="search-input" id="search-input">
+                            <i class="bi bi-arrow-down-short dropdown-icon"></i>
                         </div>
-                    </div>
-                    <div class="progress-container mb-3">
-                        <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-success" style="width: 25%">25%</div>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <a href="#">POLRES CIANJUR</a>
                         </div>
-                        <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-info" style="width: 50%">50%</div>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-warning" style="width: 75%">75%</div>
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-danger" style="width: 100%">100%</div>
-                        </div>
-                    </div>                    
-                </div>
-                <div class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height: 44vh;">
-                    <div class="d-flex align-items-center text-container">
-                        <img src="{{ asset('assets/dist/assets/img/presisi.png') }}" alt="Small Image" class="small-image me-3">
-                        <div class="text-center">
-                            @auth
-                            <div>
-                                <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, {{ Auth::user()->name }} Di Zona Integrasi Polri!</h5>
-                            </div>
-                            <div>
-                                <h6 class="mb-2 typing" id="service-text">Pelayanan Kami, Untuk Anda!</h6>
-                            </div>
-                            @else
-                            <div>
-                                <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, Tamu Di Zona Integrasi Polri!</h5>
-                            </div>
-                            <div>
-                                <h6 class="mb-2 typing" id="service-text"><b>Pelayanan Kami, Untuk Anda!</b></h6>
-                            </div>
-                            @endauth
-                        </div>
-                    </div>
+                    </div>                                                              
                 </div>                
-                <div class="container mt-3">
-                    <div id="commentList" class="comment-list mb-4">
-                        <!-- Komentar akan ditambahkan di sini -->
-                    </div>
-                    <form id="formKomentar" class="form-container p-4 rounded shadow-lg">
-                        <h5 class="mb-4">Tinggalkan Komentar</h5>
-                        <div class="form-group mb-3">
-                            <textarea name="komentar" class="form-control" rows="5" placeholder="Tulis komentar Anda di sini..."></textarea>
+                <div class="layout-container" style="padding-top: 80px;">
+                    {{-- <div class="custom-container p-4" style="width: 100%; "> --}}
+                        <div class="content-wrapper" style="display: flex; align-items: flex-start;">
+                            <div class="flex-container" style="display: flex; align-items: center;">
+                                <div class="card-wrapper" style="flex: 1;">
+                                    <div class="card transparent-card" style="width: 150%;">
+                                        <div class="card-body">
+                                            <div class="content">
+                                                <div class="text-content">
+                                                    <h3>296341</h3>
+                                                    <p>Daftarkan Sekarang!</p>
+                                                </div>
+                                                <img src="{{ asset('assets/dist/assets/img/sim.png') }}" class="navbar-logo d-inline-block align-top" alt="">
+                                            </div>
+                                            <div class="icon">
+                                                <i class="ion ion-bag"></i>
+                                            </div>
+                                            <a href="create-sim" class="small-box-footer">Pelayanan Sim <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>           
+                                <div class="box-container" style="flex: 1;">
+                                    <div class="title-container">
+                                        <h3 class="box-title">POLRES CIANJUR</h3>
+                                    </div>
+                                    <p class="box-number">91.42</p>
+                                    <h2>NILAI TOTAL ZI</h2>
+                                </div>
+                            </div> 
+                            <div class="progress-wrapper" style="margin-left: -80px;">
+                                <div class="progress-section">
+                                    <p class="progress-title">TOTAL PENGUNGKIT</p>
+                                    <span class="progress-percentage">56.85% / 60</span>
+                                    <div class="progress">
+                                        <div class="progress-bar custom-progress-bar w-75"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-section">
+                                    <p class="progress-title">TOTAL HASIL</p>
+                                    <span class="progress-percentage">34.84% / 40</span>
+                                    <div class="progress">
+                                        <div class="progress-bar custom-progress-bar w-50"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="queue-container">
+                                <div class="queue-box" id="queueBox">
+                                    <p id="queueNumber">0</p>
+                                    <button id="incrementBtn">Ambil Nomor Antrian Tes</button>
+                                </div>
+                            </div>
+                            <script src="script.js"></script>
+                        </div>                   
+                    {{-- </div>                                   --}}
+                    </div>                                     
+                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height: 30vh; margin-top: -80px;">
+                        <!-- Kontainer dengan Garis Pembatas -->
+                        <div class="bordered-container p-3">
+                            <div class="d-flex align-items-center text-container">
+                                <img src="{{ asset('assets/dist/assets/img/presisi.png') }}" alt="Small Image" class="small-image me-3">
+                                <div class="text-center">
+                                    @auth
+                                    <div>
+                                        <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, {{ Auth::user()->name }} Di Zona Integrasi Polri!</h5>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-2 typing" id="service-text">Pelayanan Kami, Untuk Anda!</h6>
+                                    </div>
+                                    @else
+                                    <div>
+                                        <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, Tamu Di Zona Integrasi Polri!</h5>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-2 typing" id="service-text"><b>Pelayanan Kami, Untuk Anda!</b></h6>
+                                    </div>
+                                    @endauth
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-end">
-                            <input type="submit" class="btn btn-primary" value="Tambahkan Komentar"/>
+                    </div>                                                        
+                    <div class="container custom-margin-top">
+                        <div id="commentList" class="comment-list mb-4">
+                            <!-- Komentar akan ditambahkan di sini -->
                         </div>
-                    </form>
-                </div>                     
+                        <form id="formKomentar" class="form-container p-4 rounded shadow-lg">
+                            <h5 class="mb-4">Tinggalkan Komentar</h5>
+                            <div class="form-group mb-3">
+                                <textarea name="komentar" class="form-control" rows="5" placeholder="Tulis komentar Anda di sini..."></textarea>
+                            </div>
+                            <div class="text-end">
+                                <input type="submit" class="btn btn-primary" value="Tambahkan Komentar"/>
+                            </div>
+                        </form>
+                    </div>                                       
         
                 <script>
+                   document.getElementById('incrementBtn').addEventListener('click', function() {
+                    let queueNumberElement = document.getElementById('queueNumber');
+                    let randomSpin = setInterval(function() {
+                        let randomNumber = Math.floor(Math.random() * 1000) + 1; // Menghasilkan angka acak antara 1 dan 1000
+                        queueNumberElement.textContent = randomNumber;
+                    }, 100); // Kecepatan spin (100ms)
+
+                    setTimeout(function() {
+                        clearInterval(randomSpin); // Hentikan spin setelah 2 detik
+                    }, 2000);
+                });
+
                     document.addEventListener('DOMContentLoaded', function() {
                         // Load comments from local storage on page load
                         const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
@@ -986,36 +1154,7 @@ h6 {
             typeWriter();
         });
                 </script>
-                
-                
-
-{{-- <body>
-            <div class="row align-items-center">
-                <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 55vh;">
-                    <div class="class text-center">
-                    <h3 class="mb-2"><b>PEDULI DIRI</b></h3>
-                    <h5 class="mb-2">Catatan Perjalanan</h5>
-                    @auth
-                    <h5 class="mb-2">Selamat Datang, {{ Auth::user()->name }} Di Aplikasi Peduli Diri!</h5>
-                    @else
-                    <h7 class="mb-2">Selamat Datang, Tamu Di Aplikasi Peduli Diri!</h7>
-                    @endauth
-        </div>
-    </div>
-</div>
-    @if(session('Success'))
-        <div class="alert alert-success">
-            {{ session('Success') }}
-        </div>
-    @endif --}}
         </main> <!--end::App Main--> <!--begin::Footer-->
-        <footer class="app-footer"> <!--begin::To the end-->
-                Copyright &copy; 2014-2024&nbsp;
-                <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-            </strong>
-            All rights reserved.
-            <!--end::Copyright-->
-        </footer> <!--end::Footer-->
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->

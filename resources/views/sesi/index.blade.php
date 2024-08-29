@@ -14,20 +14,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('assets')}}/dist/css/adminlte.css"><!--end::Required Plugin(AdminLTE)-->
     <style>
-        html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-    }
-    .login-page {
-        background-color: #792525; /* Warna latar belakang */
-        height: 100vh; /* Mengatur tinggi penuh layar */
-        width: 100vw; /* Mengatur lebar penuh layar */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+       body {
+    background-color: #682109; /* Warna latar belakang solid di bawah gambar */
+    background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); /* Ganti dengan path gambar Anda */
+    background-size: 90% 60%; /* Mengatur ukuran gambar agar sesuai dengan kontainer */
+    background-position: center; /* Memusatkan gambar di tengah layar */
+    background-repeat: no-repeat; /* Mencegah gambar berulang */
+    height: 100vh; /* Memastikan gambar latar menutupi tinggi penuh */
+    width: 100vw; /* Memastikan gambar latar menutupi lebar penuh */
+    margin: 0; /* Menghapus margin default */
+    position: relative; /* Menyiapkan positioning untuk elemen pseudo */
+}
+
+body::before {
+    content: ''; /* Konten kosong untuk pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.login-page {
+    background-color: rgba(255, 255, 255, 0.8); /* Biarkan latar belakang halaman login transparan */
+    height: 100vh; /* Tinggi layar penuh */
+    width: 100vw; /* Lebar layar penuh */
+    display: flex;
+    justify-content: center; /* Menyelaraskan konten secara horizontal di tengah */
+    align-items: center; /* Menyelaraskan konten secara vertikal di tengah */
+    position: relative; /* Memastikan konten login berada di atas pseudo-element */
+    z-index: 2; /* Membawa konten login di atas pseudo-element */
+}
         .login-box {
             width: 100%;
             max-width: 500px; /* Membatasi lebar maksimum kotak login */

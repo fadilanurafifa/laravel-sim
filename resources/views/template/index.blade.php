@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Dashboard</title><!--begin::Primary Meta Tags-->
+    <title>Form Pelayanan Sim</title><!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="AdminLTE v4 | Dashboard">
     <meta name="author" content="ColorlibHQ">
@@ -171,6 +171,16 @@ form h2 {
 .mb-3 {
     margin-bottom: 20px;
 }
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.nav-link span {
+    white-space: nowrap;
+}
+
 
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
@@ -186,142 +196,121 @@ form h2 {
                 <li class="nav-item">
                     <a href="dashboard" class="nav-link text-white d-flex align-items-center">
                         <i class="bi bi-speedometer2 me-2"></i>
-                        <p class="d-inline ms-0 mb-0">Dashboard</p>
+                        <span class="mb-0">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="history" class="nav-link text-white d-flex align-items-center">
-                        <i class="bi bi-clock-history me-2"></i>
-                        <p class="d-inline ms-0 mb-0">History</p>
-                    </a>
-                </li>
-              
             </ul>
             <div class="dropdown ms-auto">
                 <a class="dropdown-toggle d-flex align-items-center text-white text-decoration-none" href="#" role="button" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-circle profile-icon me-2"></i>
-                    <span class="profile-text">Polres Cianjur</span>
+                    <span class="profile-text">POLRES CIANJUR</span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom" aria-labelledby="dropdownProfile">
-                    <li>
-                        <a class="dropdown-item dropdown-item-custom" href="/sesi/logout">
-                            <i class="bi bi-box-arrow-right"></i> Logout
-                        </a>
-                        <a class="dropdown-item dropdown-item-custom" href="logout-url">
-                            <i class="bi bi-box-arrow-right"></i> Custom
-                        </a>
-                        <a class="dropdown-item dropdown-item-custom" href="logout-url">
-                            <i class="bi bi-box-arrow-right"></i> Custom
-                        </a>
-                        <a class="dropdown-item dropdown-item-custom" href="logout-url">
-                            <i class="bi bi-box-arrow-right"></i> Custom
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>        
     </nav>                
-    <form action="{{ route('catatan.store') }}" method="post" class="p-4 border rounded shadow-sm">
+    <form action="{{ route('catatan.store') }}" method="post" class="p-4 border rounded shadow-sm mx-auto" style="width: 100%; margin-top: 130px;">
         @csrf
-        <h2 class="mb-4">Formulir Pembuatan Kartu SIM</h2>
+        <h2 class="mb-4 text-center">Formulir Pembuatan Kartu SIM</h2>
+        <div class="d-flex flex-wrap justify-content-between">
+            <!-- Nama Lengkap -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
     
-        <!-- Nama Lengkap -->
-        <div class="mb-3">
-            <label for="name" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
+            <!-- Nomor KTP -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="nomor_ktp" class="form-label">Nomor KTP</label>
+                <input type="text" class="form-control" id="nomor_ktp" name="nomor_ktp" required>
+            </div>
     
-        <!-- Nomor KTP -->
-        <div class="mb-3">
-            <label for="nomor_ktp" class="form-label">Nomor KTP</label>
-            <input type="text" class="form-control" id="nomor_ktp" name="nomor_ktp" required>
-        </div>
+            <!-- Tempat Lahir -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
+                <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
+            </div>
     
-        <!-- Tempat Lahir -->
-        <div class="mb-3">
-            <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
-        </div>
+            <!-- Tanggal Lahir -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
+            </div>
     
-        <!-- Tanggal Lahir -->
-        <div class="mb-3">
-            <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
-        </div>
+            <!-- Alamat Lengkap -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="alamat" class="form-label">Alamat Lengkap</label>
+                <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
+            </div>
     
-        <!-- Alamat Lengkap -->
-        <div class="mb-3">
-            <label for="alamat" class="form-label">Alamat Lengkap</label>
-            <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
-        </div>
-    
-        <!-- Jenis Kelamin -->
-        <div class="mb-3">
-            <label class="form-label">Jenis Kelamin</label>
-            <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin-laki" value="Laki-laki" required>
-                    <label class="form-check-label" for="jenis-kelamin-laki">Laki-laki</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin-perempuan" value="Perempuan" required>
-                    <label class="form-check-label" for="jenis_kelamin-perempuan">Perempuan</label>
+            <!-- Jenis Kelamin -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label class="form-label">Jenis Kelamin</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin-laki" value="Laki-laki" required>
+                        <label class="form-check-label" for="jenis_kelamin-laki">Laki-laki</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin-perempuan" value="Perempuan" required>
+                        <label class="form-check-label" for="jenis_kelamin-perempuan">Perempuan</label>
+                    </div>
                 </div>
             </div>
-        </div>
     
-        <!-- Golongan Darah -->
-        <div class="mb-3">
-            <label for="golongan_darah" class="form-label">Golongan Darah</label>
-            <select class="form-select" id="golongan_darah" name="golongan_darah" required>
-                <option value="" disabled selected>Pilih Golongan Darah</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="AB">AB</option>
-                <option value="O">O</option>
-            </select>
-        </div>
+            <!-- Golongan Darah -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="golongan_darah" class="form-label">Golongan Darah</label>
+                <select class="form-select" id="golongan_darah" name="golongan_darah" required>
+                    <option value="" disabled selected>Pilih Golongan Darah</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="AB">AB</option>
+                    <option value="O">O</option>
+                </select>
+            </div>
     
-        <!-- Pendidikan Terakhir -->
-        <div class="mb-3">
-            <label for="pendidikan" class="form-label">Pendidikan Terakhir</label>
-            <select class="form-select" id="pendidikan" name="pendidikan" required>
-                <option value="" disabled selected>Pilih Pendidikan Terakhir</option>
-                <option value="SD">SD</option>
-                <option value="SMP">SMP</option>
-                <option value="SMA">SMA</option>
-                <option value="D1">D1</option>
-                <option value="D3">D3</option>
-                <option value="S1">S1</option>
-                <option value="S2">S2</option>
-                <option value="S3">S3</option>
-            </select>
-        </div>
+            <!-- Pendidikan Terakhir -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="pendidikan" class="form-label">Pendidikan Terakhir</label>
+                <select class="form-select" id="pendidikan" name="pendidikan" required>
+                    <option value="" disabled selected>Pilih Pendidikan Terakhir</option>
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
+                    <option value="D1">D1</option>
+                    <option value="D3">D3</option>
+                    <option value="S1">S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
+                </select>
+            </div>
     
-        <!-- Jenis SIM -->
-        <div class="mb-3">
-            <label for="jenis_sim" class="form-label">Jenis SIM</label>
-            <select class="form-select" id="jenis_sim" name="jenis_sim" required>
-                <option value="" disabled selected>Pilih Jenis SIM</option>
-                <option value="SIM A">SIM A</option>
-                <option value="SIM B1">SIM B1</option>
-                <option value="SIM B2">SIM B2</option>
-                <option value="SIM C">SIM C</option>
-                <option value="SIM D">SIM D</option>
-            </select>
-        </div>
+            <!-- Jenis SIM -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="jenis_sim" class="form-label">Jenis SIM</label>
+                <select class="form-select" id="jenis_sim" name="jenis_sim" required>
+                    <option value="" disabled selected>Pilih Jenis SIM</option>
+                    <option value="SIM A">SIM A</option>
+                    <option value="SIM B1">SIM B1</option>
+                    <option value="SIM B2">SIM B2</option>
+                    <option value="SIM C">SIM C</option>
+                    <option value="SIM D">SIM D</option>
+                </select>
+            </div>
     
-        <!-- Tanggal Pengajuan -->
-        <div class="mb-3">
-            <label for="tanggal_pengajuan" class="form_label">Tanggal Pengajuan</label>
-            <input type="date" class="form-control" id="tanggal_pengajuan" name="tanggal_pengajuan" required>
+            <!-- Tanggal Pengajuan -->
+            <div class="form-group flex-grow-1 me-3 mb-3" style="min-width: 250px;">
+                <label for="tanggal_pengajuan" class="form-label">Tanggal Pengajuan</label>
+                <input type="date" class="form-control" id="tanggal_pengajuan" name="tanggal_pengajuan" required>
+            </div>
         </div>
     
         <!-- Tombol Submit -->
         <div class="mb-3 text-center">
             <button type="submit" class="btn btn-primary">Ajukan SIM</button>
         </div>
-    </form>   
+    </form>
+        
     @if($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -331,160 +320,7 @@ form h2 {
         </ul>
     </div>
 @endif
-      
-{{-- <body class="layout-fixed sidebar-expand-lg bg-body-tertiary"> <!--begin::App Wrapper-->
-    <div class="app-wrapper"> <!--begin::Header-->
-        <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
-           
-        </nav> <!--end::Header--> <!--begin::Sidebar-->
-        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
-            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link"> <!--begin::Brand Image--> <img src="{{asset('assets')}}/dist/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span class="brand-text fw-light">Perjalanan Dinas</span> <!--end::Brand Text--> </a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
-            <div class="sidebar-wrapper">
-                <nav class="mt-2"> <!--begin::Sidebar Menu-->
-                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="dashboard" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                                    <p>Home</p>
-                                </a> </li>
-                                <li class="nav-item"> <a href="/" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                                        <p>Adding Data</p>
-                                    </a> </li>
-                                <li class="nav-item"> <a href="history" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                                        <p>History Data</p>
-                                    </a> </li>
-                            </ul>
-                            <div class="logout-btn">
-                                <a href="/sesi/logout" class="btn btn-danger w-100">
-                                    <i class="nav-icon bi bi-circle"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </ul> <!--end::Sidebar Menu-->
-                </nav>
-            </div> <!--end::Sidebar Wrapper-->
-        </aside> <!--end::Sidebar--> <!--begin::App Main-->
-        <main class="app-main"> <!--begin::App Content Header-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peduli Diri</title>
-    <style>
-        .app-content-header {
-            padding: 15px 0;
-        }
-        .align-items-center {
-            display: flex;
-            align-items: center;
-        }
-        .text-right {
-            text-align: right;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 12px;
-            font-size: 16px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-        }
-        .btn .nav-icon {
-            margin-right: 5px;
-        }
-    </style>
-</head>
-<body> --}}
-     {{-- <div class="app-content-header">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-sm-6 header-title">
-                    <h3 class="mb-2">PEDULI DIRI</h3>
-                    <h5 class="mb-2">Catatan Perjalanan</h5>
-                    @auth
-                    <h7 class="mb-2">Selamat Datang, {{ Auth::user()->name }} Di Aplikasi Peduli Diri!</h7>
-                @else
-                    <h7 class="mb-2">Selamat Datang, Tamu</h7>
-                @endauth
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    {{-- @if(session('Success'))
-        <div class="alert alert-success">
-            {{ session('Success') }}
-        </div>
-    @endif --}}
-            {{-- <div class="container-fluid d-flex justify-content-between">
-                <ul class="navbar-nav d-flex flex-row align-items-center">
-                    <li class="nav-item"> 
-                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> 
-                            <i class="bi bi-list"></i> 
-                        </a> 
-                    </li>
-                    <li class="nav-item d-none d-md-block ms-3"> 
-                        <a href="/" class="nav-link">Home</a> 
-                     </li>
-                    <li class="nav-item d-none d-md-block ms-3"> 
-                        <a href="#" class="nav-link">Contact</a> 
-                    </li>
-                    <li class="nav-item d-none d-md-block ms-3"> 
-                        <a href="#" class="nav-link">Isi Data</a> 
-                    </li> 
-                </ul>
-            </div> --}}
-                
-            {{-- <div class="app-content"> 
-                <div class="container-fluid"> 
-                    <div class="row">
-                        <div class="col-lg-3 col-6"> 
-                        </div> 
-                        <div class="card card-primary card-outline mb-4" id="addDataSection"> 
-                            <div class="card-header">
-                                <div class="card-title">Add Data</div>
-                            </div>
-                            <form action="tambahdata" method="POST"> 
-                                @csrf
-                                <div class="card-body">
-                                    <div class="row mb-3"> <label for="inputnik3" class="col-sm-2 col-form-label">Nik</label>
-                                        <div class="col-sm-10"> <input type="number" name="nik" class="form-control" id="inputnik3"> </div>
-                                    </div>
-                                    <div class="row mb-3"> <label for="inputnik3" class="col-sm-2 col-form-label">Tanggal</label>
-                                        <div class="col-sm-10"> <input type="date" name="tanggal" class="form-control" id="tanggal"> </div>
-                                    </div>
-                                    <div class="row mb-3"> <label for="inputnik3" class="col-sm-2 col-form-label">Jam</label>
-                                        <div class="col-sm-10"> <input type="time" name="jam" class="form-control" id="inputnik3"> </div>
-                                    </div>
-                                    <div class="row mb-3"> <label for="inputnik3" class="col-sm-2 col-form-label">Lokasi Dituju</label>
-                                        <div class="col-sm-10"> <input type="text" name="lokasi_dituju" class="form-control" id="inputnik3"> </div>
-                                    </div>
-                                    <div class="row mb-3"> <label for="inputnik3" class="col-sm-2 col-form-label">Suhu</label>
-                                        <div class="col-sm-10"> <input type="number" name="suhu" class="form-control" id="inputnik3"> </div>
-                                    </div>
-                                </div> 
-                                <div class="card-footer"> <button type="submit" class="btn btn-float">Save Data</button> 
-                            </form> 
-                        </div>
-                    </div> 
-                    
-                </div>
-                
-            </div>  --}}
         </main> 
-        <footer class="app-footer"> <!--begin::To the end-->
-                Copyright &copy; 2014-2024&nbsp;
-                <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-            </strong>
-            All rights reserved.
-            <!--end::Copyright-->
-        </footer> <!--end::Footer-->
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->

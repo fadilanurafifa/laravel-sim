@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
+        return view('dashboard');
+    }
+
+    public function create_page(){
         return view('template.index');
     }
+    
 
     public function history(){
         $data['catatan'] = catatan::get();

@@ -11,10 +11,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
 
 Route:: get('/',[HomeController::class, 'index']);
+Route:: get('create-sim',[HomeController::class, 'create_page']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route:: resource('penduduk', PendudukController::class);
 
-Route::get('/catatan', [SessionController::class, 'store'])->name('catatan.store');
+Route::post('/catatan', [SessionController::class, 'store'])->name('catatan.store');
 Route::get('/history', [SessionController::class, 'history'])->name('history');
 
 Route::get('/sesi', [SessionController::class, 'index']);
@@ -24,4 +25,3 @@ Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
 Route::post('editcatatan/{id}',[SessionController::class , 'update']);
 Route::delete('history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
-

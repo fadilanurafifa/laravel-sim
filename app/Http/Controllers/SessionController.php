@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Http\Requests\UpdatecatatanRequest;
 use App\Models\catatan;
 use App\Models\SimData;
@@ -86,23 +87,34 @@ class SessionController extends Controller
         }
     }
 
-    function update(Request $request, $id){
-        $request->validate([
-            'nik' => 'required',
-            'tanggal' => 'required',
-            'jam' => 'required',
-            'lokasi_dituju' => 'required',
-            'suhu' => 'required',
-        ]);
-        catatan::where('id', $id)->update([
-            'nik' => $request->nik,
-            'tanggal' => $request->tanggal,
-            'jam' => $request->jam,
-            'lokasi_dituju' => $request->lokasi_dituju,
-            'suhu' => $request->suhu,
-        ]);
-        return redirect('history')->with('Success', 'Update data catatan berhasil!');
-    }
+    public function update(Request $request, $id)
+{
+    // Validasi input
+    dd($request->all());
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'nomor_ktp' => 'required|string|max:20',
+        'tempat_lahir' => 'required|string|max:255',
+        'tanggal_lahir' => 'required|date',
+        'jenis_kelamin' => 'required|string|max:10',
+        'golongan_darah' => 'required|string|max:3',
+        'pendidikan' => 'required|string|max:255',
+        'jenis_sim' => 'required|string|max:10',
+        'tanggal_pengajuan' => 'required|date',
+    ]);
+
+    // Debugging untuk memastikan data yang diterima sudah benar
+
+    // Lakukan update data
+    $update = catatan::where('id', $id)->update($request->only([
+        'name', 'nomor_ktp', 'tempat_lahir', 'tanggal_lahir', 
+        'jenis_kelamin', 'golongan_darah', 'pendidikan', 
+        'jenis_sim', 'tanggal_pengajuan'
+    ]));
+
+    // Setelah update, redirect kembali ke halaman history
+    return redirect('history');
+}
     
     function store (Request $request){
         $request->validate([
