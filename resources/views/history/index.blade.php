@@ -426,18 +426,7 @@ body {
                                         <td>
                                             <div class="d-flex justify-content-start align-items-center gap-2">
                                                 <!-- Tombol Edit -->
-                                                <button class="btn btn-warning" onclick="showEditModal(
-                                                    '{{ $history->id }}',
-                                                    '{{ $history->name }}',
-                                                    '{{ $history->nomor_ktp }}',
-                                                    '{{ $history->tempat_lahir }}',
-                                                    '{{ $history->tanggal_lahir }}',
-                                                    '{{ $history->jenis_kelamin }}',
-                                                    '{{ $history->golongan_darah }}',
-                                                    '{{ $history->pendidikan }}',
-                                                    '{{ $history->jenis_sim }}',
-                                                    '{{ $history->tanggal_pengajuan }}'
-                                                )">Edit</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{ $history->id }}">Edit</button>
                         
                                                 <!-- Tombol Hapus dengan SweetAlert -->
                                                 <button type="button" class="btn btn-danger delete-button" data-id="{{ $history->id }}">Hapus</button>
@@ -477,7 +466,20 @@ body {
                                 });
                             });
                         });
-                        </script>                        
+                        </script>         
+                        
+                        @if (session()->has('Success'))
+                            <script>
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Berhasil!',
+                                    text: '{{ session()->get("Success") }}',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            </script>
+                        @endif
+
                     </div>
                     
                 </div> <!--end::Container-->

@@ -8,26 +8,28 @@ use App\Models\catatan;
 use App\Models\SimData;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 
 
 class SessionController extends Controller
 {
-    function index(){
+    function index()
+    {
         return view("sesi/index");
     }
 
-    function login(Request $request){
+    function login(Request $request)
+    {
 
         Session::flash('email', $request->email);
         $request->validate([
             'email' => 'required',
             'password' => 'required'
-        ],[
-            'email.required'=>'Email Wajib Diisi!',
-            'password.required'=>'Password Wajib Diisi!'
+        ], [
+            'email.required' => 'Email Wajib Diisi!',
+            'password.required' => 'Password Wajib Diisi!'
         ]);
 
         $infologin = [
@@ -35,37 +37,38 @@ class SessionController extends Controller
             'password' => $request->password
         ];
 
-        if(Auth::attempt($infologin)){
+        if (Auth::attempt($infologin)) {
             return redirect('dashboard')->with('Success', Auth::user()->name . ' Berhasil Login!');
         } else {
             return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
-
         }
     }
 
-    function logout(){
+    function logout()
+    {
         Auth::logout();
         return redirect('sesi')->with('Success', 'Berhasil Logout');
     }
 
-    function register(){
+    function register()
+    {
         return view('sesi/register');
-
     }
-    function create(Request $request){
+    function create(Request $request)
+    {
         Session::flash('name', $request->name);
         Session::flash('email', $request->email);
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6'
-        ],[
-            'name.required'=>'Nama Wajib Diisi!',
-            'email.required'=>'Email Wajib Diisi!',
-            'email.email'=>'Silahkan Masukan Email Yang Valid!',
-            'email.unique'=>'Email Sudah Pernah Digunakan!',
-            'password.required'=>'Password Wajib Diisi!',
-            'password.min'=>'Minimum Password Yang Diizinkan Adalah 6 Karakter!'
+        ], [
+            'name.required' => 'Nama Wajib Diisi!',
+            'email.required' => 'Email Wajib Diisi!',
+            'email.email' => 'Silahkan Masukan Email Yang Valid!',
+            'email.unique' => 'Email Sudah Pernah Digunakan!',
+            'password.required' => 'Password Wajib Diisi!',
+            'password.min' => 'Minimum Password Yang Diizinkan Adalah 6 Karakter!'
         ]);
 
         $data = [
@@ -80,7 +83,7 @@ class SessionController extends Controller
             'password' => $request->password
         ];
 
-        if(Auth::attempt($infologin)){
+        if (Auth::attempt($infologin)) {
             return redirect('dashboard')->with('Success', Auth::user()->name .  ' Berhasil Register!');
         } else {
             return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
@@ -88,35 +91,43 @@ class SessionController extends Controller
     }
 
     public function update(Request $request, $id)
-{
-    // Validasi input
-    dd($request->all());
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'nomor_ktp' => 'required|string|max:20',
-        'tempat_lahir' => 'required|string|max:255',
-        'tanggal_lahir' => 'required|date',
-        'jenis_kelamin' => 'required|string|max:10',
-        'golongan_darah' => 'required|string|max:3',
-        'pendidikan' => 'required|string|max:255',
-        'jenis_sim' => 'required|string|max:10',
-        'tanggal_pengajuan' => 'required|date',
-    ]);
+    {
+        // Validasi input
+        // dd($request->all());
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'nomor_ktp' => 'required|string|max:20',
+            'tempat_lahir' => 'required|string|max:255',
+            'tanggal_lahir' => 'required|date',
+            'jenis_kelamin' => 'required|string|max:10',
+            'golongan_darah' => 'required|string|max:3',
+            'pendidikan' => 'required|string|max:255',
+            'jenis_sim' => 'required|string|max:10',
+            'tanggal_pengajuan' => 'required|date',
+        ]);
 
-    // Debugging untuk memastikan data yang diterima sudah benar
+        // Debugging untuk memastikan data yang diterima sudah benar
 
-    // Lakukan update data
-    $update = catatan::where('id', $id)->update($request->only([
-        'name', 'nomor_ktp', 'tempat_lahir', 'tanggal_lahir', 
-        'jenis_kelamin', 'golongan_darah', 'pendidikan', 
-        'jenis_sim', 'tanggal_pengajuan'
-    ]));
+        // Lakukan update data
+        $update = catatan::where('id', $id)->update($request->only([
+            'name',
+            'nomor_ktp',
+            'tempat_lahir',
+            'tanggal_lahir',
+            'jenis_kelamin',
+            'golongan_darah',
+            'pendidikan',
+            'jenis_sim',
+            'tanggal_pengajuan'
+        ]));
 
-    // Setelah update, redirect kembali ke halaman history
-    return redirect('history');
-}
-    
-    function store (Request $request){
+        // Setelah update, redirect kembali ke halaman history
+        return redirect('history')->with('Success', 'Data Telah Diupdate');
+    }
+
+    function store(Request $request)
+    {
+        dd('masuk');
         $request->validate([
             'name' => 'required|string|max:255',
             'nomor_ktp' => 'required|string|max:16',
@@ -148,12 +159,12 @@ class SessionController extends Controller
         // Redirect ke halaman success atau halaman lain dengan pesan sukses
         return redirect()->route('history')->with('Success', 'Pengajuan SIM berhasil diajukan!');
     }
-    public function history() {
+    public function history()
+    {
         // Ambil semua data dari model Catatan
         $catatan = catatan::all();
-        
+
         // Kirim data ke view
         return view('history.index', ['catatan' => $catatan]);
     }
-
 }
