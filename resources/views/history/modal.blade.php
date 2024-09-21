@@ -4,9 +4,19 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="
+                        background-color: #102C57; /* Warna latar belakang biru */
+                        color: white; /* Warna teks putih */
+                        padding: 10px 20px; /* Padding di sekitar teks (atas/bawah, kiri/kanan) */
+                        border-radius: 15px; /* Membuat sudut membulat */
+                        text-align: center; /* Menyelaraskan teks ke tengah */
+                        margin: 0; /* Menghapus margin default */
+                        width: 100%; /* Membuat lebar h1 menyesuaikan lebar kontainer */
+                    ">
+                        Edit Data Pengajuan
+                    </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+                </div>                
                 <div class="modal-body">
                     <form id="modalForm" action="editcatatan/{{ $item->id }}" method="POST">
                   @csrf
@@ -81,8 +91,8 @@
                                 value="{{ $item->tanggal_pengajuan }}" required>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="summit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="summit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
                 </div>

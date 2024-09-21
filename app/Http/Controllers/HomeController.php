@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view('dashboard');
+        return view('verifikasi.ektp');
     }
 
     public function create_page(){

@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('assets')}}/dist/css/adminlte.css"><!--end::Required Plugin(AdminLTE)-->
     <style>
-           body {
-    background-color: #682109; /* Warna latar belakang solid di bawah gambar */
+         body {
+    background-color: #021526; /* Warna latar belakang solid di bawah gambar */
     background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); /* Ganti dengan path gambar Anda */
     background-size: 90% 60%; /* Mengatur ukuran gambar agar sesuai dengan kontainer */
     background-position: center; /* Memusatkan gambar di tengah layar */
@@ -47,7 +47,7 @@ body::before {
 }
         .login-box {
             width: 500px; /* Adjust this value as needed */
-            border-radius: 30px; /* Radius sudut untuk login box */
+            border-radius: 10px; /* Radius sudut untuk login box */
             overflow: hidden; /* Agar konten tidak keluar dari batas border-radius */
         }
         .card-header {
@@ -66,11 +66,11 @@ body::before {
             margin: 0; /* Menghapus margin default dari h1 */
         }
         .header-background {
-            background-color: #682109; /* Warna coklat */
+            background-color: #102C57;; /* Warna coklat */
             padding: 10px; /* Opsional: menambahkan padding agar konten tidak menempel pada tepi */
         }
         .custom-background {
-            background-color: #f0cc9e; /* Warna krem */
+            background-color: #ece6dc; /* Warna krem */
             padding: 20px; /* Opsional: menambahkan padding agar konten tidak menempel pada tepi */
             border-radius: 10px; /* Opsional: menambahkan border-radius agar tampilan lebih halus */
         }
@@ -79,23 +79,69 @@ body::before {
             font-size: 25px;
         }
         .btn-tomple {
-            background-color: #682109; /* Warna coklat */
+            background-color:#102C57;; /* Warna coklat */
             color: #ffffff; /* Warna teks putih */
             border: none; /* Menghilangkan border default */
         }
-        .btn-tomple:hover, .btn-tomple:focus {
-            background-color: #682109; 
-            border-color: #e2d2b1; 
-            color: #ffffff; 
-        }
+        
         .btn-tomple:hover {
-            background-color: #973131; /* Warna coklat lebih gelap untuk hover */
+            background-color: #102C57;; /* Warna coklat lebih gelap untuk hover */
         }
+        .card-nav {
+    display: flex; /* Flexbox untuk tata letak horizontal */
+    align-items: center; /* Menyelaraskan item di tengah vertikal */
+    justify-content: center; /* Menyelaraskan item di tengah horizontal */
+    gap: 10px; /* Memberi jarak antara logo dan teks */
+    background-color: transparent; /* Menghapus warna latar belakang */
+    padding: 20px 0; /* Menambahkan padding untuk ruang di sekitar elemen */
+    transition: transform 0.2s ease, opacity 0.2s ease; /* Efek transisi halus */
+}
+
+/* Mengatur ukuran dan margin untuk gambar logo */
+.logo-sinar {
+    max-width: 200px; /* Mengatur ukuran maksimum logo */
+    height: auto; /* Menjaga rasio aspek logo */
+    transition: transform 0.2s ease; /* Efek transisi halus untuk logo */
+}
+
+/* Styling untuk teks SIMedia */
+.card-nav h2 {
+    color: #021526; /* Warna teks */
+    font-family: 'Arial', sans-serif; /* Gaya font */
+    font-size: 50px; /* Ukuran font */
+    margin: 0; /* Menghapus margin */
+    font-weight: bold; /* Menebalkan teks */
+    transition: color 0.2s ease, transform 0.2s ease; /* Efek transisi halus untuk teks */
+}
+
+/* Efek hover untuk container */
+.card-nav:hover {
+    transform: scale(1.02); /* Sedikit memperbesar kontainer saat di-hover */
+}
+
+/* Efek hover untuk logo */
+.logo-sinar:hover {
+    transform: scale(1.05); /* Sedikit memperbesar logo saat di-hover */
+}
+
+/* Efek hover untuk teks */
+.card-nav h2:hover {
+    color: #555; /* Mengubah warna teks menjadi abu-abu lebih terang saat di-hover */
+    transform: translateY(-2px); /* Sedikit mengangkat teks saat di-hover */
+}
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
 
 <body> 
     <div class="login-page">
+        <div class="card-nav text-center">
+            <!-- Logo SIMedia -->
+            <img src="{{ asset('assets/dist/assets/img/sinar.png') }}" alt="Presisi Logo" class="logo-sinar">
+
+            <!-- Teks SIMedia -->
+            <h2 class="mb-0 mt-2"><b>SIMedia</b></h2>
+
+        </div>
         <div class="login-box">
             <div class="card card-outline card-secondary">
                 <div class="card-header d-flex align-items-center header-background"> 
@@ -117,21 +163,22 @@ body::before {
                     <form action="create" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" value="{{ Session::get('name') }}" name="name" class="form-control">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" value="{{ Session::get('name') }}" name="name" class="form-control" placeholder="Masukan nama anda">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" value="{{ Session::get('email') }}" name="email" class="form-control">
+                            <input type="email" value="{{ Session::get('email') }}" name="email" class="form-control" placeholder="Masukan email anda">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control">
+                            <input type="password" name="password" class="form-control" placeholder="Masukan password anda">
                         </div>
                         <div class="mb-3 d-grid">
                             <button name="submit" type="submit" class="btn btn-tomple">Register</button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>

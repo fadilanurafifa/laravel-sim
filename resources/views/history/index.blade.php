@@ -14,19 +14,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/styles/overlayscrollbars.min.css" integrity="sha256-dSokZseQNT08wYEWiz5iLI8QPlKxG+TswNRD8k35cpg=" crossorigin="anonymous"><!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('assets')}}/dist/css/adminlte.css"><!--end::Required Plugin(AdminLTE)--><!-- apexcharts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css" integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous"><!-- jsvectormap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
-        /* Gaya Umum */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Pesan Sukses */
 .alert-success {
     background-color: #28a745;
     color: #fff;
@@ -38,32 +31,52 @@ body {
 
 /* Gaya Kartu */
 .card-body {
-    background-color: #ffffff;
+    background-color: transparent;
+    /* background-color: #021526; */
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+    margin-top: -90px;
 }
 
 /* Gaya Tabel */
 .table {
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;/* Gunakan separate untuk border-radius bekerja dengan baik */
+    border-spacing: 1; /* Hilangkan jarak antar sel */
     width: 100%;
+    border-radius: 8px; /* Radius untuk sudut tabel */
+    overflow: hidden; /* Pastikan konten tidak melampaui border-radius */
 }
 
+/* Gaya untuk header tabel */
 .table thead th {
-    background-color: #682109;
+    background-color: #507687;
     color: #fff;
     padding: 12px;
     border: none;
     text-transform: uppercase;
 }
 
+/* Gaya untuk sel tabel */
 .table tbody td {
     padding: 12px;
     border: none;
-    border-bottom: 1px solid #ddd;
+    
+}
+
+/* Gaya untuk baris tabel terakhir */
+.table tbody tr:last-child td {
+    border-bottom: none; /* Hilangkan border bawah pada baris terakhir */
+}
+
+/* Jika Anda ingin border-radius yang lebih baik pada baris terakhir, pertimbangkan mengatur gaya di bawah */
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px; /* Radius sudut kiri bawah */
+}
+
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px; /* Radius sudut kanan bawah */
 }
 
 /* Tombol */
@@ -80,14 +93,9 @@ body {
     border-color: #dc3545;
    
 }
-
-.btn-float {
-    background-color: #ffc107;
-    margin-left: 5px;
-}
 .app-footer {
     background-color: #343a40;
-    color: #fff;
+   
     padding: 20px 0;
     text-align: center;
     font-size: 14px;
@@ -102,12 +110,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal-header {
-    background-color: #682109;
-    color: #fff;
-    border-bottom: none;
-}
-
 .modal-footer {
     border-top: none;
     justify-content: center;
@@ -120,20 +122,21 @@ body {
                     body {
                         font-family: Arial, sans-serif;
                         background-color: transparent;
+                        /* background-color: #021526;;  */
                         margin: 0;
                         padding: 0;
                     }
                     /* Styling untuk navbar dengan latar belakang coklat */
                     .navbar-bg-brown {
-                        background-color: #8B4513; /* Warna latar belakang navbar */
+                        background-color: #102C57;
                         display: flex; /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
                         align-items: center; /* Menyelaraskan item secara vertikal di tengah */
                     }
 
                     /* Styling untuk logo di navbar */
                     .navbar-logo {
-                        width: 80px; /* Lebar logo */
-                        height: 40px; /* Tinggi logo */
+                        width: 60px; /* Lebar logo */
+                        height: 60px; /* Tinggi logo */
                         margin-right: 10px; /* Jarak antara logo dan teks */
                     }
 
@@ -190,39 +193,13 @@ body {
                         margin-left: 65%;
                     }
                     .nav-item{
-                        margin-left: 150px;
-                    }
-                    .dashboard-container {
-                        display: flex;
-                        justify-content: space-between; /* Menyebarkan elemen ke kiri dan kanan */
-                        align-items: center;
-                        padding: 20px 20px;
-                        background-color: #f8f9fa;
-                        border-bottom: 1px solid #ddd;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                    }
-                    .dashboard-container {
-                        width: 100%; /* Lebar sesuai dengan navbar */
-                        background-color: #f0f0f0; /* Warna latar belakang sedikit berbeda dari navbar */
-                        padding: 10px 0; /* Padding atas dan bawah */
-                        border-top: 2px solid #e7e7e7; /* Garis atas untuk memisahkan dari navbar */
-                        margin-top: 60px; /* Menambahkan margin-top untuk menghindari tumpang tindih dengan navbar */
-                        padding-top: 20px;
-                        margin-bottom: 10px;
+                        margin-left: 120px;
                     }
                     .dashboard-text {
-                        margin: 10px; /* Menghilangkan margin default */
-                        font-size: 23px; /* Ukuran font untuk teks Dashboard */
-                        color: #333; /* Warna teks */
-                        font-family: Arial, sans-serif;
-                        font-weight: 500;
-                        margin-left: 25px;
-
-                    }
-                    .dashboard-text {
-                        font-size: 24px;
+                        font-size: 20px;
                         font-weight: bold;
                         color: #333;
+                        margin-left: 10px;
                     
                     }
                     .search-dropdown-container {
@@ -317,20 +294,6 @@ body {
                         color: white;
                         transition: background-color 0.3s ease;
                     }
-
-                    .btn-warning {
-                        background-color: #ffc107;
-                        border: none;
-                        padding: 8px 16px;
-                        border-radius: 5px;
-                        font-weight: bold;
-                        color: white;
-                        transition: background-color 0.3s ease;
-                    }
-
-                    .btn-danger:hover, .btn-warning:hover {
-                        opacity: 0.9; /* Menambahkan sedikit efek saat hover */
-                    }
                     .text-content{
                         padding-top: 20px;
                     }
@@ -341,8 +304,8 @@ body {
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-bg-brown fixed-top" style="padding: 12px;">
 
-        <img src="{{ asset('assets/dist/assets/img/lambangpolri.png') }}" class="navbar-logo" alt="Logo">
-        <div class="text-logo">ZONA INTEGRITAS POLRI</div>
+        <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="navbar-logo" alt="Logo">
+        <div class="text-logo">DIGITAL KORLANTAS POLRI</div>
 
         <div class="collapse navbar-collapse me-3">
             <ul class="navbar-nav d-flex align-items-center">
@@ -360,42 +323,31 @@ body {
                 </a>
             </div>
         </div>        
-    </nav> 
-    <div class="dashboard-container bg-light" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-        <div class="dashboard-text">Data Inputan</div>
-        <div class="search-dropdown-container">
-            <div class="input-wrapper">
-                <input type="text" placeholder="POLRES CIANJUR" class="search-input" id="search-input">
-                <i class="bi bi-arrow-down-short dropdown-icon"></i>
-            </div>
-            <div class="dropdown-content" id="dropdown-content">
-                <a href="#">POLRES CIANJUR</a>
-            </div>
-        </div>                                                              
-    </div>       
-    @if(session('Success'))
-        <div class="alert alert-success">
-            {{ session('Success') }}
-        </div>
-    @endif      
-            <div class="app-content"> <!--begin::Container-->
-                <div class="container-fluid" style="padding-top: 170px;"> <!--begin::Row-->
+    </nav>       
+            <div class="app-content"> 
+                <div class="container-fluid" style="padding-top: 190px;"> 
                     <div class="card-body">
                         <a href="create-sim" style="
-                            background-color: #FFA500; /* Warna oranye */
-                            color: white; /* Warna teks putih */
-                            border: none; /* Menghapus border default */
-                            padding: 10px 20px; /* Spasi dalam tombol */
-                            text-align: center; /* Memastikan teks terpusat */
-                            text-decoration: none; /* Menghapus garis bawah */
-                            display: inline-block; /* Agar tombol memiliki spasi yang cukup */
-                            font-size: 18px; /* Ukuran font */
-                            border-radius: 5px; /* Sudut membulat */
-                            transition: background-color 0.3s ease; /* Transisi warna saat hover */
-                            margin-top: 5px;
-                            margin-bottom: 25px;
-                        " onmouseover="this.style.backgroundColor='#FF8C00'" onmouseout="this.style.backgroundColor='#FFA500'">Pelayanan SIM</a>
+                        background-color: #507687; 
+                        color: white; 
+                        padding: 10px 20px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 18px;
+                        border-radius: 5px;
+                        margin-top: -20px;
+                        margin-bottom: 30px;
+                    " onmouseover="this.style.backgroundColor='#507687;'" onmouseout="this.style.backgroundColor='#507687;'">
+                        <i class="bi bi-plus-circle" style="margin-right: 10px;"></i>Pelayanan SIM
+                    </a>
 
+                    @if(session('Success'))
+                    <div class="alert alert-success">
+                        {{ session('Success') }}
+                    </div>
+                @endif    
+                    
                         <table id="example1" class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr>
@@ -408,7 +360,7 @@ body {
                                     <th>Pendidikan</th>
                                     <th>Jenis Sim</th>
                                     <th>Tanggal Pengajuan</th>
-                                    <th>Lanjutan</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -442,7 +394,6 @@ body {
                                 @endforeach
                             </tbody>
                         </table>
-                        
                         <!-- Script untuk SweetAlert2 -->
                         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                         <script>
@@ -706,6 +657,17 @@ body {
             document.getElementById('modalForm').action=`editcatatan/${historyId}`
         }
     </script>
+    <footer style="
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+">
+    <strong>Copyright &copy; 2024 <a href="/sesi" style="color: rgb(85, 109, 218); text-decoration: none;">SIMedia</a>.</strong>
+    All rights reserved.
+    <div style="float: right; display: inline-block;">
+        <b>Version</b> 3.2.0
+    </div>
+</footer>
 </body><!--end::Body-->
-
 </html>

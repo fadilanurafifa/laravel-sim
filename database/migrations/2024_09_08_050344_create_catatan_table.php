@@ -6,31 +6,25 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('catatans', function (Blueprint $table) {
-            $table->id(); 
+            $table->id();
             $table->string('name');
             $table->string('nomor_ktp');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
             $table->text('alamat');
-            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->enum('golongan_darah', ['A', 'B', 'AB', 'O']);
-            $table->enum('pendidikan', ['SD', 'SMP', 'SMA', 'D1', 'D3', 'S1', 'S2', 'S3']);
-            $table->enum('jenis_sim', ['SIM A', 'SIM B1', 'SIM B2', 'SIM C', 'SIM D']);
+            $table->string('jenis_kelamin');
+            $table->string('golongan_darah');
+            $table->string('pendidikan');
+            $table->string('jenis_sim');
             $table->date('tanggal_pengajuan');
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('catatans');
     }

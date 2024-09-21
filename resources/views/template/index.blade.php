@@ -30,18 +30,19 @@
                     }
                     body {
                         font-family: Arial, sans-serif;
-                        background-color: transparent;
+                        background-color: #021526;
                         margin: 0;
                         padding: 0;
+                        
                     }
                     .navbar-bg-brown {
-                        background-color: #8B4513; /* Warna latar belakang navbar */
+                        background-color: #102C57;; /* Warna latar belakang navbar */
                     }
 
                     /* Styling untuk logo di navbar */
                     .navbar-logo {
-                        width: 80px;
-                        height: 40px;
+                        width: 60px;
+                        height: 60px;
                     }
 
                     /* Styling untuk teks logo */
@@ -95,9 +96,8 @@
                         font-weight: 500; /* Tebal font */
                     }
                     .navbar-nav{
-                        margin-left: 65%;
+                        margin-left: 62%;
                     }
-                    /* Styling keseluruhan form */
 form {
     background-color: #f4f4f4; /* Warna latar belakang form */
     border: 2px solid #343a40; /* Border dengan warna gelap */
@@ -109,7 +109,7 @@ form {
 
 /* Heading form */
 form h2 {
-    color: #d4af37; /* Warna emas khas Polri */
+    color: #102C57; 
     font-weight: bold;
     text-align: center;
 }
@@ -123,7 +123,7 @@ form h2 {
 /* Input dan textarea */
 .form-control {
     border-radius: 4px;
-    border: 1px solid #6c757d;
+    border: 1px solid #021526;
     padding: 10px;
     font-size: 16px;
 }
@@ -131,24 +131,24 @@ form h2 {
 /* Dropdown */
 .form-select {
     border-radius: 4px;
-    border: 1px solid #6c757d;
+    border: 1px solid #102C57;
     padding: 10px;
     font-size: 16px;
 }
 
 /* Radio buttons */
 .form-check-input:checked {
-    background-color: #d4af37; /* Warna emas */
-    border-color: #d4af37;
+    background-color: #508C9B; /* Warna emas */
+    border-color: #508C9B;
 }
 
 .form-check-label {
-    color: #343a40;
+    color: #102C57;
 }
 
 /* Tombol submit */
 .btn-primary {
-    background-color: #d4af37; /* Warna emas */
+    background-color: #102C57; /* Warna emas */
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -158,12 +158,12 @@ form h2 {
 }
 
 .btn-primary:hover {
-    background-color: #c49530; /* Warna emas sedikit lebih gelap saat hover */
+    background-color: #021526; /* Warna emas sedikit lebih gelap saat hover */
 }
 
 /* Style untuk input focus */
 .form-control:focus, .form-select:focus {
-    border-color: #d4af37; /* Border warna emas saat fokus */
+    border-color: #102C57; /* Border warna emas saat fokus */
     box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
 }
 
@@ -182,13 +182,14 @@ form h2 {
 }
 
 
+
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-bg-brown fixed-top">
         <a class="navbar-brand" href="#">
-            <img src="{{ asset('assets/dist/assets/img/lambangpolri.png') }}" class="navbar-logo d-inline-block align-top" alt="">
-            <div class="text-logo">ZONA INTEGRITAS POLRI</div>
+            <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="navbar-logo d-inline-block align-top" alt="">
+            <div class="text-logo">DIGITAL KORLANTAS POLRI</div>
         </a>
         
         <div class="collapse navbar-collapse me-3">
@@ -208,7 +209,7 @@ form h2 {
             </div>
         </div>        
     </nav>                
-    <form action="{{ route('catatan.store') }}" method="post" class="p-4 border rounded shadow-sm mx-auto" style="width: 100%; margin-top: 130px;">
+    <form action="{{ route('catatan.store') }}" method="post" class="p-4 border rounded shadow-sm mx-auto" style="width: 100%; margin-top: 110px;">
         @csrf
         <h2 class="mb-4 text-center">Formulir Pembuatan Kartu SIM</h2>
         <div class="d-flex flex-wrap justify-content-between">
@@ -304,7 +305,6 @@ form h2 {
                 <input type="date" class="form-control" id="tanggal_pengajuan" name="tanggal_pengajuan" required>
             </div>
         </div>
-    
         <!-- Tombol Submit -->
         <div class="mb-3 text-center">
             <button type="submit" class="btn btn-primary">Ajukan SIM</button>

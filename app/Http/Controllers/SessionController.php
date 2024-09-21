@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Activity;
 
 
 class SessionController extends Controller
@@ -20,10 +21,12 @@ class SessionController extends Controller
         return view("sesi/index");
     }
 
-    function login(Request $request)
+    public function login(Request $request)
     {
-
+        // Menyimpan email sementara dalam session
         Session::flash('email', $request->email);
+    
+        // Validasi input
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -31,24 +34,58 @@ class SessionController extends Controller
             'email.required' => 'Email Wajib Diisi!',
             'password.required' => 'Password Wajib Diisi!'
         ]);
-
+    
+        // Mempersiapkan informasi login
         $infologin = [
             'email' => $request->email,
             'password' => $request->password
         ];
-
+    
+        // Proses login
         if (Auth::attempt($infologin)) {
-            return redirect('dashboard')->with('Success', Auth::user()->name . ' Berhasil Login!');
+            $user = Auth::user(); // Mengambil data pengguna yang sedang login
+            
+            // Simpan aktivitas login
+            Activity::create([
+                'user_id' => $user->id,
+                'activity_name' => 'Login',
+                'activity_details' => 'Pengguna ' . $user->name . ' login ke aplikasi',
+                'activity_time' => now()
+            ]);
+    
+            // Menambahkan log
+            Log::info('Aktivitas dicatat', [
+                'user_id' => $user->id,
+                'username' => $user->name, // Nama pengguna
+                'activity_name' => 'Login',
+                'activity_details' => 'Pengguna ' . $user->name . ' login ke aplikasi'
+            ]);
+    
+            // Redirect ke dashboard dengan pesan sukses
+            return redirect('dashboard')->with('Success', $user->name . ' Berhasil Login!');
         } else {
+            // Jika login gagal, redirect kembali ke halaman login dengan pesan error
             return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
         }
+    }    
+    public function logout(Request $request)
+{
+    $user = Auth::user(); // Pastikan mendapatkan user yang sedang login
+    if ($user) {
+        Activity::create([
+            'user_id' => $user->id, // Ambil ID user yang sedang login
+            'activity_name' => 'Logout',
+            'activity_details' => 'Pengguna logout dari aplikasi',
+            'activity_time' => now(),
+        ]);
     }
 
-    function logout()
-    {
-        Auth::logout();
-        return redirect('sesi')->with('Success', 'Berhasil Logout');
-    }
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/sesi');
+}
 
     function register()
     {
@@ -84,7 +121,7 @@ class SessionController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            return redirect('dashboard')->with('Success', Auth::user()->name .  ' Berhasil Register!');
+            return redirect('/')->with('Success', Auth::user()->name .  ' Berhasil Register!');
         } else {
             return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
         }
@@ -92,8 +129,6 @@ class SessionController extends Controller
 
     public function update(Request $request, $id)
     {
-        // Validasi input
-        // dd($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
             'nomor_ktp' => 'required|string|max:20',
@@ -106,9 +141,6 @@ class SessionController extends Controller
             'tanggal_pengajuan' => 'required|date',
         ]);
 
-        // Debugging untuk memastikan data yang diterima sudah benar
-
-        // Lakukan update data
         $update = catatan::where('id', $id)->update($request->only([
             'name',
             'nomor_ktp',
@@ -121,13 +153,11 @@ class SessionController extends Controller
             'tanggal_pengajuan'
         ]));
 
-        // Setelah update, redirect kembali ke halaman history
         return redirect('history')->with('Success', 'Data Telah Diupdate');
     }
 
-    function store(Request $request)
+    public function store(Request $request)
     {
-        dd('masuk');
         $request->validate([
             'name' => 'required|string|max:255',
             'nomor_ktp' => 'required|string|max:16',
@@ -140,7 +170,6 @@ class SessionController extends Controller
             'jenis_sim' => 'required|in:SIM A,SIM B1,SIM B2,SIM C,SIM D',
             'tanggal_pengajuan' => 'required|date',
         ], [
-            // Custom messages jika diperlukan
             'name.required' => 'Nama Lengkap wajib diisi!',
             'nomor_ktp.required' => 'Nomor KTP wajib diisi!',
             'tempat_lahir.required' => 'Tempat Lahir wajib diisi!',
@@ -152,19 +181,42 @@ class SessionController extends Controller
             'jenis_sim.required' => 'Jenis SIM wajib diisi!',
             'tanggal_pengajuan.required' => 'Tanggal Pengajuan wajib diisi!',
         ]);
-
-        // Simpan data ke dalam database
+    
+        // Simpan data formulir
         catatan::create($request->all());
-
-        // Redirect ke halaman success atau halaman lain dengan pesan sukses
+    
         return redirect()->route('history')->with('Success', 'Pengajuan SIM berhasil diajukan!');
-    }
+    }    
     public function history()
     {
-        // Ambil semua data dari model Catatan
         $catatan = catatan::all();
 
-        // Kirim data ke view
         return view('history.index', ['catatan' => $catatan]);
     }
+
+    public function showForm()
+    {
+        return view('verifikasi.ektp'); // Nama view untuk form verifikasi e-KTP
+    }
+
+    public function processForm(Request $request)
+{
+    // Validasi input pengguna
+    $request->validate([
+        'nama' => 'required|string|max:255',
+        'nik' => 'required|digits:16',
+        'file_ektp' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+    ]);
+
+    // Proses upload file e-KTP jika diperlukan
+    if ($request->hasFile('file_ektp')) {
+        $filePath = $request->file('file_ektp')->store('uploads/ektp', 'public');
+    }
+
+    // Simpan data ke database jika diperlukan
+    // Contoh: VerifikasiEktp::create([...]);
+
+    // Redirect ke halaman dashboard dengan pesan sukses
+    return redirect()->route('dashboard')->with('success', 'Verifikasi e-KTP berhasil dikirim!');
+}
 }

@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
     {{-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Dashboard</title><!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,18 +26,9 @@
                 <title>Polres Cianjur</title>
                 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
                 <style>
-                    .navbar-bg-brown {
-                        background-color: #682109; 
-                    }
                     .navbar-brand {
                         display: flex;
                         align-items: center;
-                    }
-                    .navbar-logo {
-                        max-height: 60px; 
-                        height: auto;
-                        width: auto;
-                        margin-right: 15px;
                     }
                     .text-logo {
                          color: #ffffff; 
@@ -45,15 +37,15 @@
                     }
                     body {
                         font-family: Arial, sans-serif;
-                        background-color: #f0f0f0;
+                        background-color: #cccecf;
+                        /* background-color: #021526; */
+                        display: grid;
                         margin: 0;
-                        padding: 0;
                     }
 
                     .container {
-                        /* padding-top: 20px;  */
                         display: flex;
-                        justify-content: space-between; /* Membuat ruang antara komentar dan form */
+                        justify-content: space-between; 
                         padding: 30px;
                         border-radius: 5px;
                         margin-top: 20px;
@@ -67,12 +59,12 @@
                         display: block;
                         margin-bottom: 20px;
                      
-                        width: 400px; /* Sesuaikan lebar card sesuai kebutuhan */
-                        height: 170px; /* Sesuaikan tinggi card sesuai kebutuhan */
-                        margin-top: 20px; /* Menambahkan jarak di bagian atas card */
-                        margin-left: 20px; /* Menambahkan jarak di bagian kiri card */
-                        border-radius: 15px; /* Menambah kelengkungan card */
-                        overflow: hidden; /* Pastikan konten tidak keluar dari card yang melengkung */
+                        width: 400px; 
+                        height: 170px; 
+                        margin-top: 20px; 
+                        margin-left: 20px; 
+                        border-radius: 15px; 
+                        overflow: hidden; 
                     }
 
                     .small-box .inner {
@@ -127,30 +119,6 @@
                         transition: all 0.3s linear;
                     }
 
-                    .small-box .small-box-footer {
-                        position: relative;
-                        text-align: center;
-                        padding: 3px 0; 
-                        color: #fff;
-                        display: block;
-                        background: rgba(0,0,0,0.1);
-                        text-decoration: none;
-                        transition: background 0.3s ease;
-                    }
-
-                    .small-box:hover .small-box-footer {
-                        background: rgba(0,0,0,0.15);
-                    }
-
-                    .small-box:hover .icon i {
-                        font-size: 45px; 
-                    }
-
-                    .small-box .inner h3,
-                    .small-box .inner p,
-                    .small-box .small-box-footer {
-                        color: #fff; 
-                    }
                     /* Kontainer utama */
                     .layout-container {
                         display: flex; /* Mengatur tata letak Flexbox untuk card dan progress bars */
@@ -159,6 +127,8 @@
                         padding: 20px; /* Jarak dari tepi kontainer */
                         width: 100%; /* Memastikan kontainer memiliki lebar penuh */
                         box-sizing: border-box; /* Memastikan padding dihitung dalam lebar total */
+                        margin-bottom: 10px;
+                        margin-left: 200px; /* menyesuaikan lebar sidebar */
                     }
 
                     /* Card styling */
@@ -225,153 +195,107 @@
                         transition: all 0.3s linear;
                     }
 
-                    .small-box .small-box-footer {
-                        position: relative;
-                        text-align: center;
-                        padding: 3px 0; 
-                        color: #fff;
-                        display: block;
-                        background: rgba(0,0,0,0.1);
-                        text-decoration: none;
-                        transition: background 0.3s ease;
-                    }
-
-                    .small-box:hover .small-box-footer {
-                        background: rgba(0,0,0,0.15);
-                    }
-
-                    .small-box:hover .icon i {
-                        font-size: 45px; 
-                    }
-
-                    .small-box .inner h3,
-                    .small-box .inner p,
-                    .small-box .small-box-footer {
-                        color: #fff; 
-                    }
+                   
         
                     .comment-list {
-            width: 55%; /* Sesuaikan lebar daftar komentar */
-            margin-right: 20px; /* Menambahkan jarak antara daftar komentar dan form */
-        }
+                        width: 55%; /* Sesuaikan lebar daftar komentar */
+                        margin-right: 20px; /* Menambahkan jarak antara daftar komentar dan form */
+                    }
 
-        .form-container {
-            width: 40%; /* Sesuaikan lebar form sesuai kebutuhan */
-            margin-left: 20%;
+                    .form-container {
+                        width: 40%; /* Sesuaikan lebar form sesuai kebutuhan */
+                        margin-left: 20%;
 
-        }
+                    }
 
-        .comment {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #e9ecef;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: relative; /* Posisi relatif untuk membatasi tombol hapus */
-            background-color: #f8f9fa; /* Warna latar belakang komentar */
-            border: 1px solid #ddd; /* Border komentar */
-            border-radius: 5px; /* Sudut melengkung pada komentar */
-            padding: 10px; /* Jarak di dalam komentar */
-            margin-bottom: 10px; /* Jarak antar komentar */
-        }
+                    .comment {
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        background-color: #e9ecef;
+                        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                        position: relative; /* Posisi relatif untuk membatasi tombol hapus */
+                        background-color: #f8f9fa; /* Warna latar belakang komentar */
+                        border: 1px solid #ddd; /* Border komentar */
+                        border-radius: 5px; /* Sudut melengkung pada komentar */
+                        padding: 10px; /* Jarak di dalam komentar */
+                        margin-bottom: 10px; /* Jarak antar komentar */
+                    }
 
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; /* Membuat textarea menyesuaikan dengan lebar container */
-            margin-bottom: 10px;
-            resize: vertical;
-        }
+                    textarea {
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-sizing: border-box; /* Membuat textarea menyesuaikan dengan lebar container */
+                        margin-bottom: 10px;
+                        resize: vertical;
+                    }
 
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #229918;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-sizing: border-box;
-            transition: background-color 0.3s ease;
-        }
-        .delete-btn {
-            background-color: #dc3545; /* Warna merah untuk tombol */
-            color: #fff; /* Warna teks putih */
-            border: none; /* Menghapus border default */
-            border-radius: 5px; /* Sudut melengkung */
-            padding: 8px 12px; /* Jarak dalam tombol */
-            cursor: pointer; /* Menunjukkan bahwa tombol bisa diklik */
-            font-size: 14px; /* Ukuran teks tombol */
-            font-weight: bold; /* Teks tebal */
-            transition: background-color 0.3s, transform 0.2s; /* Transisi halus */
-            position: absolute;
-            top: 10px; /* Jarak dari bagian atas komentar */
-            right: 10px; /* Jarak dari bagian kanan komentar */
-            }
-            .delete-btn:hover {
-                background-color: #c82333; /* Warna merah gelap saat hover */
-                transform: scale(1.05); /* Meningkatkan ukuran sedikit saat hover */
-            }
-            .delete-btn:focus {
-                outline: none; /* Menghilangkan outline default */
-                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Menambahkan shadow saat fokus */
-            }
-            .delete-btn:active {
-                background-color: #bd2130; /* Warna merah lebih gelap saat ditekan */
-                transform: scale(0.95); /* Menurunkan ukuran saat ditekan */
-            }
-            .small-image {
-        width: 20%; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-        height: auto;
-    }
+                    input[type="submit"] {
+                        width: 100%;
+                        padding: 10px;
+                        background-color: #229918;
+                        color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        box-sizing: border-box;
+                        transition: background-color 0.3s ease;
+                    }
+                    .delete-btn {
+                        background-color: #dc3545; /* Warna merah untuk tombol */
+                        color: #fff; /* Warna teks putih */
+                        border: none; /* Menghapus border default */
+                        border-radius: 5px; /* Sudut melengkung */
+                        padding: 8px 12px; /* Jarak dalam tombol */
+                        cursor: pointer; /* Menunjukkan bahwa tombol bisa diklik */
+                        font-size: 14px; /* Ukuran teks tombol */
+                        font-weight: bold; /* Teks tebal */
+                        transition: background-color 0.3s, transform 0.2s; /* Transisi halus */
+                        position: absolute;
+                        top: 10px; /* Jarak dari bagian atas komentar */
+                        right: 10px; /* Jarak dari bagian kanan komentar */
+                        }
+                    .delete-btn:hover {
+                        background-color: #c82333; /* Warna merah gelap saat hover */
+                        transform: scale(1.05); /* Meningkatkan ukuran sedikit saat hover */
+                    }
+                    .delete-btn:focus {
+                        outline: none; /* Menghilangkan outline default */
+                        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Menambahkan shadow saat fokus */
+                    }
+                    .delete-btn:active {
+                        background-color: #bd2130; /* Warna merah lebih gelap saat ditekan */
+                        transform: scale(0.95); /* Menurunkan ukuran saat ditekan */
+                    }
 
-    .container-fluid {
-        padding: 0;
-        margin: 0;
-    }
+                    .text-center h3,
+                    .text-center h5,
+                    .text-center h7 {
+                        margin-top: 0;
+                        margin-bottom: 15px; /* Sesuaikan jarak bawah sesuai kebutuhan */
+                   }
 
-    .text-center h3,
-    .text-center h5,
-    .text-center h7 {
-        margin-top: 0;
-        margin-bottom: 15px; /* Sesuaikan jarak bawah sesuai kebutuhan */
-    }
-
-    .me-3 {
-        margin-right: 1rem; /* Sesuaikan jarak kanan antara gambar dan teks */
-    }
-        h5, h6 {
-            font-family: 'Arial', sans-serif;
-        }
-
-        #welcome-text {
-            font-size: 2em;
-            color: #2c3e50;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        #service-text {
-            font-size: 1.5em;
-            color: #16a085;
-        }
-        .no-cursor {
-            cursor: none;
-        }
-        .card.transparent-card {
-    background: #A91D3A; /* Latar belakang transparan */
-    border-radius: 15px; /* Sudut membulat */
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4); /* Bayangan lembut */
-    overflow: hidden; /* Menghindari konten melampaui border-radius */
-    margin: 20px; /* Jarak dari elemen lain */
-    width: 80%; /* Lebar responsif berdasarkan kontainer induk */
-    max-width: 350px; /* Lebar maksimum */
-    position: relative; /* Menetapkan posisi relatif untuk pseudo-element */
-    overflow: hidden; /* Menyembunyikan bagian yang melampaui batas card */
-}
+                    .me-3 {
+                        margin-right: 1rem; /* Sesuaikan jarak kanan antara gambar dan teks */
+                    }
+                    h5, h6 {
+                        font-family: 'Arial', sans-serif;
+                    }
+                    
+                    .no-cursor {
+                        cursor: none;
+                    }
+                    .card.transparent-card {
+                        background: linear-gradient(to bottom, #102C57, #5f615d);
+                        border-radius: 10px; /* Sudut membulat */
+                        margin: 100px; /* Jarak dari elemen lain */
+                        width: 80%; /* Lebar responsif berdasarkan kontainer induk */
+                        max-width: 350px; /* Lebar maksimum */
+                        border: none;
+                    }
 
 .card .card-body {
     padding: 35px; /* Padding internal */
@@ -398,15 +322,7 @@
     margin-top: 20px; /* Jarak atas footer */
     font-weight: bold; /* Membuat teks menjadi tebal */
 }
-.container-fluid {
-    background: rgba(255, 255, 255, 0.8); /* Background putih transparan */
-    border-radius: 15px; /* Sudut membulat */
-    padding: 20px; /* Padding di sekitar konten */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .text-container {
     display: flex;
@@ -418,11 +334,10 @@
 }
 
 .small-image {
-    width: 150px; /* Ukuran gambar yang konsisten */
+    width: 170px; /* Ukuran gambar yang konsisten */
     height: auto; /* Menjaga rasio aspek */
     margin-right: 15px; /* Jarak antara gambar dan teks */
 }
-
 h5, h6 {
     margin: 0; /* Menghapus margin default */
     font-weight: 600; /* Menebalkan teks */
@@ -450,29 +365,24 @@ h6 {
     padding: 12px 24px; /* Memberikan padding di sekitar teks */
     font-size: 1rem; /* Ukuran font */
     font-weight: 600; /* Menebalkan teks */
-    color: #fff; /* Warna teks putih */
-    background-color: #682109;
+    color: #6c757d; /* Warna teks putih */
+    background-color: #6c757d;
     border-radius: 8px; /* Sudut membulat */
     text-decoration: none; /* Menghapus garis bawah default */
+    transition: transform 0.3s, color 0.3s; /* Tambahkan transisi */
 }
 
 .small-box-footer:hover, .small-box-footer:focus {
-    background-color: #682109; /* Warna latar belakang biru solid saat hover */
-    color: #f8f9fa; /* Warna teks lebih terang saat hover */
+    background-color: #6c757d; /* Warna latar belakang biru solid saat hover */
+    color: #6c757d; /* Warna teks lebih terang saat hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih pekat saat hover */
     transform: translateY(-2px); /* Gerakkan elemen sedikit ke atas saat hover */
 }
 
-.small-box-footer i {
-    margin-left: 10px; /* Jarak antara teks dan ikon */
-    font-size: 1.3rem; /* Ukuran ikon */
-    transition: transform 0.3s ease; /* Transisi halus untuk transformasi ikon */
-    color: inherit; /* Ikuti warna teks dari parent */
+.small-box-footer:hover i {
+    transform: translateY(-2px); /* Gerakkan ikon sedikit ke atas saat hover */
 }
 
-.small-box-footer:hover i {
-    transform: translateX(5px); /* Gerakkan ikon sedikit ke kanan saat hover */
-}
 .small-box-footer:active {
     color: #f8f9fa; /* Warna teks tetap putih saat diklik */
 }
@@ -482,13 +392,13 @@ h6 {
 }
 /* Styling untuk background navbar */
 .navbar-bg-brown {
-    background-color: #8B4513; /* Warna latar belakang navbar */
+    background: linear-gradient(to right, #102C57, #5f615d); /* Gradasi dari kiri ke kanan */
 }
 
 /* Styling untuk logo di navbar */
 .navbar-logo {
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     margin-right: 10px;
 }
 
@@ -526,21 +436,16 @@ h6 {
     margin-right: 30px; /* Atur jarak antara item-menu */
 }
 .btn-orange {
-    background-color: #f0a401; /* Warna oranye */
+    background-color: #6c757d; /* Warna oranye */
     border: none; /* Menghilangkan border default */
-    color: #fff; /* Warna teks putih */
-    padding: 8px 30px; /* Padding diperbesar secara horizontal (samping) */
-    font-size: 16px; /* Ukuran font dalam tombol */
-    border-radius: 4px; /* Sudut tombol yang sedikit melengkung */
-    text-align: center; /* Menyelaraskan teks di tengah */
-    display: inline-flex; /* Agar konten di dalam tombol dapat disejajarkan dengan flexbox */
-    align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
-    min-width: 120px; /* Lebar minimum tombol */
-    justify-content: center; /* Menyelaraskan konten di tengah tombol */
+    color: #531e1e; /* Warna teks putih */
+    padding: 8px 35px; /* Padding diperbesar secara horizontal (samping) */
+    
 }
 
 .nav-link p {
     margin-bottom: 0; /* Menghilangkan margin bawah pada paragraf */
+    font-size: 16px;
 }
 
 .dropdown-menu-custom {
@@ -576,7 +481,7 @@ h6 {
         margin-right: 8px; /* Sesuaikan jarak sesuai kebutuhan */
     }
     .search-form {
-            margin-right: 30px; /* Jarak antara form pencarian dan ikon profil */
+            margin-right: 40px; /* Jarak antara form pencarian dan ikon profil */
         }
         .custom-container {
     background-color: #ffffff; /* Warna latar belakang sedikit berbeda */
@@ -585,25 +490,20 @@ h6 {
 }
 .dashboard-container {
     width: 100%; /* Lebar sesuai dengan navbar */
-    background-color: #f0f0f0; /* Warna latar belakang sedikit berbeda dari navbar */
-    padding: 10px 0; /* Padding atas dan bawah */
+    background: linear-gradient(to right, #102C57, #5f615d); /* Gradasi dari kiri ke kanan */
     border-top: 2px solid #e7e7e7; /* Garis atas untuk memisahkan dari navbar */
     margin-top: 60px; /* Menambahkan margin-top untuk menghindari tumpang tindih dengan navbar */
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
-
-.container-fluid {
     display: flex;
-    justify-content: flex-start; /* Memastikan teks rata kiri */
+    justify-content: space-between; /* Menyebarkan elemen ke kiri dan kanan */
+    align-items: center;
+    padding: 20px 20px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 43px;
+    border: none;
 }
-
-.dashboard-text {
-    margin: 5px; /* Menghilangkan margin default */
-    font-size: 23px; /* Ukuran font untuk teks Dashboard */
-    color: #333; /* Warna teks */
-    font-family: Arial, sans-serif;
-    font-weight: 500;
+.dashboard-container .dashboard-text {
+    padding-right: 70px;
 }
 .custom-progress-bar {
     height: 300px; /* Tinggi progress bar yang lebih besar */
@@ -656,18 +556,10 @@ h6 {
     height: 30%;
 }
 .dashboard-text {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    color: #333;
-}
-.dashboard-container {
-    display: flex;
-    justify-content: space-between; /* Menyebarkan elemen ke kiri dan kanan */
-    align-items: center;
-    padding: 20px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    margin-right: 30px;
 }
 .search-dropdown-container {
     display: flex;
@@ -691,7 +583,7 @@ h6 {
 }
 
 .search-input:focus {
-    border-color: #bd2130;
+    border-color: #102C57;
 }
 
 .dropdown-icon {
@@ -737,7 +629,6 @@ h6 {
 .box-container {
     width: 200px; /* Lebar kotak */
     height: 200px; /* Tinggi kotak */
-    background-color: #3844e7; /* Warna latar belakang kotak */
     color: #fff; /* Warna teks putih */
     display: flex;
     flex-direction: column;
@@ -761,13 +652,13 @@ h6 {
 .progress-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 5px; /* Jarak antar section progress */
+    gap: 5px;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #DEE5D4;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 650px; /* Batasi lebar container */
-    margin: auto; /* Pusatkan container */
+    max-width: 650px; 
+    margin: auto; 
 }
 
 .progress-section {
@@ -794,7 +685,7 @@ h6 {
 }
 
 .custom-progress-bar {
-    background-color: #007bff;
+    background-color: #102C57;
     height: 100%;
 }
 .box-container {
@@ -803,12 +694,19 @@ h6 {
     min-height: 200px; /* Tinggi minimal */
     height: auto; /* Tinggi menyesuaikan konten jika lebih besar dari min-height */
     padding: 20px;
-    background-color: #6670f7;
+    background-color: #102C57;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin-left: 180px;
     overflow: hidden; /* Memastikan logo tidak keluar dari container */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.box-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Menambahkan shadow */
+    transform: scale(1.05); /* Memperbesar sedikit ukuran elemen */
 }
 
 .box-container::before {
@@ -829,13 +727,13 @@ h6 {
     height: 40px;
     width: 220px;
     padding: 10px;
-    background-color: #58a4f7;
+    background-color: #ece6dc;
     border-radius: 5px;
     margin-bottom: 30px;
 }
 
 .box-title {
-    color: #ffffff;
+    color: #6c757d;
     margin: 0;
     font-size: 18px;
     font-weight: 600;
@@ -849,61 +747,575 @@ h6 {
     font-size: 20px;
     font-weight: 600;
 }
+/* Styling untuk queue container */
 .queue-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px; /* Disesuaikan agar tidak terlalu besar */
-    margin: 20px 0;
-    padding-top: 115px;
+    width: 450px;
+    margin: 20px;
+    margin-top: -20px;
     margin-left: 30px;
+    position: relative; /* Untuk menghindari tumpang tindih dengan elemen lain */
+    overflow: hidden; /* Untuk memastikan tidak ada elemen yang keluar dari container */
 }
-
+/* Styling untuk queue box */
 .queue-box {
-    background-color: #A91D3A; /* Warna semi-transparan sesuai tema Polri */
+    background: linear-gradient(to bottom, #102C57, #ffffff);
     border-radius: 10px;
     padding: 15px 20px;
     text-align: center;
     color: white;
     width: 100%;
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10); /* Bayangan kotak */
+    position: relative; /* Pastikan box tidak tumpang tindih */
 }
 
-
+/* Styling untuk nomor antrian */
 .queue-box p {
     font-size: 30px;
     margin: 0;
     font-weight: bold;
-    color: #f5c518; /* Warna emas untuk menonjolkan angka */
+    color: #ffffff; /* Warna emas untuk menonjolkan angka */
 }
 
+/* Styling untuk tombol */
 .queue-box button {
     margin-top: 15px;
     padding: 8px 15px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: #682109; /* Warna oranye sesuai dengan aksen Polri */
+    background-color: #28455e; /* Warna sesuai dengan aksen Polri */
     color: white;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
-.queue-box button:hover {
-    background-color: #682109; /* Warna lebih gelap saat hover */
-    transform: translateY(-2px); /* Efek naik saat hover */
-}
+
 .custom-margin-top {
         margin-top: 80px; /* Kamu bisa sesuaikan nilai ini */
     }
+    .button-sim {
+    background-color: #102C57; /* Warna latar belakang tombol */
+    color: #ffffff; /* Warna teks tombol */
+    border: 2px solid white; /* Border putih tebal */
+    padding: 10px 20px; /* Padding untuk ukuran tombol */
+    text-align: center;
+    font-size: 16px;
+    border-radius: 15px; /* Membuat sudut tombol melengkung */
+    margin: 0 10px; /* Memberikan jarak antar tombol */
+    outline: none;
+    cursor: pointer; /* Menunjukkan bahwa tombol bisa diklik */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, border 0.3s; /* Menambahkan 
+    transisi */
+    margin-top: -30px;
+}
+
+.button-sim:hover {
+    background-color: #6c757d; /* Warna latar belakang tombol saat hover */
+    color: #ffffff; /* Warna teks saat hover */
+    transform: translateY(-2px); /* Efek naik saat hover */
+}
+
+.button-sim:focus,
+.button-sim:active {
+    border: 2px solid white; /* Menjaga border tetap putih */
+    outline: none; /* Menghilangkan outline default */
+    transform: translateY(-2px); /* Efek naik saat fokus atau aktif */
+}
+.container-atas {
+    display: flex;
+    flex-direction: column;
+    height: 40vh; /* Tinggi viewport penuh */
+    background-color: #596264; /* Warna latar belakang biru */
+    padding: 20px;
+    margin-top: 86px; /* Sesuaikan nilai margin-top sesuai kebutuhan */
+    margin-bottom: -20px; /* Menggeser kontainer ke atas */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* Pastikan berada di atas navbar */
+    background-image: url('{{ asset('assets/dist/assets/img/polres.jpg') }}'); /* Gambar latar belakang */
+    background-size: 140%; /* Menyesuaikan ukuran gambar dengan container */
+    background-position: center 20%; /* Mengatur posisi gambar agak ke atas */
+    background-blend-mode: overlay; /* Mencampur gambar dengan warna latar belakang */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+    background-attachment: fixed; /* Menjaga gambar tetap pada tempatnya saat scroll */
+    color: #ffffff; /* Warna teks putih agar kontras dengan latar belakang */
+    text-align: center; /* Memusatkan teks dalam elemen */
+}
+
+/* Jika Anda ingin menambahkan styling khusus pada elemen di dalam container */
+.container-atas h1, 
+.container-atas p {
+    margin: 0;
+    padding: 10px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed; /* Tetap di tempat */
+    z-index: 1000; /* Di atas semua elemen */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar penuh */
+    height: 500%; /* Tinggi penuh */
+    overflow: auto; /* Aktifkan scroll jika diperlukan */
+    background-color: rgba(0,0,0,0.4); /* Hitam dengan opacity */
+    z-index: 1050;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Pusatkan modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Sesuaikan lebar jika diperlukan */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.typing {
+    color: #2c3e50; /* Warna putih untuk teks */
+    font-family: Arial, sans-serif; /* Gaya font */
+    margin-right: 230px;
+}
+
+#welcome-text {
+    color: #1f1e1e; /* Warna putih untuk teks selamat datang */
+}
+
+#service-text {
+    color: #1f1e1e; /* Warna putih untuk teks layanan */
+}
+/* Gaya untuk Modal */
+/* Gaya untuk Modal */
+.modal-card {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed; /* Tetap di tempat */
+    z-index: 1; /* Pastikan modal berada di atas konten lainnya */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    overflow: auto; /* Aktifkan scroll jika diperlukan */
+    background-color: rgba(0, 0, 0, 0.4); /* Background semi-transparan */
+    opacity: 0; /* Sembunyikan modal secara default */
+    transition: opacity 0.3s ease; /* Transisi untuk opacity */
+}
+
+/* Gaya untuk Konten Modal */
+.modal-cons {
+    background-color: #fff; /* Latar belakang putih */
+    margin: 15% auto; /* Margin atas otomatis */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar modal */
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan kotak */
+    transition: transform 0.3s ease; /* Transisi untuk transformasi */
+}
+
+/* Gaya untuk Tombol Tutup */
+.closes {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closes:hover,
+.closes:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-image {
+    display: block;
+    max-width: 20%; 
+    height: auto;
+    margin: 20px auto 0;
+    border-radius: 8px; 
+}
+.modal-cons p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+ }
+ .modal-cons h2 {
+    text-align: center;
+    font-weight: 600;
+    color: #6c757d;
+ }
+ .modal-cons h3 {
+    font-size: 20px;
+    text-align: center;
+ }
+
+.modal-cons {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    position: relative;
+}
+
+.closes {
+    position: absolute;`
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.closes:hover {
+    color: #ff0000;
+}
+
+.modal-cons h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #0056b3; /* Warna biru */
+    text-align: center;
+}
+
+.procedure-content {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.procedure-content h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #004080;
+}
+
+.procedure-content ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.procedure-content ol li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #555;
+    font-size: 16px;
+}
+
+.procedure-content ol li::marker {
+    color: #004080; /* Warna biru untuk penanda list */
+}
+
+/* Styling untuk box container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+/* Styling Card */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    padding: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body p {
+    margin-bottom: 15px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+.card {
+            width: 100%; /* Menyesuaikan lebar card dengan lebar kolom */
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Untuk memastikan tombol aksi berada di bawah */
+        }
+        .btn {
+            margin-top: auto; /* Memastikan tombol aksi selalu berada di bagian bawah card */
+        }
+        .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff; /* Teks berwarna putih */
+    background: transparent; /* Latar belakang transparan */
+    padding: 10px 0; /* Padding atas dan bawah */
+    font-size: 14px; /* Ukuran font */
+}
+
+/* Styling untuk bagian kanan footer */
+.footer .float-right {
+    margin-right: 30px; /* Margin kanan */
+}
+
+/* Responsif: mengatur float-right untuk tampilan kecil */
+@media (max-width: 576px) {
+    .footer .float-right {
+        float: none;
+        text-align: center;
+        margin: 0;
+    }
+}
+.activity-container {
+    background: #ffffff; /* Warna latar belakang kontainer putih */
+    padding: 20px; /* Jarak di dalam kontainer */
+    border-radius: 8x; /* Sudut membulat */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bayangan lembut untuk efek kedalaman */
+    width: 90%;
+    margin: 20px auto; /* Pusatkan kontainer secara horizontal dengan jarak atas/bawah */
+    border: 1px solid #e0e0e0; /* Border tipis untuk kontainer */
+    overflow: hidden; /* Menghindari konten melampaui kontainer */
+    text-align: center; /* Pusatkan teks di dalam kontainer */
+}
+
+.activity-container h3 {
+    font-size: 1.75rem; /* Ukuran font untuk judul */
+    margin-bottom: 20px; /* Jarak bawah untuk judul */
+    color: #333; /* Warna teks judul */
+}
+
+.btn-view-details {
+    display: inline-block; /* Membuat tombol inline-block */
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background tombol */
+    color: #ffffff; /* Warna teks tombol putih */
+    border: none; /* Hilangkan border default */
+    border-radius: 6px; /* Sudut tombol membulat */
+    padding: 12px 24px; /* Padding di dalam tombol */
+    font-size: 1.1rem; /* Ukuran font tombol */
+    cursor: pointer; /* Pointer cursor saat hover */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    font-weight: bold; /* Menguatkan teks tombol */
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Transisi halus untuk hover */
+}
+
+.btn-view-details:hover {
+    background: linear-gradient(135deg, #0056b3, #003d7a); /* Gradient background saat hover */
+    transform: translateY(-3px); /* Efek gerakan tombol saat hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow yang lebih besar saat hover */
+}
+
+.btn-view-details:focus {
+    outline: none; /* Hilangkan outline saat fokus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Shadow untuk efek fokus */
+}
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Logo dan teks berada sejajar */
+}
+
+.brand-text-container {
+    display: flex;
+    flex-direction: column; /* Atur "DIGITAL KORLANTAS POLRI" di atas dan "Pages Dashboard" di bawahnya */
+    margin-left: 15px; /* Jarak antara logo dan teks */
+}
+
+.text-logo {
+    font-size: 18px; /* Ukuran teks untuk "DIGITAL KORLANTAS POLRI" */
+    font-weight: bold;
+    color: white;
+}
+
+.page-title {
+    display: flex; /* Untuk mengatur ikon dan teks secara horizontal */
+    align-items: center;
+    margin-top: 40px; /* Jarak kecil antara teks logo dan page-title */
+    margin-left: 50px;
+}
+
+.page-title i {
+    font-size: 30px; /* Ukuran ikon */
+    color: rgb(3, 3, 3);
+    margin-right: 5px; /* Jarak antara ikon dan teks */
+}
+
+.page-title h3 {
+    font-size: 30px; /* Ukuran teks lebih kecil */
+    color: rgb(0, 0, 0);
+    margin: 0;
+    font-weight: 600;
+    
+}
+.additional-box-container {
+    width: 40px; /* Atur lebar sesuai kebutuhan */
+    max-width: 20%; /* Pastikan tidak melebihi lebar kontainer parent */
+    background: linear-gradient(to bottom, #102C57, #5f615d);
+    border: 1px solid #ddd; /* Ganti border sesuai kebutuhan */
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek visual */
+    border-radius: 10px;
+    border: none;
+    padding-top: -20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.additional-box-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.additional-box-container .title-container {
+    margin-bottom: 15px;
+}
+
+.additional-box-container .box-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.additional-box-container .box-number {
+    font-size: 2rem;
+    color: #eeeeee; /* Ganti warna sesuai kebutuhan */
+}
+
+.additional-box-container h2 {
+    font-size: 1.25rem;
+    color: #555;
+}
+.additional-box-container h3 {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bold;
+}
+/* Styling utama untuk sidebar */
+.sidebar {
+    height: 100vh; /* Sidebar mengisi seluruh tinggi viewport */
+    width: 250px; /* Lebar sidebar */
+    position: fixed; /* Tetap di posisi kiri */
+    top: 0;
+    left: 0;
+    background-color: #2c3e50; /* Warna latar sidebar */
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk tampilan lebih menonjol */
+    font-family: 'Arial', sans-serif;
+    overflow-y: auto; /* Memungkinkan sidebar untuk di-scroll secara vertikal */
+    margin-top: 80px;
+    z-index: 1000;
+}
+
+/* Sembunyikan scrollbar di sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 0; /* Lebar scrollbar 0, sehingga tidak terlihat */
+}
+
+/* Heading untuk sidebar */
+.sidebar h2 {
+    text-align: center;
+    color: #ecf0f1;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Styling untuk setiap link di sidebar */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #bdc3c7; /* Warna teks default */
+    display: block;
+    transition: 0.3s; /* Efek transisi halus saat hover */
+    margin-bottom: 10px;
+}
+
+/* Hover effect untuk link sidebar */
+.sidebar a:hover {
+    color: #ecf0f1; /* Warna teks saat hover */
+    background-color: #34495e; /* Warna latar saat hover */
+}
+
+/* Styling untuk konten utama */
+#main {
+    margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    overflow-y: auto; /* Memungkinkan konten utama untuk di-scroll */
+    height: 100vh; /* Pastikan konten utama memiliki tinggi 100vh */
+}
+
+/* Pastikan konten utama lebih panjang untuk demonstrasi scroll */
+#main p {
+    margin-bottom: 15px; /* Ruang antar paragraf */
+}
+
+#main h1 {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+
+
 
                 </style>
             </head>
             <body>
                 <nav class="navbar navbar-expand-lg navbar-light navbar-bg-brown fixed-top">
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ asset('assets/dist/assets/img/lambangpolri.png') }}" class="navbar-logo d-inline-block align-top" alt="">
-                        <div class="text-logo">ZONA INTEGRITAS POLRI</div>
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="navbar-logo d-inline-block align-top" alt="">
+                        <div class="brand-text-container">
+                            <div class="text-logo">DIGITAL KORLANTAS POLRI</div>
+                        </div>
                     </a>
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
@@ -921,19 +1333,13 @@ h6 {
                             </li>                               
                         </ul>
                         <div class="dropdown ms-auto">
-                            <!-- Tombol Dropdown -->
                             <a class="dropdown-toggle d-flex align-items-center text-white text-decoration-none" href="#" role="button" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
-                                <!-- Ikon Profil -->
                                 <i class="bi bi-person-circle profile-icon me-2"></i>
-                                <!-- Teks Profil -->
                                 <span class="profile-text">POLRES CIANJUR</span>
                             </a>
-                        
-                            <!-- Menu Dropdown -->
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom" aria-labelledby="dropdownProfile">
-                                <!-- Tombol Logout -->
                                 <li>
-                                    <a class="dropdown-item dropdown-item-custom" href="logout-url">
+                                    <a class="dropdown-item dropdown-item-custom" href="#">
                                         <i class="bi bi-person"></i> Profil
                                     </a>
                                     <a class="dropdown-item dropdown-item-custom" href="/sesi/logout">
@@ -942,12 +1348,11 @@ h6 {
                                 </li>
                             </ul>
                         </div>
-                            
                     </div>
-                </nav>
-                <div class="dashboard-container bg-light" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-                    <div class="dashboard-text">Dashboard</div>
-                    <div class="search-dropdown-container">
+                </nav> 
+                
+                    <!-- Elemen pencarian tetap terpisah -->
+                    {{-- <div class="search-dropdown-container" style="margin-left: 77%; position: relative;">
                         <div class="input-wrapper">
                             <input type="text" placeholder="POLRES CIANJUR" class="search-input" id="search-input">
                             <i class="bi bi-arrow-down-short dropdown-icon"></i>
@@ -955,18 +1360,132 @@ h6 {
                         <div class="dropdown-content" id="dropdown-content">
                             <a href="#">POLRES CIANJUR</a>
                         </div>
-                    </div>                                                              
-                </div>                
-                <div class="layout-container" style="padding-top: 80px;">
-                    {{-- <div class="custom-container p-4" style="width: 100%; "> --}}
-                        <div class="content-wrapper" style="display: flex; align-items: flex-start;">
-                            <div class="flex-container" style="display: flex; align-items: center;">
-                                <div class="card-wrapper" style="flex: 1;">
-                                    <div class="card transparent-card" style="width: 150%;">
+                    </div> --}}               
+                  {{-- <div class="button-container">
+                        <button class="button-sim" data-target="#modal-sim-internasional">SIM Internasional</button>
+                        <button class="button-sim" data-target="#modal-sim-nasional">SIM Nasional</button>
+                        <button class="button-sim" data-target="#modal-memperpanjang">Memperpanjang SIM</button>
+                    </div>     --}}
+                <div class="container-atas" style="padding-top: 20px;">
+                    <div class="bordered-container p-3 d-flex flex-column justify-content-center align-items-center">
+                        {{-- <div class="d-flex align-items-center text-container">
+                            <img src="{{ asset('assets/dist/assets/img/presisi.png') }}" alt="Gambar Kecil" class="small-image me-3">
+                            <div class="text-center">
+                                @auth
+                                <div>
+                                    <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, {{ Auth::user()->name }} Di Sim Nasional Presisi!</h5>
+                                </div>
+                                <div>
+                                    <h6 class="mb-2 typing" id="service-text">Digital Korlantas Polri</h6>
+                                </div>
+                                @else
+                                <div>
+                                    <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, Tamu Di Sim Nasional Presisi!</h5>
+                                </div>
+                                <div>
+                                    <h6 class="mb-2 typing" id="service-text"><b>Digital Korlantas Polri!</b></h6>
+                                </div>
+                                @endauth
+                            </div>
+                        </div> --}}
+                    </div>
+                
+                        <!-- Modal SIM Internasional -->
+                    <div id="modal-sim-internasional" class="modal-card">
+                        <div class="modal-cons">
+                            <span class="closes" data-modal="#modal-sim-internasional">&times;</span>
+                            <h2>SIM Internasional</h2>
+                            <img src="{{ asset('assets/dist/assets/img/intern.jpg') }}" alt="SIM Internasional" class="modal-image">
+                            <p>Layanan Belum Tersedia</p>
+                            <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
+                         </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal SIM Nasional -->
+                    <div id="modal-sim-nasional" class="modal-card">
+                        <div class="modal-cons">
+                            <span class="closes" data-modal="#modal-sim-nasional">&times;</span>
+                            <h2>SIM Nasional</h2>
+                            <div class="procedure-content">
+                                <h3>Tata Cara Pengajuan SIM</h3>
+                                <ol>
+                                    <li>Lengkapi formulir pendaftaran secara online atau di kantor kepolisian.</li>
+                                    <li>Siapkan dokumen pendukung seperti KTP, pas foto, dan bukti pembayaran.</li>
+                                    <li>Bayar biaya administrasi di loket pembayaran atau secara online.</li>
+                                    <li>Ikuti tes teori dan praktik sesuai jadwal yang telah ditentukan.</li>
+                                    <li>Tunggu hasil pengujian. Jika lulus, SIM akan dicetak dan diberikan.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal Memperpanjang SIM -->
+                    <div id="modal-memperpanjang" class="modal-card">
+                        <div class="modal-cons">
+                            <span class="closes" data-modal="#modal-memperpanjang">&times;</span>
+                            <h2>Memperpanjang SIM</h2>
+                            <img src="{{ asset('assets/dist/assets/img/perpanjang.jpg') }}" alt="SIM Internasional" class="modal-image">
+                            <p>Layanan Belum Tersedia</p>
+                            <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
+                        </div>
+                    </div>
+                    {{-- <div class="page-title">
+                        <i class="bi bi-house-door"></i>
+                        <h3 style="margin: 0">Dashboard</h3>
+                    </div> --}}
+                    <div id="mySidebar" class="sidebar">
+                        <h2>My Sidebar</h2>
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                        <a href="#">Link 4</a>
+                        <!-- Tambahkan lebih banyak link untuk demonstrasi scroll -->
+                        <a href="#">Link 5</a>
+                        <a href="#">Link 6</a>
+                        <a href="#">Link 7</a>
+                        <a href="#">Link 8</a>
+                        <a href="#">Link 9</a>
+                        <a href="#">Link 10</a>
+                        <a href="#">Link 11</a>
+                        <a href="#">Link 12</a>
+                        <a href="#">Link 13</a>
+                    </div>
+                    
+                    <div id="main" style="padding-top: 30px;">
+                        <div class="d-flex align-items-center text-container">
+                            {{-- <img src="{{ asset('assets/dist/assets/img/presisi.png') }}" alt="Gambar Kecil" class="small-image me-3"> --}}
+                            <div class="text-center">
+                                @auth
+                                <div>
+                                    <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, {{ Auth::user()->name }} Di Sim Nasional Presisi!</h5>
+                                </div>
+                                <div>
+                                    <h6 class="mb-2 typing" id="service-text">Digital Korlantas Polri</h6>
+                                </div>
+                                @else
+                                <div>
+                                    <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, Tamu Di Sim Nasional Presisi!</h5>
+                                </div>
+                                <div>
+                                    <h6 class="mb-2 typing" id="service-text"><b>Digital Korlantas Polri!</b></h6>
+                                </div>
+                                @endauth
+                            </div>
+                        </div>
+                        {{-- <h1>Welcome to the Dashboard</h1>
+                        <p>Content goes here...</p> --}}
+                    </div>                                        
+                            
+                    <div class="layout-container" style="padding-top: -10px; margin-top: -800px;">
+                        <div class="content-wrapper" style="display: flex; align-items: flex-start; margin-left: -100px; ">
+                            <div class="flex-container" style="display: flex; align-items: center; width: 100%; justify-content: space-around;"> <!-- Mengganti justify-content -->
+                                <div class="card-wrapper" style="flex: 1; margin: 0 50px;"> <!-- Menambahkan margin antar box -->
+                                    <div class="card transparent-card" style="width: 100%;">
                                         <div class="card-body">
-                                            <div class="content">
+                                            <div class="content" style="display: flex; justify-content: space-between; align-items: center;">
                                                 <div class="text-content">
-                                                    <h3>296341</h3>
+                                                    <h3>{{ $jumlahPengajuan }}</h3>
                                                     <p>Daftarkan Sekarang!</p>
                                                 </div>
                                                 <img src="{{ asset('assets/dist/assets/img/sim.png') }}" class="navbar-logo d-inline-block align-top" alt="">
@@ -978,68 +1497,41 @@ h6 {
                                         </div>
                                     </div>
                                 </div>           
-                                <div class="box-container" style="flex: 1;">
+                                <div class="box-container" style="flex: 1; margin: 0 20px; text-align: center;"> <!-- Menambahkan margin antar box -->
                                     <div class="title-container">
                                         <h3 class="box-title">POLRES CIANJUR</h3>
                                     </div>
                                     <p class="box-number">91.42</p>
                                     <h2>NILAI TOTAL ZI</h2>
                                 </div>
+                                <div class="additional-box-container" style="flex: 1; margin: 0 10px; text-align: center;"> <!-- Menambahkan margin antar box -->
+                                    <h3>Clien</h3>
+                                    <p class="box-number">123.45</p>
+                                    <h2>INFORMATION</h2>
+                                </div>
+                                <div class="queue-container" style="flex: 1; margin: 0 30px; text-align: center;"> <!-- Menambahkan margin antar box -->
+                                    <div class="queue-box" id="queueBox">
+                                        <p id="queueNumber">0</p>
+                                        <button id="incrementBtn">Ambil Nomor Antrian Tes</button>
+                                        <p id="message"></p>
+                                    </div>
+                                </div>
                             </div> 
-                            <div class="progress-wrapper" style="margin-left: -80px;">
-                                <div class="progress-section">
-                                    <p class="progress-title">TOTAL PENGUNGKIT</p>
-                                    <span class="progress-percentage">56.85% / 60</span>
-                                    <div class="progress">
-                                        <div class="progress-bar custom-progress-bar w-75"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-section">
-                                    <p class="progress-title">TOTAL HASIL</p>
-                                    <span class="progress-percentage">34.84% / 40</span>
-                                    <div class="progress">
-                                        <div class="progress-bar custom-progress-bar w-50"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="queue-container">
-                                <div class="queue-box" id="queueBox">
-                                    <p id="queueNumber">0</p>
-                                    <button id="incrementBtn">Ambil Nomor Antrian Tes</button>
-                                </div>
-                            </div>
-                            <script src="script.js"></script>
-                        </div>                   
-                    {{-- </div>                                   --}}
-                    </div>                                     
-                    <div class="container-fluid d-flex flex-column justify-content-center align-items-center" style="height: 30vh; margin-top: -80px;">
-                        <!-- Kontainer dengan Garis Pembatas -->
-                        <div class="bordered-container p-3">
-                            <div class="d-flex align-items-center text-container">
-                                <img src="{{ asset('assets/dist/assets/img/presisi.png') }}" alt="Small Image" class="small-image me-3">
-                                <div class="text-center">
-                                    @auth
-                                    <div>
-                                        <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, {{ Auth::user()->name }} Di Zona Integrasi Polri!</h5>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-2 typing" id="service-text">Pelayanan Kami, Untuk Anda!</h6>
-                                    </div>
-                                    @else
-                                    <div>
-                                        <h5 class="mb-2 typing" id="welcome-text">Selamat Datang, Tamu Di Zona Integrasi Polri!</h5>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-2 typing" id="service-text"><b>Pelayanan Kami, Untuk Anda!</b></h6>
-                                    </div>
-                                    @endauth
-                                </div>
-                            </div>
-                        </div>
-                    </div>                                                        
-                    <div class="container custom-margin-top">
+                        </div> 
+                    </div>                    
+                                         
+                    <div class="activity-container">
+                        <h3>Aktivitas Terbaru</h3>
+                        
+                        <!-- Tombol Aktivitas Terbaru untuk menampilkan aktivitas saat ini -->
+                        <button onclick="window.location.href='{{ route('user.activityDetails') }}'">
+                            Lihat Aktivitas Details
+                        </button>
+                    </div>                           
+                                 
+                    {{-- <div class="container custom-margin-top">
                         <div id="commentList" class="comment-list mb-4">
-                            <!-- Komentar akan ditambahkan di sini -->
+                  
                         </div>
                         <form id="formKomentar" class="form-container p-4 rounded shadow-lg">
                             <h5 class="mb-4">Tinggalkan Komentar</h5>
@@ -1050,44 +1542,228 @@ h6 {
                                 <input type="submit" class="btn btn-primary" value="Tambahkan Komentar"/>
                             </div>
                         </form>
-                    </div>                                       
+                    </div>  --}}
         
-                <script>
-                   document.getElementById('incrementBtn').addEventListener('click', function() {
-                    let queueNumberElement = document.getElementById('queueNumber');
-                    let randomSpin = setInterval(function() {
-                        let randomNumber = Math.floor(Math.random() * 1000) + 1; // Menghasilkan angka acak antara 1 dan 1000
-                        queueNumberElement.textContent = randomNumber;
-                    }, 100); // Kecepatan spin (100ms)
 
-                    setTimeout(function() {
-                        clearInterval(randomSpin); // Hentikan spin setelah 2 detik
-                    }, 2000);
-                });
+                    <script>
+                        function toggleSidebar() {
+    var sidebar = document.getElementById("mySidebar");
+    var main = document.getElementById("main");
+    var button = document.getElementById("sidebarToggle");
 
-                    document.addEventListener('DOMContentLoaded', function() {
-                        // Load comments from local storage on page load
-                        const storedComments = JSON.parse(localStorage.getItem('comments')) || [];
-                        storedComments.forEach(comment => {
-                            addCommentToList(comment);
+    // Cek apakah sidebar dalam kondisi terbuka atau tertutup
+    if (sidebar.classList.contains('open')) {
+        // Jika terbuka, tutup sidebar
+        sidebar.classList.remove('open');
+        sidebar.classList.add('closed');
+        main.style.marginLeft = "0";
+        button.innerHTML = "☰"; // Ubah ikon tombol menjadi buka
+    } else {
+        // Jika tertutup, buka sidebar
+        sidebar.classList.remove('closed');
+        sidebar.classList.add('open');
+        main.style.marginLeft = "250px";
+        button.innerHTML = "×"; // Ubah ikon tombol menjadi tutup
+    }
+}
+
+                        </script>
+                    <script>
+                      document.addEventListener('DOMContentLoaded', function () {
+    function fetchActivities() {
+        fetch('/activities') // Pastikan endpoint ini mengembalikan aktivitas untuk pengguna yang sedang login
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data aktivitas yang diterima:', data); // Debugging: Tampilkan data yang diterima
+                renderActivities(data);
+            })
+            .catch(error => {
+                console.error('Error fetching activities:', error); // Debugging: Menampilkan kesalahan di konsol
+                const activityTable = document.getElementById('activity-table');
+                activityTable.innerHTML = '<p>Tidak dapat mengambil data aktivitas. Silakan coba lagi nanti.</p>';
+            });
+    }
+
+    function renderActivities(activities) {
+        const activityTable = document.getElementById('activity-table');
+        activityTable.innerHTML = ''; // Menghapus konten lama
+
+        if (!activities || activities.length === 0) {
+            activityTable.innerHTML = '<p>Tidak ada aktivitas terbaru.</p>';
+            return;
+        }
+
+        // Menampilkan aktivitas tanpa nama pengguna
+        activities.forEach(activity => {
+            const activityItem = document.createElement('div');
+            activityItem.classList.add('activity-item');
+
+            activityItem.innerHTML = `
+                <h4>${activity.activity_name}</h4>
+                <small>Waktu: ${new Date(activity.activity_time).toLocaleString()}</small>
+                <p>Detail: ${activity.activity_details}</p>
+            `;
+
+            activityTable.appendChild(activityItem);
+        });
+    }
+
+    // Memanggil fungsi untuk mengambil aktivitas saat halaman dimuat
+    fetchActivities();
+});
+                        </script>
+                   <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const buttons = document.querySelectorAll('.button-sim');
+                        
+                        buttons.forEach(button => {
+                            button.addEventListener('click', () => {
+                                const target = document.querySelector(button.getAttribute('data-target'));
+                                if (target) {
+                                    target.style.display = 'block'; // Tampilkan modal
+                                    setTimeout(() => {
+                                        target.style.opacity = 1; // Menambahkan opacity untuk transisi
+                                    }, 10); // Kecilkan delay agar opacity transisi terlihat
+                                }
+                            });
+                        });
+
+                        const closeButtons = document.querySelectorAll('.closes');
+
+                    closeButtons.forEach(closeButton => {
+                        closeButton.addEventListener('click', () => {
+                            const modal = document.querySelector(closeButton.getAttribute('data-modal'));
+                            if (modal) {
+                                modal.style.opacity = 0; // Menambahkan opacity untuk transisi
+                                setTimeout(() => {
+                                    modal.style.display = 'none'; // Sembunyikan modal setelah transisi
+                                }, 300); // Durasi transisi opacity
+                            }
                         });
                     });
-                
-                    document.getElementById('formKomentar').addEventListener('submit', function(event) {
-                        event.preventDefault(); // Mencegah form submit default
-                        let textarea = this.querySelector('textarea');
-                        let komentar = textarea.value.trim();
-                
-                        if (komentar !== '') {
-                            // Add comment to list and save to local storage
-                            addCommentToList(komentar);
-                            saveCommentToLocalStorage(komentar);
-                
-                            // Clear textarea
-                            textarea.value = '';
-                        }
+
+                        window.addEventListener('click', (event) => {
+                            if (event.target.classList.contains('modal')) {
+                                event.target.style.opacity = 0; // Menambahkan opacity untuk transisi
+                                setTimeout(() => {
+                                    event.target.style.display = 'none'; // Sembunyikan modal setelah transisi
+                                }, 300); // Durasi transisi opacity
+                            }
+                        });
                     });
-                
+
+                    </script>
+
+                    <script>
+//                         document.addEventListener('DOMContentLoaded', function() {
+//     const queueNumberElement = document.getElementById('queueNumber');
+//     const incrementBtn = document.getElementById('incrementBtn');
+//     const messageElement = document.getElementById('message');
+
+//     // Fungsi untuk mendapatkan nomor antrian dari localStorage
+//     function getQueueNumber() {
+//         const number = parseInt(localStorage.getItem('queueNumber'), 10);
+//         return isNaN(number) ? 0 : number;
+//     }
+
+//     // Fungsi untuk menyimpan nomor antrian ke localStorage
+//     function setQueueNumber(number) {
+//         localStorage.setItem('queueNumber', number);
+//     }
+
+//     // Fungsi untuk mendapatkan daftar ID pengguna yang sudah mengambil nomor antrian
+//     function getUsers() {
+//         const users = JSON.parse(localStorage.getItem('users')) || [];
+//         return users;
+//     }
+
+//     // Fungsi untuk menyimpan daftar ID pengguna ke localStorage
+//     function setUsers(users) {
+//         localStorage.setItem('users', JSON.stringify(users));
+//     }
+
+//     // Fungsi untuk mendapatkan ID pengguna unik dari cookies
+//     function getUserId() {
+//         const cookie = document.cookie.split('; ').find(row => row.startsWith('userId='));
+//         if (cookie) {
+//             return cookie.split('=')[1];
+//         } else {
+//             // Buat ID pengguna unik
+//             const userId = 'user_' + Math.random().toString(36).substr(2, 9);
+//             // Simpan ID pengguna ke cookie (berlaku untuk sesi browser)
+//             document.cookie = `userId=${userId}; path=/; max-age=86400`; // Cookie berlaku selama 24 jam
+//             return userId;
+//         }
+//     }
+
+//     // Fungsi untuk mereset tampilan notifikasi dan nomor antrian
+//     function resetQueueDisplay() {
+//         messageElement.textContent = '';  // Mengosongkan pesan notifikasi
+//         incrementBtn.disabled = false;    // Mengaktifkan tombol agar bisa diambil nomor lagi
+//     }
+
+//     // Fungsi untuk menangani klik tombol
+//     function handleIncrement() {
+//         const users = getUsers();
+//         const userId = getUserId();
+
+//         // Periksa jika pengguna sudah mengambil nomor
+//         if (users.includes(userId)) {
+//             messageElement.textContent = 'Anda sudah mengambil nomor antrian.';
+//             incrementBtn.disabled = true;
+//             return;
+//         }
+
+//         // Perbarui nomor antrian dan status pengguna
+//         let currentNumber = getQueueNumber();
+//         currentNumber++; // Tambah nomor antrian
+//         setQueueNumber(currentNumber);
+
+//         users.push(userId);
+//         setUsers(users);
+
+//         // Perbarui tampilan
+//         queueNumberElement.textContent = currentNumber;
+//         messageElement.textContent = 'Nomor antrian Anda adalah ' + currentNumber;
+//         incrementBtn.disabled = true; // Nonaktifkan tombol setelah pengguna mengambil nomor
+//     }
+
+//     // Fungsi untuk inisialisasi tampilan awal
+//     function initializeDisplay() {
+//         const userId = getUserId(); // Dapatkan ID pengguna saat ini
+//         const users = getUsers();
+
+//         // Reset tampilan notifikasi dan tombol
+//         resetQueueDisplay();
+
+//         // Tampilkan nomor antrian terakhir tanpa notifikasi jika pengguna sudah mengambil nomor
+//         if (users.includes(userId)) {
+//             const lastQueueNumber = getQueueNumber();
+//             queueNumberElement.textContent = lastQueueNumber;
+//             messageElement.textContent = 'Nomor antrian Anda adalah ' + lastQueueNumber;
+//             incrementBtn.disabled = true; // Nonaktifkan tombol jika pengguna sudah mengambil nomor
+//         } else {
+//             // Jika pengguna belum mengambil nomor, tampilkan nomor terakhir tanpa notifikasi
+//             const lastQueueNumber = getQueueNumber();
+//             queueNumberElement.textContent = lastQueueNumber;
+//         }
+//     }
+
+//     // Inisialisasi tampilan nomor antrian saat halaman dimuat
+//     initializeDisplay();
+
+//     // Tambahkan event listener ke tombol
+//     incrementBtn.addEventListener('click', handleIncrement);
+// });
+
+                        </script>
+                        
+                <script>
                     function addCommentToList(comment) {
                         // Create new comment element
                         let newComment = document.createElement('div');
@@ -1370,5 +2046,17 @@ h6 {
         );
         sparkline3.render();
     </script> <!--end::Script-->
+    <footer style="
+    text-align: center;
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+">
+    <strong>Copyright &copy; 2024 <a href="/sesi" style="color: rgb(50, 77, 196); text-decoration: none;">SIMedia</a>.</strong>
+    All rights reserved.
+    <div style="float: right; display: inline-block;">
+        <b>Version</b> 3.2.0
+    </div>
+</footer>
 </body><!--end::Body-->
 </html> 
