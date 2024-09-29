@@ -119,13 +119,16 @@
     min-width: 100px;
 }
 
-                    body {
-                        font-family: Arial, sans-serif;
-                        background-color: transparent;
-                        /* background-color: #021526;;  */
-                        margin: 0;
-                        padding: 0;
+                    *{
+                        font-family: "Ubuntu", system-ui;
+                        font-weight: 500;
+                        font-style: normal;
                     }
+                    body {
+                        background-color: #cccecf;
+                        padding: 0;
+                        margin: 0;
+                    } 
                     /* Styling untuk navbar dengan latar belakang coklat */
                     .navbar-bg-brown {
                         background-color: #102C57;
@@ -193,7 +196,7 @@
                         margin-left: 65%;
                     }
                     .nav-item{
-                        margin-left: 120px;
+                        margin-left: 220px;
                     }
                     .dashboard-text {
                         font-size: 20px;
@@ -212,20 +215,6 @@
                     .input-wrapper {
                         position: relative;
                         width: 100%;
-                    }
-
-                    .search-input {
-                        width: 100%;
-                        padding: 10px 173px 10px 15px;
-                        border: 2px solid #ccc;
-                        border-radius: 5px;
-                        outline: none;
-                        font-size: 16px;
-                        transition: border-color 0.3s ease;
-                    }
-
-                    .search-input:focus {
-                        border-color: #bd2130;
                     }
 
                     .dropdown-icon {
@@ -319,7 +308,7 @@
             <div class="dropdown ms-auto">
                 <a class="dropdown-toggle d-flex align-items-center text-white text-decoration-none" href="#" role="button" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-circle profile-icon me-2"></i>
-                    <span class="profile-text">POLRES CIANJUR</span>
+                    <span class="profile-text">KORLANTAS POLRI</span>
                 </a>
             </div>
         </div>        
@@ -330,7 +319,7 @@
                         <a href="create-sim" style="
                         background-color: #507687; 
                         color: white; 
-                        padding: 10px 20px;
+                        padding: 15px 15px;
                         text-align: center;
                         text-decoration: none;
                         display: inline-block;
@@ -660,7 +649,7 @@
     <footer style="
     text-align: center;
     padding: 15px;
-    color: white;
+    color: black;
     font-size: 14px;
 ">
     <strong>Copyright &copy; 2024 <a href="/sesi" style="color: rgb(85, 109, 218); text-decoration: none;">SIMedia</a>.</strong>

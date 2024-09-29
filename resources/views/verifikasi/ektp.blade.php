@@ -15,62 +15,56 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Tambahkan styling custom di sini -->
     <style>
-        .body {
-            background-color: #ece6dc;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Styling untuk Card */
-        .card {
-            border-radius: 12px;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Untuk efek border-radius yang lebih baik */
-        }
-
-        .card-header {
-            background-color: #102C57;
-            color: #ffffff;
-            font-size: 1.25rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 15px;
-            border-bottom: none;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            align-items: center;
-        }
-
-        .card-body {
-            padding: 30px;
-            background-color: #ffffff; /* Warna latar belakang body card */
-        }
-        .form-label {
-            font-weight: bold;
-            font-size: 1rem;
-            margin-bottom: 30px;
-            display: inline-block;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Styling untuk Pesan Sukses */
-        .alert-success {
-            border-radius: 6px;
-            font-size: 1rem;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #d4edda;
-            color: #155724;
-        }
-       
+                    *{
+                        font-family: "Ubuntu", system-ui;
+                        font-weight: 500;
+                        font-style: normal;
+                    }
                     body {
-                        font-family: Arial, sans-serif;
-                        background-color: #021526;
-                        margin: 0;
+                        background-color: #cccecf;
                         padding: 0;
+                        margin: 0;
+                    } 
+
+                    /* Styling untuk Card */
+                    .card {
+                        border-radius: 12px;
+                        border: none;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        overflow: hidden; /* Untuk efek border-radius yang lebih baik */
+                    }
+
+                    .card-header {
+                        background-color: #102C57;
+                        color: #ffffff;
+                        font-size: 1.25rem;
+                        font-weight: bold;
+                        text-align: center;
+                        padding: 15px;
+                        border-bottom: none;
+                        align-items: center;
+                    }
+
+                    .card-body {
+                        padding: 30px;
+                        background-color: #ffffff; /* Warna latar belakang body card */
+                    }
+                    .form-label {
+                        font-weight: bold;
+                        font-size: 1rem;
+                        margin-bottom: 30px;
+                        display: inline-block;
+                    }
+
+                    /* Styling untuk Pesan Sukses */
+                    .alert-success {
+                        border-radius: 6px;
+                        font-size: 1rem;
+                        margin-bottom: 20px;
+                        padding: 15px;
+                        background-color: #d4edda;
+                        color: #155724;
                     }
                     /* Styling untuk navbar dengan latar belakang coklat */
                     .navbar-bg-brown {
@@ -139,59 +133,59 @@
                         margin-left: 65%;
                     }
                     .nav-item{
-                        margin-left: 120px;
+                        margin-left: 230px;
                     }
                     .icon-large {
                         font-size: 100px; /* Atur ukuran ikon menjadi lebih besar */
                     }
                     .custom-button {
-        background-color: #102C57; /* Warna dasar biru */
-        border: none; /* Menghilangkan border default */
-        border-radius: 25px; /* Membuat sudut tombol menjadi bulat */
-        color: #fff; /* Warna teks putih */
-        font-size: 18px; /* Ukuran font lebih besar */
-        padding: 12px 20px; /* Jarak dalam tombol */
-        transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi untuk hover */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus pada tombol */
-    }
+                    background-color: #102C57; /* Warna dasar biru */
+                    border: none; /* Menghilangkan border default */
+                    border-radius: 25px; /* Membuat sudut tombol menjadi bulat */
+                    color: #fff; /* Warna teks putih */
+                    font-size: 18px; /* Ukuran font lebih besar */
+                    padding: 12px 20px; /* Jarak dalam tombol */
+                    transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi untuk hover */
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus pada tombol */
+                }
 
-    .custom-button:hover {
-        background-color: #102C57; /* Warna saat hover lebih gelap */
-        transform: translateY(-2px); /* Efek angkat saat hover */
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Meningkatkan bayangan saat hover */
-    }
+                .custom-button:hover {
+                    background-color: #102C57; /* Warna saat hover lebih gelap */
+                    transform: translateY(-2px); /* Efek angkat saat hover */
+                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Meningkatkan bayangan saat hover */
+                }
 
-    .custom-button:active {
-        background-color: #102C57; /* Warna lebih gelap saat tombol ditekan */
-        transform: translateY(1px); /* Mengurangi efek angkat saat tombol ditekan */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mengurangi bayangan saat tombol ditekan */
-    }
-    /* Styling untuk footer */
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: #ffffff; /* Teks berwarna putih */
-    background: transparent; /* Latar belakang transparan */
-    padding: 10px 0; /* Padding atas dan bawah */
-    font-size: 14px; /* Ukuran font */
-}
+                .custom-button:active {
+                    background-color: #102C57; /* Warna lebih gelap saat tombol ditekan */
+                    transform: translateY(1px); /* Mengurangi efek angkat saat tombol ditekan */
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mengurangi bayangan saat tombol ditekan */
+                }
+                /* Styling untuk footer */
+            .footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                color: #000000; /* Teks berwarna putih */
+                background: transparent; /* Latar belakang transparan */
+                padding: 10px 0; /* Padding atas dan bawah */
+                font-size: 14px; /* Ukuran font */
+            }
 
-/* Styling untuk bagian kanan footer */
-.footer .float-right {
-    margin-right: 30px; /* Margin kanan */
-}
+            /* Styling untuk bagian kanan footer */
+            .footer .float-right {
+                margin-right: 30px; /* Margin kanan */
+            }
 
-/* Responsif: mengatur float-right untuk tampilan kecil */
-@media (max-width: 576px) {
-    .footer .float-right {
-        float: none;
-        text-align: center;
-        margin: 0;
-    }
-}
+            /* Responsif: mengatur float-right untuk tampilan kecil */
+            @media (max-width: 576px) {
+                .footer .float-right {
+                    float: none;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
 
     </style>
 </head>
@@ -217,7 +211,7 @@
             <div class="dropdown ms-auto">
                 <a class="dropdown-toggle d-flex align-items-center text-white text-decoration-none" href="#" role="button" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-circle profile-icon me-2"></i>
-                    <span class="profile-text">POLRES CIANJUR</span>
+                    <span class="profile-text">KORLANTAS POLRI</span>
                 </a>
             </div>
         </div>        
@@ -231,12 +225,6 @@
                         <h4 class="mb-0">Verifikasi e-KTP</h4>
                     </div>
                     <div class="card-body">
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
                         <form action="{{ route('verifikasi.ektp.submit') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
@@ -254,7 +242,12 @@
                                 <input type="file" class="form-control" id="file_ektp" name="file_ektp" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 custom-button">Kirim Verifikasi</button>
-                        </form>                        
+                        </form>     
+                        @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif       
                     </div>
                 </div>
             </div>

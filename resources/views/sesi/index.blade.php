@@ -14,20 +14,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css" integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous"><!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('assets')}}/dist/css/adminlte.css"><!--end::Required Plugin(AdminLTE)-->
     <style>
-       body {
-    background-color: #021526; /* Warna latar belakang solid di bawah gambar */
-    background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); /* Ganti dengan path gambar Anda */
-    background-size: 90% 60%; /* Mengatur ukuran gambar agar sesuai dengan kontainer */
-    background-position: center; /* Memusatkan gambar di tengah layar */
-    background-repeat: no-repeat; /* Mencegah gambar berulang */
-    height: 100vh; /* Memastikan gambar latar menutupi tinggi penuh */
-    width: 100vw; /* Memastikan gambar latar menutupi lebar penuh */
-    margin: 0; /* Menghapus margin default */
-    position: relative; /* Menyiapkan positioning untuk elemen pseudo */
+    *{
+    font-family: "Ubuntu", system-ui;
+    font-weight: 500;
+    font-style: normal;
+    }
+     body {
+    background-color: #021526; 
+    background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); 
+    background-size: 90% 60%; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0; 
+    position: relative; 
 }
 
 body::before {
-    content: ''; /* Konten kosong untuk pseudo-element */
+    content: ''; 
     position: absolute;
     top: 0;
     left: 0;
@@ -36,118 +41,189 @@ body::before {
 }
 
 .login-page {
-    background-color: rgba(255, 255, 255, 0.8); /* Biarkan latar belakang halaman login transparan */
-    height: 100vh; /* Tinggi layar penuh */
-    width: 100vw; /* Lebar layar penuh */
+    background-color: rgba(255, 255, 255, 0.8); 
+    height: 100vh; 
+    width: 100vw; 
     display: flex;
-    justify-content: center; /* Menyelaraskan konten secara horizontal di tengah */
-    align-items: center; /* Menyelaraskan konten secara vertikal di tengah */
-    position: relative; /* Memastikan konten login berada di atas pseudo-element */
-    z-index: 2; /* Membawa konten login di atas pseudo-element */
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    z-index: 2; 
 }
-        .login-box {
-            width: 100%;
-            max-width: 500px; /* Membatasi lebar maksimum kotak login */
-            margin: 20px auto; /* Membuat kotak login berada di tengah halaman */
-            border-radius: 10px; /* Radius sudut untuk kotak login */
-            overflow: hidden; /* Agar konten tidak keluar dari batas border-radius */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek kedalaman */
-            background-color: #ffffff; /* Warna latar belakang kotak login */
-        }
+.login-box {
+    width: 100%;
+    max-width: 600px; 
+    margin: 20px; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; 
+}
+
         .card-header {
             display: flex;
             align-items: center;
-            background-color: #102C57; /* Warna latar belakang header */
-            padding: 20px; /* Menambahkan padding pada header */
-            color: #ffffff; /* Warna teks putih */
+            background-color: #102C57; 
+            padding: 20px; 
+            color: #ffffff;
         }
         .logo-image {
-            width: 40%; /* Ukuran gambar lebih kecil */
-            height: auto; /* Menjaga proporsi gambar */
-            margin-right: 15px; /* Spasi antara gambar dan teks */
+            width: 40%; 
+            height: auto; 
+            margin-right: 15px; 
         }
         .card-header h1 {
-            margin: 0; /* Menghapus margin default dari h1 */
-            font-size: 24px; /* Ukuran font untuk h1 */
+            margin: 0; 
+            font-size: 24px; 
         }
         .card-body.login-content {
-            background-color: #ece6dc; /* Warna krem */
-            padding: 20px; /* Menambahkan padding agar konten tidak menempel pada tepi */
-            border-radius: 10px; /* Menambahkan border-radius agar tampilan lebih halus */
-            color: black; /* Warna teks */
+            background-color: #ece6dc; 
+            padding: 20px; 
+            border-radius: 10px; 
+            color: black; 
         }
         .btn-custom {
-            background-color: #102C57; /* Warna tombol */
-            color: #ffffff; /* Warna teks putih */
-            border: none; /* Menghilangkan border default */
-            padding: 10px 20px; /* Padding dalam tombol */
-            font-size: 16px; /* Ukuran font dalam tombol */
-            border-radius: 5px; /* Membulatkan sudut tombol */
-            cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
-        }
-        .btn-custom:hover {
-            background-color: #102C57; /* Warna tombol saat dihover */
+            background-color: #102C57;
+            color: #ffffff; 
+            border: none; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            border-radius: 5px;
+            cursor: pointer; 
         }
         .alert-danger {
-            margin: 20px; /* Menambahkan margin untuk pesan kesalahan */
+            margin: 20px;
+            color: red;
         }
-        /* Menghapus warna latar belakang dan mengatur layout card-header */
-/* Mengatur styling untuk container logo dan teks */
 .card-nav {
-    display: flex; /* Flexbox untuk tata letak horizontal */
-    align-items: center; /* Menyelaraskan item di tengah vertikal */
-    justify-content: center; /* Menyelaraskan item di tengah horizontal */
-    gap: 10px; /* Memberi jarak antara logo dan teks */
-    background-color: transparent; /* Menghapus warna latar belakang */
-    padding: 20px 0; /* Menambahkan padding untuk ruang di sekitar elemen */
-    transition: transform 0.2s ease, opacity 0.2s ease; /* Efek transisi halus */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    background-color: transparent; 
+    padding: 20px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
-/* Mengatur ukuran dan margin untuk gambar logo */
 .logo-sinar {
-    max-width: 200px; /* Mengatur ukuran maksimum logo */
-    height: auto; /* Menjaga rasio aspek logo */
-    transition: transform 0.2s ease; /* Efek transisi halus untuk logo */
+    max-width: 200px; 
+    height: auto;
+    transition: transform 0.2s ease; 
 }
-
-/* Styling untuk teks SIMedia */
 .card-nav h2 {
-    color: #021526; /* Warna teks */
-    font-family: 'Arial', sans-serif; /* Gaya font */
-    font-size: 50px; /* Ukuran font */
-    margin: 0; /* Menghapus margin */
-    font-weight: bold; /* Menebalkan teks */
-    transition: color 0.2s ease, transform 0.2s ease; /* Efek transisi halus untuk teks */
+    color: #021526;
+    font-family: 'Arial', sans-serif; 
+    font-size: 50px;
+    margin: 0; 
+    font-weight: bold; 
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Efek hover untuk container */
 .card-nav:hover {
-    transform: scale(1.02); /* Sedikit memperbesar kontainer saat di-hover */
+    transform: scale(1.02); 
 }
 
-/* Efek hover untuk logo */
 .logo-sinar:hover {
-    transform: scale(1.05); /* Sedikit memperbesar logo saat di-hover */
+    transform: scale(1.05); 
 }
 
-/* Efek hover untuk teks */
 .card-nav h2:hover {
-    color: #555; /* Mengubah warna teks menjadi abu-abu lebih terang saat di-hover */
-    transform: translateY(-2px); /* Sedikit mengangkat teks saat di-hover */
+    color: #555; 
+    transform: translateY(-2px); 
+}
+.login-content {
+    padding: 30px;
+    border-radius: 10px; 
+    background-color: #f7f7f7; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.form-label {
+    font-weight: bold; 
+    color: #021526;
+}
+
+.btn-custom {
+    background-color: #102C57;
+    color: #ffffff; 
+    border: none; 
+    padding: 12px 20px; 
+    font-size: 16px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.btn-custom:hover {
+    background-color: #0e2342;
+}
+
+.mb-3 {
+    margin-bottom: 20px; 
+}
+.login-content {
+    padding: 30px; 
+    border-radius: 10px; 
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.form-label {
+    font-weight: bold; 
+    color: #021526;
+    margin-bottom: 5px; 
+}
+
+.form-control {
+    width: 90%; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    padding: 12px; 
+    transition: border-color 0.3s ease; 
+    margin-top: 10px;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #102C57; 
+    box-shadow: 0 0 5px rgba(16, 44, 87, 0.5); 
+}
+
+.btn-custom {
+    background-color: #102C57; 
+    color: #ffffff; 
+    border: none;
+    padding: 12px 20px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.btn-custom:hover {
+    background-color: #0e2342; 
+}
+
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+.d-grid {
+    display: grid; 
+    gap: 10px; 
 }
 
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
 <body> 
     <div class="login-page">
-        <div class="card-nav text-center">
+        {{-- <div class="card-nav text-center">
             <!-- Logo SIMedia -->
             <img src="{{ asset('assets/dist/assets/img/sinar.png') }}" alt="Presisi Logo" class="logo-sinar">
 
             <!-- Teks SIMedia -->
             <h2 class="mb-0 mt-2"><b>SIMedia</b></h2>
 
-        </div>
+        </div> --}}
         <div class="login-box">
             <div class="card card-outline card-secondary">
              <div class="card-header"> 
@@ -168,21 +244,20 @@ body::before {
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" value="{{ Session::get('email') }}" name="email" class="form-control" placeholder="Masukan email anda">
+                        <input type="email" value="{{ Session::get('email') }}" name="email" class="form-control" placeholder="Masukan email anda" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Masukan password anda">
+                        <input type="password" name="password" class="form-control" placeholder="Masukan password anda" required>
                     </div>
                     <div class="mb-3 d-grid">
                         <button name="submit" type="submit" class="btn btn-custom">LOGIN</button>
                     </div>
                     <div class="mb-3 d-grid">
-                        <a href="/sesi/register" class="btn btn-custom">REGISTER MEMBER BARU</a>
-                    </div>        
+                        <button name="submit" type="button" class="btn btn-custom" onclick="window.location.href='/sesi/register'">REGISTER MEMBER BARU</button>
+                    </div>                    
                 </form>
-                
-            </div>
+            </div>            
         </div>
     </div>
     </div>

@@ -6,13 +6,18 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\CatatanController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\QueueController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Auth;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\DataEktpController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\VerifikasiEktpController;
 use App\Models\Activity;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Models\VerifikasiEktp;
 use GuzzleHttp\Cookie\SessionCookieJar;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -36,8 +41,10 @@ Route::get('/verifikasi-ektp', [SessionController::class, 'showForm'])->name('ve
 Route::post('/verifikasi-ektp', [SessionController::class, 'processForm'])->name('verifikasi.ektp.submit');
 
 Route::post('/verifikasi-ektp', [VerifikasiEktpController::class, 'store'])->name('verifikasi.ektp.submit');
+Route::get('/verifikasi-ektp/hasil', [VerifikasiEktpController::class, 'showHasil'])->name('verifikasi_ektp.hasil');
+
 Route::get('/verifikasi-sukses', function () {
-    return view('verifikasi-sukses'); // Nama view harus sesuai dengan file yang telah dibuat
+    return view('verifikasi-sukses'); 
 })->name('verifikasi.sukses');
 
 Route::get('/activities', [SessionController::class, 'index']);
@@ -49,7 +56,16 @@ Route::get('/activities', function () {
 Route::get('/activity-details', [ActivityController::class, 'activityDetails'])->name('user.activityDetails');
 Route::get('/activity-details', [ActivityController::class, 'activityDetails'])
     ->name('user.activityDetails')
-    ->middleware('auth'); // Pastikan pengguna sudah login
+    ->middleware('auth'); 
+
+Route::get('/registered-users', [UserController::class, 'index'])->name('registered-users');
+
+// data ektp 
+Route::get('/data-ektp', [DataEktpController::class, 'index'])->name('data_ektp.index');
+Route::get('/data-verifikasi', [VerifikasiEktpController::class, 'showDataVerifikasi'])->name('data.verifikasi');
+
+
+
 
 
 

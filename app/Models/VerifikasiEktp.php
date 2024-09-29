@@ -9,7 +9,13 @@ class VerifikasiEktp extends Model
 {
     use HasFactory;
 
-    protected $table = 'verifikasi_ektp'; // Menentukan tabel yang digunakan
+    protected $table = 'verifikasi_ektp'; // Menentukan nama tabel yang benar
 
-    protected $fillable = ['nama', 'nik', 'file_ektp_path']; // Kolom yang dapat diisi
+    protected $fillable = [
+        'nama',
+        'nik',
+        'file_ektp_path',
+        'status',
+    ];
 }
+
