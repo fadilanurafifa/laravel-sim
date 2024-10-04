@@ -25,13 +25,16 @@ class VerifikasiEktpController extends Controller
         if ($request->nama == Auth::user()->name) {
             try {
                 // Simpan file e-KTP yang diupload
-                $filePath = $request->file('file_ektp')->store('uploads/ektp', 'public');
+                $file = $request->file('file_ektp');
+                $ext = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $ext;
+                $file->move('uploads/ektp/', $filename);
 
                 // Simpan data ke database dengan status 'berhasil'
                 VerifikasiEktp::create([
                     'nama' => $validatedData['nama'],
                     'nik' => $validatedData['nik'],
-                    'file_ektp_path' => $filePath,
+                    'file_ektp_path' => $filename,
                     'status' => 'berhasil', // Pastikan status disimpan
                 ]);
 
