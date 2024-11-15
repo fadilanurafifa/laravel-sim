@@ -4,13 +4,11 @@
     font-style: normal;
 }
 body {
-    background-color: #cccecf;
+    background-color: #E2F1E7;
     padding: 0;
     margin: 0;
 }                       
-.navbar-bg-brown {
-    background: linear-gradient(to right, #102C57, #5f615d); 
-}
+
 .navbar-logo {
     width: 60px;
     height: 60px;
@@ -34,7 +32,7 @@ body {
     margin-right: 30px; 
 }
 .btn-orange {
-    background-color: #6c757d; 
+    background-color: #02293b; 
     border: none; 
     padding: 8px 35px; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
@@ -46,7 +44,7 @@ body {
 }
 .dropdown-menu-custom {
     background-color: #ffffff;
-    border: 1px solid #6c757d;
+    border: 1px solid #5f615d;
     border-radius: 0.5rem; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     min-width: 400px; 
@@ -80,7 +78,7 @@ body {
     margin-right: 8px; 
 }
 .illustration img {
-    width: 60%;
+    width: 100%;
     display: block;
     margin: 0 auto;
     position: relative;
@@ -102,8 +100,8 @@ body {
     text-decoration: none;
 }
 
-.sidebar .headerer .list-item .icon1 {
-    margin-right: 12px;
+.sidebar .headerer .list-item .icon {
+    margin-right: 20px;
 }
 
 .sidebar .main .list-item .description {
@@ -112,7 +110,7 @@ body {
     font-size: 20px;
     line-height: 16px;
     text-align: center;
-    color: #cccecf;
+    color: #e1e4e6;
 }
 .sidebar.hide .main .list-item .description{
     display: none;
@@ -125,7 +123,7 @@ body {
     flex-direction: row;
     align-items: center;
     padding: 12px 10px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-sizing: border-box;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     cursor: pointer;
@@ -183,8 +181,8 @@ body {
 }
 
 .sidebar {
-    background: linear-gradient(to bottom, #102C57, #5f615d); 
-    width: 300px; /* Lebar sidebar saat terbuka */
+    background: #02293b; 
+    width: 300px; 
     transition: transform 0.4s;
     padding: 24px;
     box-sizing: border-box;
@@ -204,22 +202,16 @@ body {
     justify-content: baseline;
     align-items: center;
     padding: 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000; 
+    background-color: #E2F1E7;
+    border-bottom: 8px solid #02293b;
+    z-index: 100; 
     transition: margin-left 0.2s; 
-    border-radius: 5px;
+    margin-left: 300px; 
 }
 .sidebar.closed {
     transform: translateX(-100%); 
     width: 80px;
 }
-
-.header-top {
-    margin-left: 300px; 
-    background-color: #ffffff;
-}
-
 .sidebar.closed + .main-content .header-top {
     margin-left: 0; 
 }
@@ -237,7 +229,7 @@ body {
     padding-left: 40px;
 }
 .header-top h1 {
-   color: #102C57;
+   color: #02293b;
 }
 .header-title {
     font-size: 25px;
@@ -254,7 +246,7 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #102C57;
+    background-color: #02293b;
 }
 
 #menu-label:after, #menu-label:before {
@@ -275,7 +267,7 @@ body {
     top: 5px;
     right: 0;
     left: 0;
-    color: #102C57;
+    color: #02293b;
     font-size: 10px;
     font-weight: bold;
     text-align: center;
@@ -342,28 +334,6 @@ body {
     display: flex;
     gap: 10px; 
 }
-.header-button-dashboard{
-    background-color: #102C57;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 15px;
-    margin-left: 10px;
-    outline: none;
-}
-
-.header-button-dashboard:hover {
-    background-color: #5f615d;
-}
-.header-button-input{
-    background-color: #102C57;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 15px;
-    outline: none;
-}
-
 .header-button-input:hover {
     background-color: #5f615d;
 }
@@ -371,19 +341,19 @@ body {
 .header-button-input {
     display: flex; 
     align-items: center; 
-    background-color: #102C57;
+    background-color: #02293b;
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: px;
+    border-radius: 15px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 10px;
     outline: none;
 }
 
 .header-button-dashboard:hover,
 .header-button-input:hover {
-    background-color: #5f615d;
+    background-color: #02293b;
 }
 
 .bi {
@@ -401,8 +371,9 @@ body {
 }
 
 .dropdown-item:hover {
-    background-color: #007bff; 
+    background-color: #5f615d; 
     color: white; 
+    border-radius: 15px;
 }
 .dropdown-toggle {
     padding: 10px 46px;
@@ -414,15 +385,15 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
-    margin-top: 100px;
-    width: 160%;  
-    margin-left: -30px;
+    margin-top: 20px;
+    width: 150%;  
+    margin-left: 25px;
 }
 
 .box {
-    background: linear-gradient(to bottom, #102C57, #5f615d); 
+    background: #02293b;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 30px;
     text-align: left;
     transition: all 0.3s;
     width: 100%;
@@ -434,48 +405,85 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.01);
 }
+.box .flex {
+    display: flex;
+    justify-content: space-between;
+}
+.box i {
+    font-size: 50px; /* Ukuran ikon */
+    color: #ffffff; /* Warna ikon */
+}
+.box-header {
+    display: flex;
+    justify-content: space-between; /* Membuat teks di kiri dan ikon di kanan */
+    align-items: center; /* Menyelaraskan konten secara vertikal */
+    padding: 10px; /* Opsional: Memberi ruang di dalam box */
+    border-radius: 30px; /* Opsional: Sudut melengkung */
+}
+
+.box-header i {
+    font-size: 55px; /* Sesuaikan ukuran ikon */
+    color: #ffffff; /* Sesuaikan warna ikon */
+}
+
+.box-header p {
+    margin: 0; /* Menghilangkan margin default pada teks */
+    font-size: 16px; /* Atur ukuran teks */
+}
+
 
 .box2 {
-    background-color: #102C57;
+    background: linear-gradient(to bottom, #02293b, #387478); 
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
     transition: all 0.3s;
     width: 100%;
     position: relative;
 }
 .box3 {
-    background: linear-gradient(to bottom, #102C57, #5f615d); 
+    align-items: flex-start;
+    background: #02293b; 
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 30px;
     text-align: center;
     transition: all 0.3s;
     width: 100%;
     position: relative;
     transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: space-between; 
+    border: 1px solid #ccc; 
     cursor: pointer;
 }
 .box3:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.01);
 }
-.box3 p {
+.client-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;  
+}
+
+.box3 .client-link p {
+    margin: 0; 
     margin-top: 5px;
     font-size: 30px;
     color: white;
     text-align: left;
     font-weight: bold;
 }
-.box3 a i {
-    margin-top: -20px;
+.box3 .client-link i {
+    font-size: 55px;
 }
-.box3 a {
-    text-decoration: none;
-}
+
 .box4 {
-    background: linear-gradient(to bottom, #102C57, #5f615d); 
+    background: #02293b; 
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 30px;
     text-align: center;
     transition: all 0.3s;
     width: 100%;
@@ -491,6 +499,7 @@ body {
     text-decoration: none;
 }
 .box4 p {
+    align-items: flex-start;
     margin-top: 5px;
     font-size: 30px;
     color: white;
@@ -499,15 +508,21 @@ body {
     text-decoration: none;
 }
 .box4 a i {
-    font-size: 35px; 
+    font-size: 45px; 
     margin-right: 10px; 
     color: #ffffff; 
-    margin-top: -20px;
+    margin-top: -8px;
+}
+.payment-evidence {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
 }
 .box5 {
-    background: linear-gradient(to bottom, #102C57, #5f615d); 
+    background: #02293b; 
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 30px;
     text-align: center;
     transition: all 0.3s;
     width: 100%;
@@ -562,7 +577,7 @@ body {
     background-color: white; 
     padding: 12px;
     padding-inline: 60px;
-    border-radius: 8px; 
+    border-radius: 10px; 
     display: inline-block; 
     position: relative; 
     z-index: 1; 
@@ -590,7 +605,7 @@ body {
     position: relative; 
     z-index: 1; 
     margin: 0; 
-    color: #102C57;
+    color: #02293b;
 }
 
 .box p {
@@ -604,20 +619,18 @@ body {
 .box-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #6c757d;
+    background-color: #387478;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     text-decoration: none; 
     transition: background-color 0.3s;
-    margin-top: 40px;
+    margin-top: 60px;
     text-align: left;
 }
-
 .box-button:hover {
-    background-color: #102C57;
     color: #ffffff;
     text-decoration: none;
 }
@@ -648,7 +661,7 @@ body {
 .custom-search-form {
     display: flex;
     justify-content: center;
-    margin-left: 235%;
+    margin-left: 3%;
 }
 
 .input-with-icon {
@@ -669,7 +682,7 @@ body {
     width: 300px;
     padding: 13px 13px 13px 35px; 
     border: 2px solid #ccc;
-    border-radius: 20px;
+    border-radius: 30px;
     font-size: 16px;
     outline: none;
 }
@@ -680,4 +693,369 @@ body {
 .header-top h1 img {
     width: 55px;
 }
+/* icon profile */
+.profile-link {
+    display: flex; /* Menyusun ikon dan teks secara horizontal */
+    align-items: center; /* Menyelaraskan ikon dan teks secara vertikal */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    color: #333; /* Warna teks */
+    padding-top: 20px;
+}
 
+.icon.initials {
+    display: inline-flex; /* Menggunakan flexbox untuk menampilkan inisial */
+    justify-content: center; /* Menyelaraskan inisial ke tengah */
+    align-items: center; /* Menyelaraskan inisial secara vertikal */
+    width: 40px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    border-radius: 50%; /* Membuat bentuk bulat */
+    background-color: #9ea2a5; /* Warna latar belakang (biru) */
+    color: white; /* Warna teks (putih) */
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Ketebalan font */
+}
+.chart-container {
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #E2F1E7;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(36, 54, 66, 0.6);
+    margin-left: 100px;
+}
+.chart-wrapper {
+    display: flex;
+    justify-content: space-between; /* Make sure the charts are spaced evenly */
+    gap: 20px; /* Optional: Add some space between the charts */
+    flex-wrap: wrap; /* Allows wrapping if screen size is too small */
+    width: 100%; /* Makes sure the charts take up available space */
+}
+
+.chart-container {
+    flex: 1; /* Makes both charts take equal space */
+    min-width: 350px; /* Minimum width to ensure the charts don’t get too small */
+    height: 400px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+.box-ujian {
+    background: #02293b;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: left;
+    transition: all 0.3s;
+    width: 100%;
+    position: relative;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+.box-ujian:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+}
+.link-ujian {
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    color: #ffffff; /* Warna teks */
+    display: flex; /* Flexbox untuk tautan */
+    justify-content: space-between; /* Memastikan teks dan ikon berada di ujung yang berbeda */
+    align-items: flex-start; /* Menyelaraskan teks dan ikon ke atas */
+    width: 100%; /* Memastikan tautan mengambil seluruh lebar box */
+}
+.link-ujian:link{
+    color: inherit; /* Menjaga warna tetap sama pada semua keadaan (link, hover, aktif, fokus) */
+    background-color: transparent; /* Menghapus efek latar belakang */
+    text-decoration: none; /* Tidak ada garis bawah */
+}
+
+.link-ujian p {
+    margin: 0; 
+    margin-top: 5px;
+    font-size: 30px;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.link-ujian i {
+    font-size: 50px; /* Ukuran ikon sesuai kebutuhan */
+    margin-left: -20px; /* Ruang antara teks dan ikon */
+    color: white;
+}
+.long-box-container {
+    width: 100%; /* Lebar penuh */
+    max-width: 1200px; /* Batas maksimal lebar */
+    height: 200px; /* Tinggi box */
+    padding: 20px; /* Ruang di dalam box */
+    background-color: #f8f9fa; /* Warna latar belakang terang */
+    border-radius: 30px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek 3D */
+    margin: 20px auto; /* Jarak dari elemen di atas dan bawah, center */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Mengatur elemen di dalam box secara vertikal */
+    justify-content: center; /* Mengatur posisi isi di tengah secara vertikal */
+    align-items: center; /* Mengatur posisi isi di tengah secara horizontal */
+    font-family: Arial, sans-serif; /* Font default */
+    color: #343a40; /* Warna teks gelap */
+}
+
+.long-box-container h3 {
+    margin: 0 0 10px 0; /* Mengatur margin judul */
+    font-size: 24px; /* Ukuran font judul */
+}
+
+.long-box-container p {
+    font-size: 16px; /* Ukuran font paragraf */
+    line-height: 1.5; /* Jarak antar baris teks */
+}
+ /* Gaya untuk SweetAlert */
+ .my-custom-popup {
+    background-color: #f8f9fa; /* Warna latar belakang yang lebih terang */
+    border-radius: 10px; /* Sudut yang lebih halus */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Bayangan yang halus */
+}
+
+.my-custom-title {
+    font-size: 2rem; /* Ukuran font judul lebih besar */
+    color: #343a40; /* Warna teks judul */
+    font-weight: bold; /* Tebal */
+    margin: 0; /* Hapus margin untuk lebih rapat */
+}
+
+.my-custom-text {
+    font-size: 30px; /* Ukuran font teks lebih besar */
+    color: #6c757d; /* Warna teks yang lebih lembut */
+}
+
+.my-custom-confirm-button {
+    background-color: #007bff; /* Warna tombol */
+    border: none; /* Menghilangkan border */
+    color: white; /* Warna teks tombol */
+    border-radius: 5px; /* Sudut tombol */
+    padding: 10px 20px; /* Padding tombol */
+    font-size: 1rem; /* Ukuran font tombol */
+}
+
+.my-custom-confirm-button:hover {
+    background-color: #0056b3; /* Warna saat hover */
+}
+.image-box {
+    display: flex;                 /* Centers content horizontally */
+    align-items: center;           /* Centers content vertically */
+    justify-content: center;       /* Centers content horizontally */
+    height: 300px;                 /* Adjust height as needed */
+    position: relative;
+    background-color: transparent;     /* Optional: background color for the box */
+    border-radius: 8px;            /* Optional: rounded corners */
+    padding-top: 90px;
+    margin-left: 50%;
+}
+
+.image-box img {
+    max-width: 150%;               /* Adjust size to fit the box */
+    max-height: 150%;              /* Keep the image within box boundaries */
+    margin-top: 20px;             /* Move the image slightly downward */
+}
+.user-info {
+    display: flex;
+    flex-direction: column; /* Menyusun nama dan teks pengguna dalam kolom */
+}
+
+.description-header {
+    font-size: 1em; /* Ukuran teks nama */
+}
+
+.description-sub {
+    font-size: 0.8em;
+    color: #888; /* Warna teks yang lebih halus */
+    margin-top: 2px; /* Jarak kecil dari teks utama */
+}
+.header-title .digilog {
+    width: 70px;
+}
+.divider {
+    border: none;
+    border-top: 0.5px solid #888; /* Warna garis pembatas */
+    margin: 38px 0; /* Jarak vertikal */
+}
+
+.separator {
+    height: 1px;
+    background-color: #ddd; /* Warna garis pembatas */
+    margin: 10px 0; /* Jarak vertikal */
+}
+
+/* Styling untuk teks selamat datang */
+.welcome-text {
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.6s; /* Transisi untuk pergerakan elemen */
+    width: 100%; /* Atur lebar agar proporsional */
+    margin-left: 30%;
+}
+.welcome-text h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50; /* Warna lebih gelap untuk kontras */
+}
+.welcome-text h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #d35400; /* Warna yang menarik */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+}
+/* Responsif saat sidebar ditutup */
+.sidebar-closed .welcome-text {
+    transform: translateX(0); /* Tetap di tengah saat sidebar ditutup */
+}
+
+/* Responsif saat sidebar dibuka */
+.sidebar-open .welcome-text {
+    transform: translateX(0); /* Tetap di tengah saat sidebar dibuka */
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Memposisikan tombol di tengah dalam kontainer */
+    gap: 20px; /* Jarak antara tombol */
+    padding: 20px; /* Memberikan padding di sekitar tombol */
+    display: flex;
+    align-items: center; /* Posisikan elemen di tengah secara vertikal */
+    margin-left: 60%;
+}
+
+.button-sim {
+    background-color: #d35400; /* Warna latar oranye */
+    color: #fff; /* Warna teks putih */
+    border: none; /* Menghilangkan border */
+    border-radius: 10px; /* Sudut membulat */
+    padding: 10px 20px; /* Padding untuk tombol */
+    font-size: 1rem; /* Ukuran font */
+    font-weight: 600; /* Ketebalan font */
+    cursor: pointer; /* Pointer saat hover */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    transition: all 0.3s ease; /* Transisi saat hover */
+    outline: none;
+}
+
+.button-sim:hover {
+    background-color: #b03a00; /* Warna lebih gelap saat di-hover */
+    transform: translateY(-3px); /* Efek mengangkat */
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat */
+    outline: none;
+}
+
+.button-sim:active {
+    transform: translateY(0); /* Tombol kembali saat ditekan */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan normal */
+    outline: none;
+}
+.modal-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 700px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.modal-cons {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-cons h2, .modal-cons h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.modal-cons p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.modal-image {
+    width: 40%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.divider-item{
+    width: 70px;
+    height: 4px;
+    background-color: #3498db;
+    margin: 10px auto;
+}
+
+.closes {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #e74c3c;
+    transition: color 0.3s;
+}
+
+.closes:hover {
+    color: #c0392b;
+}
+
+.procedure-content ol {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.procedure-content li {
+    margin-bottom: 10px;
+    color: #34495e;
+    font-size: 0.95rem;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-footer .btn-primary {
+    background-color: #3498db;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #2980b9;
+}
+/* Overlay untuk meredupkan latar belakang */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna gelap transparan */
+    z-index: 999; /* Pastikan ini berada di belakang modal */
+    transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+    display: block;
+    opacity: 1;
+}

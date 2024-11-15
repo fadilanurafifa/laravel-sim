@@ -13,15 +13,25 @@ use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DataEktpController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\VerifikasiEktpController;
 use App\Models\Activity;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SimController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UjianController;
 use App\Models\VerifikasiEktp;
+use Faker\Provider\ar_EG\Payment;
 use GuzzleHttp\Cookie\SessionCookieJar;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-Route:: get('/',[HomeController::class, 'index']);
+// Route:: get('/',[HomeController::class, 'index']);
+Route::get('/', function () {
+    return redirect('/sesi');
+});
 Route:: get('create-sim',[HomeController::class, 'create_page']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route:: resource('penduduk', PendudukController::class);
@@ -44,8 +54,8 @@ Route::post('/verifikasi-ektp', [VerifikasiEktpController::class, 'store'])->nam
 Route::get('/verifikasi-ektp/hasil', [VerifikasiEktpController::class, 'showHasil'])->name('verifikasi_ektp.hasil');
 
 Route::get('/verifikasi-sukses', function () {
-    return view('verifikasi-sukses'); 
-})->name('verifikasi.sukses');
+    return view('verifikasi-sukses');
+})->name('verifikasi-sukses');
 
 Route::get('/activities', [SessionController::class, 'index']);
 Route::get('/activities', function () {
@@ -63,6 +73,58 @@ Route::get('/registered-users', [UserController::class, 'index'])->name('registe
 // data ektp 
 Route::get('/data-ektp', [DataEktpController::class, 'index'])->name('data_ektp.index');
 Route::get('/data-verifikasi', [VerifikasiEktpController::class, 'showDataVerifikasi'])->name('data.verifikasi');
+
+// menampilkan file ektp
+Route::get('/show-ektp', [VerifikasiEktpController::class, 'showAllEktp'])->name('show_ektp');
+
+// profile
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::post('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+
+// chart
+Route::get('/get-sim-data', [SimController::class, 'getSimData']);
+
+// verif akses ujian
+Route::get('/akses-ujian', function () {
+    return view('akses-ujian'); // Pastikan ini mengarah ke file akses-ujian.blade.php
+})->name('ujian.akses');
+
+Route::post('/verifikasi-akun', [SessionController::class, 'verifikasiAkun'])->name('verifikasi.akun');
+
+Route::get('/halaman-ujian', [UjianController::class, 'index'])->name('halaman.ujian');
+
+Route::post('/ambil-antrian', [QueueController::class, 'ambilAntrian'])->name('ambilAntrian');
+
+Route::get('/pembayaran', [PembayaranController::class, 'showForm'])->name('pembayaran.form');
+
+// Rute untuk memproses pembayaran
+Route::post('/pembayaran', [PembayaranController::class, 'processPayment'])->name('process-payment');
+
+Route::get('payment/success', function () {
+    return view('payment.success');
+})->name('payment.success');
+Route::get('/payment/error', function () {
+    return view('payment.error');
+})->name('payment.error');
+Route::get('/transaction/{id}', [PaymentController::class, 'showTransaction'])->name('transaction.show');
+
+// Route untuk menampilkan bukti pembayaran
+Route::get('/payment-proof', [PaymentController::class, 'showPaymentProof'])->name('payment-proof');
+
+// Route untuk menyimpan data pembayaran
+Route::post('/store-payment', [PaymentController::class, 'storePayment'])->name('store-payment');
+
+Route::post('/submit-payment', [PaymentController::class, 'submitPayment'])->name('submit-payment');
+
+
+
+
+
+
+
+
+
+
 
 
 

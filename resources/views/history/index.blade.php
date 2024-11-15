@@ -35,7 +35,6 @@
     /* background-color: #021526; */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     margin-top: -90px;
 }
@@ -51,11 +50,12 @@
 
 /* Gaya untuk header tabel */
 .table thead th {
-    background-color: #507687;
+    background-color: #02293b;
     color: #fff;
     padding: 12px;
     border: none;
     text-transform: uppercase;
+    
 }
 
 /* Gaya untuk sel tabel */
@@ -125,13 +125,13 @@
                         font-style: normal;
                     }
                     body {
-                        background-color: #cccecf;
+                        background-color: #E2F1E7;
                         padding: 0;
                         margin: 0;
                     } 
                     /* Styling untuk navbar dengan latar belakang coklat */
                     .navbar-bg-brown {
-                        background-color: #102C57;
+                        background-color: #02293b;
                         display: flex; /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
                         align-items: center; /* Menyelaraskan item secara vertikal di tengah */
                     }
@@ -170,7 +170,7 @@
                     }
                     .dropdown-menu-custom {
                         background-color: transparent; /* Warna latar belakang dropdown */
-                        border: 1px solid #6c757d; /* Warna border */
+                        border: 1px solid #02293b; /* Warna border */
                         border-radius: 0.5rem; /* Radius border */
                         padding: 10px; /* Padding dalam dropdown */
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan dropdown */
@@ -196,7 +196,7 @@
                         margin-left: 65%;
                     }
                     .nav-item{
-                        margin-left: 220px;
+                        margin-left: 260px;
                     }
                     .dashboard-text {
                         font-size: 20px;
@@ -294,7 +294,7 @@
     <nav class="navbar navbar-expand-lg navbar-light navbar-bg-brown fixed-top" style="padding: 12px;">
 
         <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="navbar-logo" alt="Logo">
-        <div class="text-logo">DIGITAL KORLANTAS POLRI</div>
+        <div class="text-logo">DATA PENGAJUAN SIM</div>
 
         <div class="collapse navbar-collapse me-3">
             <ul class="navbar-nav d-flex align-items-center">
@@ -317,17 +317,17 @@
                 <div class="container-fluid" style="padding-top: 190px;"> 
                     <div class="card-body">
                         <a href="create-sim" style="
-                        background-color: #507687; 
+                        background-color: #28a745; 
                         color: white; 
-                        padding: 15px 15px;
+                        padding: 13px 24px;
                         text-align: center;
                         text-decoration: none;
                         display: inline-block;
-                        font-size: 18px;
+                        font-size: 20px;
                         border-radius: 5px;
                         margin-top: -20px;
                         margin-bottom: 30px;
-                    " onmouseover="this.style.backgroundColor='#507687;'" onmouseout="this.style.backgroundColor='#507687;'">
+                    " onmouseover="this.style.backgroundColor='#28a745;'" onmouseout="this.style.backgroundColor='#28a745;'">
                         <i class="bi bi-plus-circle" style="margin-right: 10px;"></i>Pelayanan SIM
                     </a>
 

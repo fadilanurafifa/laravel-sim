@@ -22,4 +22,5 @@ class catatan extends Model
     
     public $timestamps = true;
     
+    
 }

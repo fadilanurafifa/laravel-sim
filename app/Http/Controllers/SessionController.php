@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Activity;
-
+use Illuminate\Support\Facades\DB;
 
 class SessionController extends Controller
 {
@@ -22,62 +22,64 @@ class SessionController extends Controller
     }
 
     public function login(Request $request)
-    {
-        // Menyimpan email sementara dalam session
-        Session::flash('email', $request->email);
-    
-        // Validasi input
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ], [
-            'email.required' => 'Email Wajib Diisi!',
-            'password.required' => 'Password Wajib Diisi!'
+{
+    // Menyimpan email sementara dalam session
+    Session::flash('email', $request->email);
+
+    // Validasi input
+    $request->validate([
+        'email' => 'required',
+        'password' => 'required'
+    ], [
+        'email.required' => 'Email Wajib Diisi!',
+        'password.required' => 'Password Wajib Diisi!'
+    ]);
+
+    // Mempersiapkan informasi login
+    $infologin = [
+        'email' => $request->email,
+        'password' => $request->password
+    ];
+
+    // Proses login
+    if (Auth::attempt($infologin)) {
+        $user = Auth::user(); // Mengambil data pengguna yang sedang login
+        
+        // Simpan nama pengguna di sesi
+        session(['user_name' => $user->name]); // Simpan nama pengguna ke sesi
+
+        // Simpan aktivitas login
+        Activity::create([
+            'user_id' => Auth::id(),
+            'activity_name' => 'Login',
+            'activity_time' => now(),
+            'activity_details' => 'Pengguna berhasil login.'
+        ]);        
+
+        // Menambahkan log
+        Log::info('Aktivitas dicatat', [
+            'user_id' => $user->id,
+            'username' => $user->name, // Nama pengguna
+            'activity_name' => 'Login',
+            'activity_details' => 'Pengguna ' . $user->name . ' login ke aplikasi'
         ]);
-    
-        // Mempersiapkan informasi login
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-    
-        // Proses login
-        if (Auth::attempt($infologin)) {
-            $user = Auth::user(); // Mengambil data pengguna yang sedang login
-            
-            // Simpan aktivitas login
-            Activity::create([
-                'user_id' => $user->id,
-                'activity_name' => 'Login',
-                'activity_details' => 'Pengguna ' . $user->name . ' login ke aplikasi',
-                'activity_time' => now()
-            ]);
-    
-            // Menambahkan log
-            Log::info('Aktivitas dicatat', [
-                'user_id' => $user->id,
-                'username' => $user->name, // Nama pengguna
-                'activity_name' => 'Login',
-                'activity_details' => 'Pengguna ' . $user->name . ' login ke aplikasi'
-            ]);
-    
-            // Redirect ke dashboard dengan pesan sukses
-            return redirect('dashboard')->with('Success', $user->name . ' Berhasil Login!');
-        } else {
-            // Jika login gagal, redirect kembali ke halaman login dengan pesan error
-            return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
-        }
-    }    
+
+        // Redirect ke dashboard dengan pesan sukses
+        return redirect('dashboard')->with('Success', $user->name . ' Berhasil Login!');
+    } else {
+        // Jika login gagal, redirect kembali ke halaman login dengan pesan error
+        return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
+    }
+} 
     public function logout(Request $request)
 {
     $user = Auth::user(); // Pastikan mendapatkan user yang sedang login
     if ($user) {
         Activity::create([
-            'user_id' => $user->id, // Ambil ID user yang sedang login
+            'user_id' => Auth::id(),
             'activity_name' => 'Logout',
-            'activity_details' => 'Pengguna logout dari aplikasi',
             'activity_time' => now(),
-        ]);
+        ]); 
     }
 
     Auth::logout();
@@ -87,45 +89,49 @@ class SessionController extends Controller
     return redirect('/sesi');
 }
 
-    function register()
-    {
-        return view('sesi/register');
+public function register()
+{
+    return view('sesi/register');
+}
+
+public function create(Request $request)
+{
+    Session::flash('name', $request->name);
+    Session::flash('email', $request->email);
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:6'
+    ], [
+        'name.required' => 'Nama Wajib Diisi!',
+        'email.required' => 'Email Wajib Diisi!',
+        'email.email' => 'Silahkan Masukan Email Yang Valid!',
+        'email.unique' => 'Email Sudah Pernah Digunakan!',
+        'password.required' => 'Password Wajib Diisi!',
+        'password.min' => 'Minimum Password Yang Diizinkan Adalah 6 Karakter!'
+    ]);
+
+    $data = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password)
+    ];
+    User::create($data);
+
+    // Simpan nama pengguna ke sesi setelah registrasi
+    session(['user_name' => $request->name]); // Simpan nama pengguna ke sesi
+
+    $infologin = [
+        'email' => $request->email,
+        'password' => $request->password
+    ];
+
+    if (Auth::attempt($infologin)) {
+        return redirect('verifikasi-ektp')->with('Success', Auth::user()->name . ' Berhasil Register!');
+    } else {
+        return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
     }
-    function create(Request $request)
-    {
-        Session::flash('name', $request->name);
-        Session::flash('email', $request->email);
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
-        ], [
-            'name.required' => 'Nama Wajib Diisi!',
-            'email.required' => 'Email Wajib Diisi!',
-            'email.email' => 'Silahkan Masukan Email Yang Valid!',
-            'email.unique' => 'Email Sudah Pernah Digunakan!',
-            'password.required' => 'Password Wajib Diisi!',
-            'password.min' => 'Minimum Password Yang Diizinkan Adalah 6 Karakter!'
-        ]);
-
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ];
-        User::create($data);
-
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-
-        if (Auth::attempt($infologin)) {
-            return redirect('/')->with('Success', Auth::user()->name .  ' Berhasil Register!');
-        } else {
-            return redirect('sesi')->withErrors(['message' => 'Username dan password yang dimasukkan tidak valid']);
-        }
-    }
+}
 
     public function update(Request $request, $id)
     {
@@ -186,6 +192,12 @@ class SessionController extends Controller
         catatan::create($request->all());
     
         return redirect()->route('history')->with('Success', 'Pengajuan SIM berhasil diajukan!');
+        Activity::create([
+            'user_id' => Auth::id(),
+            'activity_name' => 'Pengajuan SIM',
+            'activity_time' => now(),
+        ]);
+        
     }    
     public function history()
     {
@@ -218,5 +230,28 @@ class SessionController extends Controller
 
     // Redirect ke halaman dashboard dengan pesan sukses
     return redirect()->route('dashboard')->with('success', 'Verifikasi e-KTP berhasil dikirim!');
+}
+public function verifikasiAkun(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
+
+    // Cek kredensial
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        // Jika berhasil, arahkan ke halaman ujian
+        return response()->json([
+            'success' => true,
+            'redirect' => route('halaman.ujian'), // Ganti dengan route yang sesuai
+        ]);
+    } else {
+        // Jika gagal
+        return response()->json([
+            'success' => false,
+            'message' => 'Email atau password salah.',
+        ]);
+    }
 }
 }

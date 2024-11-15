@@ -27,4 +27,5 @@ class HomeController extends Controller
         Catatan::create($request->all());
         return redirect('history');
     }
+    
 }

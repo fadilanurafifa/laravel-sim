@@ -20,7 +20,7 @@
     font-style: normal;
     }
      body {
-    background-color: #021526; 
+    background-color: #02293b; 
     background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); 
     background-size: 90% 60%; 
     background-position: center;
@@ -63,7 +63,7 @@ body::before {
         .card-header {
             display: flex;
             align-items: center;
-            background-color: #102C57; 
+            background-color: #02293b; 
             padding: 20px; 
             color: #ffffff;
         }
@@ -82,15 +82,7 @@ body::before {
             border-radius: 10px; 
             color: black; 
         }
-        .btn-custom {
-            background-color: #102C57;
-            color: #ffffff; 
-            border: none; 
-            padding: 10px 20px; 
-            font-size: 16px; 
-            border-radius: 5px;
-            cursor: pointer; 
-        }
+        
         .alert-danger {
             margin: 20px;
             color: red;
@@ -110,7 +102,7 @@ body::before {
     transition: transform 0.2s ease; 
 }
 .card-nav h2 {
-    color: #021526;
+    color: #02293b;
     font-family: 'Arial', sans-serif; 
     font-size: 50px;
     margin: 0; 
@@ -137,25 +129,7 @@ body::before {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.form-label {
-    font-weight: bold; 
-    color: #021526;
-}
 
-.btn-custom {
-    background-color: #102C57;
-    color: #ffffff; 
-    border: none; 
-    padding: 12px 20px; 
-    font-size: 16px; 
-    border-radius: 5px;
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-}
-
-.btn-custom:hover {
-    background-color: #0e2342;
-}
 
 .mb-3 {
     margin-bottom: 20px; 
@@ -169,7 +143,7 @@ body::before {
 
 .form-label {
     font-weight: bold; 
-    color: #021526;
+    color: #02293b;
     margin-bottom: 5px; 
 }
 
@@ -189,7 +163,7 @@ body::before {
 }
 
 .btn-custom {
-    background-color: #102C57; 
+    background-color: #02293b; 
     color: #ffffff; 
     border: none;
     padding: 12px 20px; 
@@ -200,7 +174,7 @@ body::before {
 }
 
 .btn-custom:hover {
-    background-color: #0e2342; 
+    background-color: #02293b; 
 }
 
 .mb-3 {

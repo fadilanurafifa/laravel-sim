@@ -9,17 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
-    {
-        Schema::create('activities', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->string('activity_name');
-            $table->text('activity_details');
-            $table->timestamp('activity_time'); // Pastikan tipe data ini adalah timestamp atau datetime
-            $table->timestamps();
-        });        
-    }
+   // Contoh migrasi untuk tabel activities
+public function up()
+{
+    Schema::create('activities', function (Blueprint $table) {
+        $table->id();
+        $table->string('activity_name'); // Misalnya 'login' atau 'logout'
+        $table->timestamp('activity_time')->useCurrent();
+        $table->text('activity_details')->nullable();
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.

@@ -22,7 +22,7 @@
                         font-style: normal;
                     }
                     body {
-                        background-color: #cccecf;
+                        background-color: #E2F1E7;
                         padding: 0;
                         margin: 0;
                     } 
@@ -36,7 +36,7 @@
                     }
 
                     .card-header {
-                        background-color: #102C57;
+                        background-color: #02293b;
                         color: #ffffff;
                         font-size: 1.25rem;
                         font-weight: bold;
@@ -68,7 +68,7 @@
                     }
                     /* Styling untuk navbar dengan latar belakang coklat */
                     .navbar-bg-brown {
-                        background-color: #102C57; /* Warna latar belakang navbar */
+                        background-color: #02293b; /* Warna latar belakang navbar */
                         display: flex; /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
                         align-items: center; /* Menyelaraskan item secara vertikal di tengah */
                     }
@@ -139,7 +139,7 @@
                         font-size: 100px; /* Atur ukuran ikon menjadi lebih besar */
                     }
                     .custom-button {
-                    background-color: #102C57; /* Warna dasar biru */
+                    background: #387478;
                     border: none; /* Menghilangkan border default */
                     border-radius: 25px; /* Membuat sudut tombol menjadi bulat */
                     color: #fff; /* Warna teks putih */
@@ -150,16 +150,12 @@
                 }
 
                 .custom-button:hover {
-                    background-color: #102C57; /* Warna saat hover lebih gelap */
+                    background-color: #387478; /* Warna saat hover lebih gelap */
                     transform: translateY(-2px); /* Efek angkat saat hover */
                     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Meningkatkan bayangan saat hover */
                 }
 
-                .custom-button:active {
-                    background-color: #102C57; /* Warna lebih gelap saat tombol ditekan */
-                    transform: translateY(1px); /* Mengurangi efek angkat saat tombol ditekan */
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mengurangi bayangan saat tombol ditekan */
-                }
+              
                 /* Styling untuk footer */
             .footer {
                 position: fixed;
@@ -197,7 +193,7 @@
     @endif
     <nav class="navbar navbar-expand-lg navbar-light navbar-bg-brown fixed-top" style="padding: 12px;">
         <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="navbar-logo" alt="Logo">
-        <div class="text-logo">DIGITAL KORLANTAS POLRI</div>
+        <div class="text-logo">FORM VERIFIKASI E-KTP</div>
 
         <div class="collapse navbar-collapse me-3">
             <ul class="navbar-nav d-flex align-items-center">

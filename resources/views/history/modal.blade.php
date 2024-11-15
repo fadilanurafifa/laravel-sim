@@ -5,10 +5,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel" style="
-                        background-color: #102C57; /* Warna latar belakang biru */
+                        background-color: #02293b; /* Warna latar belakang biru */
                         color: white; /* Warna teks putih */
                         padding: 10px 20px; /* Padding di sekitar teks (atas/bawah, kiri/kanan) */
-                        border-radius: 15px; /* Membuat sudut membulat */
+                        border-radius: 5px; /* Membuat sudut membulat */
                         text-align: center; /* Menyelaraskan teks ke tengah */
                         margin: 0; /* Menghapus margin default */
                         width: 100%; /* Membuat lebar h1 menyesuaikan lebar kontainer */

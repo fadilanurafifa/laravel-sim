@@ -20,7 +20,7 @@
     font-style: normal;
     }
      body {
-    background-color: #021526; 
+    background-color: #02293b; 
     background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); 
     background-size: 90% 60%; 
     background-position: center;
@@ -63,7 +63,7 @@ body::before {
         .card-header {
             display: flex;
             align-items: center;
-            background-color: #102C57; 
+            background-color: #02293b; 
             padding: 20px; 
             color: #ffffff;
         }
@@ -102,7 +102,7 @@ body::before {
     transition: transform 0.2s ease; 
 }
 .card-nav h2 {
-    color: #021526;
+    color: #02293b;
     font-family: 'Arial', sans-serif; 
     font-size: 50px;
     margin: 0; 
@@ -131,7 +131,7 @@ body::before {
 
 .form-label {
     font-weight: bold; 
-    color: #021526;
+    color: #02293b;
 }
 .mb-3 {
     margin-bottom: 20px; 
@@ -145,7 +145,7 @@ body::before {
 
 .form-label {
     font-weight: bold; 
-    color: #021526;
+    color: #02293b;
     margin-bottom: 5px; 
 }
 
@@ -173,7 +173,7 @@ body::before {
     gap: 10px; 
 }
 .btn-tomple {
-    background-color: #102C57; 
+    background-color: #02293b; 
     color: #ffffff; 
     border: none; 
     padding: 10px 20px; 
@@ -183,7 +183,7 @@ body::before {
     transition: background-color 0.3s ease; 
 }
 .btn-tomple:hover {
-    background-color: #102C57; 
+    background-color: #02293b; 
 }
 
     </style>
@@ -203,7 +203,7 @@ body::before {
             <div class="card card-outline card-secondary">
              <div class="card-header"> 
                 <img src="{{ asset('assets/dist/assets/img/pres.png') }}" alt="Presisi Logo" class="logo-image">
-                <h1 class="mb-0"><b>LOGIN ACCESS</b></h1>
+                <h1 class="mb-0"><b>REGISTER ACCESS</b></h1>
             </div>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -218,7 +218,7 @@ body::before {
                 <form action="create" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama</label>
+                        <label for="name" class="form-label">Nama Sesuai KTP</label>
                         <input type="text" value="{{ Session::get('name') }}" name="name" class="form-control" placeholder="Masukan nama anda">
                     </div>
                     <div class="mb-3">
