@@ -201,6 +201,9 @@ public function create(Request $request)
     }    
     public function history()
     {
+        if(Auth::user()->role != 'admin'){
+            return redirect()->back()->with('error', 'Anda tidak memiliki akses ke halaman ini.');
+        }
         $catatan = catatan::all();
 
         return view('history.index', ['catatan' => $catatan]);

@@ -4,16 +4,11 @@ use App\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PendudukController;
-use App\Http\Controllers\CatatanController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\QueueController;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\Auth;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\DataEktpController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\VerifikasiEktpController;
@@ -21,20 +16,15 @@ use App\Models\Activity;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SimController;
-use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UjianController;
-use App\Models\VerifikasiEktp;
-use Faker\Provider\ar_EG\Payment;
-use GuzzleHttp\Cookie\SessionCookieJar;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Route:: get('/',[HomeController::class, 'index']);
 Route::get('/', function () {
     return redirect('/sesi');
 });
-Route:: get('create-sim',[HomeController::class, 'create_page']);
+Route::get('create-sim', [HomeController::class, 'create_page']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route:: resource('penduduk', PendudukController::class);
+Route::resource('penduduk', PendudukController::class);
 
 Route::post('/catatan', [SessionController::class, 'store'])->name('catatan.store');
 Route::get('/history', [SessionController::class, 'history'])->name('history');
@@ -44,7 +34,7 @@ Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/logout', [SessionController::class, 'logout']);
 Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
-Route::post('editcatatan/{id}',[SessionController::class , 'update']);
+Route::post('editcatatan/{id}', [SessionController::class, 'update']);
 Route::delete('history/{id}', [HistoryController::class, 'destroy'])->name('history.destroy');
 
 Route::get('/verifikasi-ektp', [SessionController::class, 'showForm'])->name('verifikasi.ektp');
@@ -66,7 +56,7 @@ Route::get('/activities', function () {
 Route::get('/activity-details', [ActivityController::class, 'activityDetails'])->name('user.activityDetails');
 Route::get('/activity-details', [ActivityController::class, 'activityDetails'])
     ->name('user.activityDetails')
-    ->middleware('auth'); 
+    ->middleware('auth');
 
 Route::get('/registered-users', [UserController::class, 'index'])->name('registered-users');
 
@@ -115,19 +105,3 @@ Route::get('/payment-proof', [PaymentController::class, 'showPaymentProof'])->na
 Route::post('/store-payment', [PaymentController::class, 'storePayment'])->name('store-payment');
 
 Route::post('/submit-payment', [PaymentController::class, 'submitPayment'])->name('submit-payment');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,608 +1,627 @@
 <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Polres Cianjur</title>
-                <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-                <link rel="stylesheet" href="styles.css">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                <link rel="stylesheet" href="{{ asset('assets/dist/css/dashboard.css') }}">
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="sidebar closed"> 
-                        <div class="headerer">
-                            <div class="list-item">
-                                <a href="#" class="profile-link">
-                                    <div class="icon initials">{{ strtoupper(substr(session('user_name', 'Nama Lengkap'), 0, 1)) }}</div>
-                                    <div class="user-info">
-                                        <div class="description-header">{{ session('user_name', 'Nama Lengkap') }}</div>
-                                        <div class="description-sub">pengguna</div> <!-- Teks "pengguna" tepat di bawah nama user -->
-                                    </div>
-                                </a>                                
-                            </div>                                                  
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polres Cianjur</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar closed">
+            <div class="headerer">
+                <div class="list-item">
+                    <a href="#" class="profile-link">
+                        <div class="icon initials">{{ strtoupper(substr(session('user_name', 'Nama Lengkap'), 0, 1)) }}
                         </div>
-                        <hr class="divider">                 
-                        <div class="main" style="padding-top: -20px;">
-                            <div class="list-item">
-                                <a href="dashboard">
-                                    <img src="{{ asset('assets/dist/assets/img/dashboard.svg') }}" alt="" class="icon">
-                                    <span class="description">Dashboard</span>
-                                </a>
-                            </div>
-                            <div class="list-item">
-                                <a href="{{ route('profile.show') }}">
-                                    <img src="{{ asset('assets/dist/assets/img/user.svg') }}" alt="" class="icon">
-                                    <span class="description">Profile</span>
-                                </a>
-                            </div>                            
-                            <div class="list-item">
-                                <a href="registered-users">
-                                    <img src="{{ asset('assets/dist/assets/img/human.svg') }}" alt="" class="icon">
-                                    <span class="description">Client</span>
-                                </a>
-                            </div>
-                            <div class="list-item">
-                                <a href="history">
-                                    <img src="{{ asset('assets/dist/assets/img/data.svg') }}" alt="" class="icon">
-                                    <span class="description">Data Pengajuan</span>
-                                </a>
-                            </div>
-                            <div class="list-item">
-                                <a href="activity-details">
-                                    <img src="{{ asset('assets/dist/assets/img/activity.svg') }}" alt="" class="icon">
-                                    <span class="description">Aktivitas Terbaru</span>
-                                </a>
-                            </div>
-                            <div class="list-item">
-                                <a href="/sesi/register">
-                                    <img src="{{ asset('assets/dist/assets/img/register.svg') }}" alt="" class="icon">
-                                    <span class="description">Register</span>
-                                </a>
-                            </div>
-                            <div class="list-item">
-                                <a href="/sesi">
-                                    <img src="{{ asset('assets/dist/assets/img/login.svg') }}" alt="" class="icon">
-                                    <span class="description">Login</span>
-                                </a>
-                            </div>
-                            <div class="list-item">
-                                <a href="/sesi">
-                                    <img src="{{ asset('assets/dist/assets/img/logout.svg') }}" alt="" class="icon">
-                                    <span class="description">Logout</span>
-                                </a>
-                            </div>
+                        <div class="user-info">
+                            <div class="description-header">{{ session('user_name', 'Nama Lengkap') }}</div>
+                            <div class="description-sub">pengguna</div>
+                            <!-- Teks "pengguna" tepat di bawah nama user -->
                         </div>
+                    </a>
+                </div>
+            </div>
+            <hr class="divider">
+            <div class="main" style="padding-top: -20px;">
+                <div class="list-item">
+                    <a href="dashboard">
+                        <img src="{{ asset('assets/dist/assets/img/dashboard.svg') }}" alt="" class="icon">
+                        <span class="description">Dashboard</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="{{ route('profile.show') }}">
+                        <img src="{{ asset('assets/dist/assets/img/user.svg') }}" alt="" class="icon">
+                        <span class="description">Profile</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="registered-users">
+                        <img src="{{ asset('assets/dist/assets/img/human.svg') }}" alt="" class="icon">
+                        <span class="description">Client</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="history">
+                        <img src="{{ asset('assets/dist/assets/img/data.svg') }}" alt="" class="icon">
+                        <span class="description">Data Pengajuan</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="activity-details">
+                        <img src="{{ asset('assets/dist/assets/img/activity.svg') }}" alt="" class="icon">
+                        <span class="description">Aktivitas Terbaru</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="/sesi/register">
+                        <img src="{{ asset('assets/dist/assets/img/register.svg') }}" alt="" class="icon">
+                        <span class="description">Register</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="/sesi">
+                        <img src="{{ asset('assets/dist/assets/img/login.svg') }}" alt="" class="icon">
+                        <span class="description">Login</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="/sesi">
+                        <img src="{{ asset('assets/dist/assets/img/logout.svg') }}" alt="" class="icon">
+                        <span class="description">Logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header-top">
+                <div id="menu-button">
+                    <input type="checkbox" id="menu-checkbox">
+                    <label for="menu-checkbox" id="menu-label">
+                        <div id="hamburger"></div>
+                    </label>
+                </div>
+                <h1 class="header-title">
+                    <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="digilog">
+                    DIGITAL KORLANTAS POLRI
+                </h1>
+                <div class="header-buttons">
+                    <div class="custom-search-container">
+                        <form action="/search" method="GET" class="custom-search-form">
+                            <div class="input-with-icon">
+                                <i class="bi bi-search"></i>
+                                <input type="text" placeholder="Cari sesuatu..." name="search"
+                                    class="custom-search-input">
+                            </div>
+                        </form>
                     </div>
-                    <div class="main-content">
-                        <div class="header-top">
-                            <div id="menu-button">
-                                <input type="checkbox" id="menu-checkbox">
-                                <label for="menu-checkbox" id="menu-label">
-                                    <div id="hamburger"></div>
-                                </label>
-                            </div>
-                            <h1 class="header-title">
-                                <img src="{{ asset('assets/dist/assets/img/simedia.png') }}" class="digilog">
-                                DIGITAL KORLANTAS POLRI</h1>
-                                <div class="header-buttons">
-                                <div class="custom-search-container">
-                                    <form action="/search" method="GET" class="custom-search-form">
-                                        <div class="input-with-icon">
-                                            <i class="bi bi-search"></i>
-                                            <input type="text" placeholder="Cari sesuatu..." name="search" class="custom-search-input">
-                                        </div>
-                                    </form>                                
-                                </div>                                                            
-                                <button class="header-button-dashboard" onclick="location.href='/dashboard'">
-                                    <i class="bi bi-house"></i> 
-                                    Dashboard
-                                </button>
-                                <button class="header-button-input" onclick="location.href='history'">
-                                    <i class="bi bi-file-earmark-plus"></i>
-                                    Data Input
-                                </button>
-                                
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-people"></i>
-                                        KORLANTAS POLRI
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bi bi-person"></i> Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="/sesi">
-                                                <i class="bi bi-box-arrow-right"></i> Logout
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>                                                
-                            </div> 
-                        </div>
-                        <!-- Box container di bawah header -->
-                        <div class="image-box">
-                            <img src="assets/dist/assets/img/simfile.png" alt="SIM File">
-                        </div>  
-                        <div class="welcome-text">
-                            <h2>Selamat Datang di Layanan SIM Digital Korlantas Polri! </h2>
-                            <h1>Sim Media: Inovasi Layanan, Kenyamanan Berkendara</h1>
-                        </div>   
-                     
-                            <div class="button-container">
-                                <button class="button-sim" data-target="#modal-sim-internasional">Internasional</button>
-                                <button class="button-sim" data-target="#modal-sim-nasional">Nasional</button>
-                                <button class="button-sim" data-target="#modal-memperpanjang">Perpanjang</button>
-                            </div>
-                            <div class="overlay"></div>
-                            <div id="modal-sim-internasional" class="modal-card">
-                                <div class="modal-cons">
-                                    <span class="closes" data-modal="#modal-sim-internasional">&times;</span>
-                                    <h2><i class="fas fa-globe"></i> SIM Internasional</h2>
-                                    <div class="divider-item"></div>
-                                    <img src="{{ asset('assets/dist/assets/img/intern.png') }}" alt="SIM Internasional" class="modal-image">
-                                    <p>Layanan Belum Tersedia</p>
-                                    <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
-                                </div>
-                            </div>
-                            
-                            <div id="modal-sim-nasional" class="modal-card">
-                                <div class="modal-cons">
-                                    <span class="closes" data-modal="#modal-sim-nasional">&times;</span>
-                                    <h2><i class="fas fa-id-card"></i> SIM Nasional</h2>
-                                    <div class="divider-item"></div>
-                                    <div class="procedure-content">
-                                        <h3> Tata Cara Pengajuan SIM</h3>
-                                        <ol>
-                                            <li>Lengkapi formulir pendaftaran secara online atau di kantor kepolisian.</li>
-                                            <li>Siapkan dokumen pendukung seperti KTP, pas foto, dan bukti pembayaran.</li>
-                                            <li>Bayar biaya administrasi di loket pembayaran atau secara online.</li>
-                                            <li>Ikuti tes teori dan praktik sesuai jadwal yang telah ditentukan.</li>
-                                            <li>Tunggu hasil pengujian. Jika lulus, SIM akan dicetak dan diberikan.</li>
-                                        </ol>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn-primary" onclick="window.location.href='create-sim'">Ajukan Sekarang!</button>
-                                        <button class="btn-primary">Cek Status Pengajuan</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div id="modal-memperpanjang" class="modal-card">
-                                <div class="modal-cons">
-                                    <span class="closes" data-modal="#modal-memperpanjang">&times;</span>
-                                    <h2><i class="fas fa-redo-alt"></i> Memperpanjang SIM</h2>
-                                    <div class="divider-item"></div>
-                                    <img src="{{ asset('assets/dist/assets/img/perpanjang.jpg') }}" alt="Memperpanjang SIM" class="modal-image">
-                                    <p>Layanan Belum Tersedia</p>
-                                    <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
-                                </div>
-                            </div>                                                         
-                        <div class="box-container flex-layout">
-                            <div class="box">
-                            <div class="flex">
-                                <p id="jumlah-pengajuan">{{ $jumlahPengajuan }}</p>
-                                <i class="bi bi-plus-circle"></i> <!-- Ikon tambah data diletakkan di sini -->
-                            </div>
-                                <h1>Miliki SIM Sekarang!</h1>
-                                <a href="create-sim" class="box-button">Pelayanan SIM</a>
-                            </div>
-                                                   
-                            <div class="box2">
-                                <img src="{{ asset('assets/dist/assets/img/lambangpolri.png') }}" class="background-image" alt="Background Image">
-                                <div class="content-box2">
-                                    <p>POLRES CIANJUR</p>
-                                </div>
-                                <p class="angka">91.42</p>
-                                <p class="total">NILAI TOTAL ZI</p>
-                            </div>
-                            <div class="box-ujian" style="border-radius: 30px;">
-                                <a href="{{ route('ujian.akses') }}" class="link-ujian" style="text-decoration: none;">
-                                        <p>Ikuti Ujian</p>
-                                        <i class="bi bi-patch-question"></i>
-                                </a>                                
-                            </div>                                                                                            
-                            <div class="box3">
-                                <a href="{{ route('registered-users') }}" class="client-link" style="text-decoration: none;">
-                                    <p>Client</p>
-                                    <i class="bi bi-person-check"></i>
-                                </a>
-                            </div>                                              
-                            <div class="box4">
-                                <a href="#" class="client-link" id="takeQueueNumber">
-                                    <p>Nomor Antrian</p>
-                                    <i class="bi bi-calendar-range-fill"></i>
-                                </a>
-                            </div>                              
-                            @if (session('success'))
-                            <div class="alert alert-success">{{ session('success') }}</div>
-                        @endif
-                        
-                        @if (session('error'))
-                            <div class="alert alert-danger">{{ session('error') }}</div>
-                        @endif                                         
-                            <div class="box">
-                                <div class="box-header">
-                                    <p style="display: inline; margin-left: 8px;">File E-KTP</p> <!-- Teks judul -->
-                                    <i class="bi bi-database-add"></i> <!-- Ikon diletakkan di sini -->
-                                </div>
-                                <a href="{{ route('show_ektp') }}" class="box-button">
-                                    Identitas Pengaju
-                                </a>
-                            </div>     
-                            <div class="box4">
-                                <a href="{{ route('pembayaran.form') }}" class="client-link">
-                                    <p>Pembayaran SIM</p>
-                                    <i class="bi bi-credit-card"></i>
-                                </a>
-                            </div>                                                 
-                            <div class="box4">
-                                <a href="/payment-proof" class="client-link">
-                                    <p>Bukti Pendaftaran</p>
-                                    <i class="bi bi-arrow-down-left-circle"></i>
-                                </a>
-                            </div>                                                                                                      
-                        </div> 
-                            <!-- Chart for progress data -->
-                            <div class="chart-container" style="height:450px; width:700px;">
-                                <canvas id="progressChart"></canvas>
-                            </div>                                   
-                          </div>
-                    </div>   
-                    <script>
-                        // Ambil elemen overlay
-                        const overlay = document.querySelector('.overlay');
-                    
-                        // Ambil semua tombol dengan class 'button-sim' dan tambahkan event listener
-                        document.querySelectorAll('.button-sim').forEach(button => {
-                            button.addEventListener('click', () => {
-                                const targetModal = button.getAttribute('data-target');
-                                const modal = document.querySelector(targetModal);
-                                if (modal) {
-                                    modal.style.display = 'block'; // Tampilkan modal
-                                    overlay.classList.add('show'); // Tampilkan overlay
-                                }
-                            });
-                        });
-                    
-                        // Ambil semua tombol close dan tambahkan event listener
-                        document.querySelectorAll('.closes').forEach(closeBtn => {
-                            closeBtn.addEventListener('click', () => {
-                                const modal = document.querySelector(closeBtn.getAttribute('data-modal'));
-                                if (modal) {
-                                    modal.style.display = 'none'; // Sembunyikan modal
-                                    overlay.classList.remove('show'); // Sembunyikan overlay
-                                }
-                            });
-                        });
-                    
-                        // Menutup modal ketika klik di luar modal (overlay)
-                        overlay.addEventListener('click', () => {
-                            document.querySelectorAll('.modal-card').forEach(modal => {
-                                modal.style.display = 'none'; // Sembunyikan modal
-                            });
-                            overlay.classList.remove('show'); // Sembunyikan overlay
-                        });
-                    
-                        // Menutup modal jika klik di luar elemen modal (untuk klik di window)
-                        window.addEventListener('click', (event) => {
-                            document.querySelectorAll('.modal-card').forEach(modal => {
-                                if (event.target === modal) {
-                                    modal.style.display = 'none'; // Sembunyikan modal
-                                    overlay.classList.remove('show'); // Sembunyikan overlay
-                                }
-                            });
-                        });
-                    </script>
-                    
-                    
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                    <script>
-                        document.getElementById('takeQueueNumber').addEventListener('click', function(event) {
-                            event.preventDefault(); // Mencegah default behavior dari tautan
-                    
-                            // Kirim permintaan AJAX untuk mengambil nomor antrian
-                            fetch('{{ route('ambilAntrian') }}', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Tambahkan token CSRF
-                                }
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                // Tampilkan SweetAlert sesuai dengan status dari respons
-                                if (data.status === 'success') {
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Nomor Antrian Anda',
-                                        text: data.message,
-                                        customClass: {
-                                            popup: 'my-custom-popup',
-                                            title: 'my-custom-title',
-                                            text: 'my-custom-text',
-                                            confirmButton: 'my-custom-confirm-button'
-                                        },
-                                        confirmButtonColor: '#3085d6'
-                                    });
-                                } else {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        title: 'Tidak Bisa',
-                                        text: data.message,
-                                        customClass: {
-                                            popup: 'my-custom-popup',
-                                            title: 'my-custom-title',
-                                            text: 'my-custom-text',
-                                            confirmButton: 'my-custom-confirm-button'
-                                        },
-                                        confirmButtonColor: '#d33'
-                                    });
-                                }
-                            })
-                            .catch(error => {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Error',
-                                    text: 'Terjadi kesalahan saat mengambil nomor antrian.',
-                                    customClass: {
-                                        popup: 'my-custom-popup',
-                                        title: 'my-custom-title',
-                                        text: 'my-custom-text',
-                                        confirmButton: 'my-custom-confirm-button'
-                                    },
-                                    confirmButtonColor: '#d33'
-                                });
-                            });
-                        });
-                    </script>                    
+                    <button class="header-button-dashboard" onclick="location.href='/dashboard'">
+                        <i class="bi bi-house"></i>
+                        Dashboard
+                    </button>
+                    @if (Auth::user()->role === 'admin')
+                        <button class="header-button-input" onclick="location.href='history'">
+                            <i class="bi bi-file-earmark-plus"></i>
+                            Data Input
+                        </button>
+                    @endif
 
-                                      
-                    <script>
-                        // Progress Chart
-const progressCtx = document.getElementById('progressChart').getContext('2d');
-const progressChart = new Chart(progressCtx, {
-    type: 'line', // Example: line chart for progress
-    data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Example data
-        datasets: [{
-            label: 'Progress Data',
-            data: [65, 59, 80, 81, 56, 55], // Example progress data
-            borderColor: 'rgba(36, 54, 66, 0.8)',
-            backgroundColor: 'rgba(36, 54, 66, 0.3)',
-            fill: true,
-            lineTension: 0.4,
-        }]
-    },
-    options: {
-        responsive: true,
-    }
-});
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-people"></i>
+                            KORLANTAS POLRI
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person"></i> Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/sesi">
+                                    <i class="bi bi-box-arrow-right"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Box container di bawah header -->
+            <div class="image-box">
+                <img src="assets/dist/assets/img/simfile.png" alt="SIM File">
+            </div>
+            <div class="welcome-text">
+                <h2>Selamat Datang di Layanan SIM Digital Korlantas Polri! </h2>
+                <h1>Sim Media: Inovasi Layanan, Kenyamanan Berkendara</h1>
+            </div>
 
-// Login Chart
-const loginCtx = document.getElementById('loginChart').getContext('2d');
-const loginChart = new Chart(loginCtx, {
-    type: 'doughnut', // Doughnut chart for login percentage
-    data: {
-        labels: ['Logged In', 'Not Logged In'],
-        datasets: [{
-            label: 'Login Data',
-            data: [75, 25], // Example login data, 75% logged in
-            backgroundColor: ['#243642', '#e0e0e0'], // Color for each portion
-            borderColor: '#ffffff', // White border between sections
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-    }
-});
+            <div class="button-container">
+                <button class="button-sim" data-target="#modal-sim-internasional">Internasional</button>
+                <button class="button-sim" data-target="#modal-sim-nasional">Nasional</button>
+                <button class="button-sim" data-target="#modal-memperpanjang">Perpanjang</button>
+            </div>
+            <div class="overlay"></div>
+            <div id="modal-sim-internasional" class="modal-card">
+                <div class="modal-cons">
+                    <span class="closes" data-modal="#modal-sim-internasional">&times;</span>
+                    <h2><i class="fas fa-globe"></i> SIM Internasional</h2>
+                    <div class="divider-item"></div>
+                    <img src="{{ asset('assets/dist/assets/img/intern.png') }}" alt="SIM Internasional"
+                        class="modal-image">
+                    <p>Layanan Belum Tersedia</p>
+                    <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
+                </div>
+            </div>
 
-                        </script>
-                                                <script>
-    var ctx = document.getElementById('progressChart').getContext('2d');
-    var progressChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June'], // Ubah sesuai data bulan kamu
-            datasets: [{
-                label: 'Pengajuan SIM',
-                data: [10, 20, 15, 25, 30, 40], // Ubah sesuai data jumlah pengajuan dari database
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Warna area di bawah garis
-                borderColor: 'rgba(75, 192, 192, 1)',  // Warna garis
-                borderWidth: 3,  // Lebar garis
-                pointBackgroundColor: '#fff',
-                pointBorderColor: 'rgba(75, 192, 192, 1)',
-                pointHoverBackgroundColor: '#ff6384',
-                pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
-                tension: 0.4
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Persentase Pengajuan SIM Per Bulan',
-                    color: '#333',
-                    font: {
-                        size: 20
-                    }
-                },
-                legend: {
-                    labels: {
-                        color: '#555',
-                        font: {
-                            size: 14
-                        }
-                    }
+            <div id="modal-sim-nasional" class="modal-card">
+                <div class="modal-cons">
+                    <span class="closes" data-modal="#modal-sim-nasional">&times;</span>
+                    <h2><i class="fas fa-id-card"></i> SIM Nasional</h2>
+                    <div class="divider-item"></div>
+                    <div class="procedure-content">
+                        <h3> Tata Cara Pengajuan SIM</h3>
+                        <ol>
+                            <li>Lengkapi formulir pendaftaran secara online atau di kantor kepolisian.</li>
+                            <li>Siapkan dokumen pendukung seperti KTP, pas foto, dan bukti pembayaran.</li>
+                            <li>Bayar biaya administrasi di loket pembayaran atau secara online.</li>
+                            <li>Ikuti tes teori dan praktik sesuai jadwal yang telah ditentukan.</li>
+                            <li>Tunggu hasil pengujian. Jika lulus, SIM akan dicetak dan diberikan.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-primary" onclick="window.location.href='create-sim'">Ajukan
+                            Sekarang!</button>
+                        <button class="btn-primary">Cek Status Pengajuan</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-memperpanjang" class="modal-card">
+                <div class="modal-cons">
+                    <span class="closes" data-modal="#modal-memperpanjang">&times;</span>
+                    <h2><i class="fas fa-redo-alt"></i> Memperpanjang SIM</h2>
+                    <div class="divider-item"></div>
+                    <img src="{{ asset('assets/dist/assets/img/perpanjang.jpg') }}" alt="Memperpanjang SIM"
+                        class="modal-image">
+                    <p>Layanan Belum Tersedia</p>
+                    <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
+                </div>
+            </div>
+            <div class="box-container flex-layout">
+                <div class="box">
+                    <div class="flex">
+                        <p id="jumlah-pengajuan">{{ $jumlahPengajuan }}</p>
+                        <i class="bi bi-plus-circle"></i> <!-- Ikon tambah data diletakkan di sini -->
+                    </div>
+                    <h1>Miliki SIM Sekarang!</h1>
+                    <a href="create-sim" class="box-button">Pelayanan SIM</a>
+                </div>
+
+                <div class="box2">
+                    <img src="{{ asset('assets/dist/assets/img/lambangpolri.png') }}" class="background-image"
+                        alt="Background Image">
+                    <div class="content-box2">
+                        <p>POLRES CIANJUR</p>
+                    </div>
+                    <p class="angka">91.42</p>
+                    <p class="total">NILAI TOTAL ZI</p>
+                </div>
+                <div class="box-ujian" style="border-radius: 30px;">
+                    <a href="{{ route('ujian.akses') }}" class="link-ujian" style="text-decoration: none;">
+                        <p>Ikuti Ujian</p>
+                        <i class="bi bi-patch-question"></i>
+                    </a>
+                </div>
+                <div class="box3">
+                    <a href="{{ route('registered-users') }}" class="client-link" style="text-decoration: none;">
+                        <p>Client</p>
+                        <i class="bi bi-person-check"></i>
+                    </a>
+                </div>
+                <div class="box4">
+                    <a href="#" class="client-link" id="takeQueueNumber">
+                        <p>Nomor Antrian</p>
+                        <i class="bi bi-calendar-range-fill"></i>
+                    </a>
+                </div>
+                @if (session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                @endif
+                <div class="box">
+                    <div class="box-header">
+                        <p style="display: inline; margin-left: 8px;">File E-KTP</p> <!-- Teks judul -->
+                        <i class="bi bi-database-add"></i> <!-- Ikon diletakkan di sini -->
+                    </div>
+                    <a href="{{ route('show_ektp') }}" class="box-button">
+                        Identitas Pengaju
+                    </a>
+                </div>
+                <div class="box4">
+                    <a href="{{ route('pembayaran.form') }}" class="client-link">
+                        <p>Pembayaran SIM</p>
+                        <i class="bi bi-credit-card"></i>
+                    </a>
+                </div>
+                <div class="box4">
+                    <a href="/payment-proof" class="client-link">
+                        <p>Bukti Pendaftaran</p>
+                        <i class="bi bi-arrow-down-left-circle"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Chart for progress data -->
+            <div class="chart-container" style="height:450px; width:700px;">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Ambil elemen overlay
+        const overlay = document.querySelector('.overlay');
+
+        // Ambil semua tombol dengan class 'button-sim' dan tambahkan event listener
+        document.querySelectorAll('.button-sim').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetModal = button.getAttribute('data-target');
+                const modal = document.querySelector(targetModal);
+                if (modal) {
+                    modal.style.display = 'block'; // Tampilkan modal
+                    overlay.classList.add('show'); // Tampilkan overlay
                 }
-            },
-            layout: {
-                padding: {
-                    top: 20,
-                    bottom: 20,
-                    left: 20,
-                    right: 20
+            });
+        });
+
+        // Ambil semua tombol close dan tambahkan event listener
+        document.querySelectorAll('.closes').forEach(closeBtn => {
+            closeBtn.addEventListener('click', () => {
+                const modal = document.querySelector(closeBtn.getAttribute('data-modal'));
+                if (modal) {
+                    modal.style.display = 'none'; // Sembunyikan modal
+                    overlay.classList.remove('show'); // Sembunyikan overlay
                 }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        color: '#000',
-                        font: {
-                            size: 12
+            });
+        });
+
+        // Menutup modal ketika klik di luar modal (overlay)
+        overlay.addEventListener('click', () => {
+            document.querySelectorAll('.modal-card').forEach(modal => {
+                modal.style.display = 'none'; // Sembunyikan modal
+            });
+            overlay.classList.remove('show'); // Sembunyikan overlay
+        });
+
+        // Menutup modal jika klik di luar elemen modal (untuk klik di window)
+        window.addEventListener('click', (event) => {
+            document.querySelectorAll('.modal-card').forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none'; // Sembunyikan modal
+                    overlay.classList.remove('show'); // Sembunyikan overlay
+                }
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('takeQueueNumber').addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah default behavior dari tautan
+
+            // Kirim permintaan AJAX untuk mengambil nomor antrian
+            fetch('{{ route('ambilAntrian') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Tambahkan token CSRF
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Tampilkan SweetAlert sesuai dengan status dari respons
+                    if (data.status === 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Nomor Antrian Anda',
+                            text: data.message,
+                            customClass: {
+                                popup: 'my-custom-popup',
+                                title: 'my-custom-title',
+                                text: 'my-custom-text',
+                                confirmButton: 'my-custom-confirm-button'
+                            },
+                            confirmButtonColor: '#3085d6'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Tidak Bisa',
+                            text: data.message,
+                            customClass: {
+                                popup: 'my-custom-popup',
+                                title: 'my-custom-title',
+                                text: 'my-custom-text',
+                                confirmButton: 'my-custom-confirm-button'
+                            },
+                            confirmButtonColor: '#d33'
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Terjadi kesalahan saat mengambil nomor antrian.',
+                        customClass: {
+                            popup: 'my-custom-popup',
+                            title: 'my-custom-title',
+                            text: 'my-custom-text',
+                            confirmButton: 'my-custom-confirm-button'
                         },
-                        padding: 10
-                    },
+                        confirmButtonColor: '#d33'
+                    });
+                });
+        });
+    </script>
+
+
+    <script>
+        // Progress Chart
+        const progressCtx = document.getElementById('progressChart').getContext('2d');
+        const progressChart = new Chart(progressCtx, {
+            type: 'line', // Example: line chart for progress
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Example data
+                datasets: [{
+                    label: 'Progress Data',
+                    data: [65, 59, 80, 81, 56, 55], // Example progress data
+                    borderColor: 'rgba(36, 54, 66, 0.8)',
+                    backgroundColor: 'rgba(36, 54, 66, 0.3)',
+                    fill: true,
+                    lineTension: 0.4,
+                }]
+            },
+            options: {
+                responsive: true,
+            }
+        });
+
+        // Login Chart
+        const loginCtx = document.getElementById('loginChart').getContext('2d');
+        const loginChart = new Chart(loginCtx, {
+            type: 'doughnut', // Doughnut chart for login percentage
+            data: {
+                labels: ['Logged In', 'Not Logged In'],
+                datasets: [{
+                    label: 'Login Data',
+                    data: [75, 25], // Example login data, 75% logged in
+                    backgroundColor: ['#243642', '#e0e0e0'], // Color for each portion
+                    borderColor: '#ffffff', // White border between sections
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+            }
+        });
+    </script>
+    <script>
+        var ctx = document.getElementById('progressChart').getContext('2d');
+        var progressChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'], // Ubah sesuai data bulan kamu
+                datasets: [{
+                    label: 'Pengajuan SIM',
+                    data: [10, 20, 15, 25, 30, 40], // Ubah sesuai data jumlah pengajuan dari database
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
+                    borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
+                    borderWidth: 3, // Lebar garis
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: 'rgba(75, 192, 192, 1)',
+                    pointHoverBackgroundColor: '#ff6384',
+                    pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
                     title: {
                         display: true,
-                        text: 'Jumlah Pengajuan',
-                        color: '#000',
+                        text: 'Persentase Pengajuan SIM Per Bulan',
+                        color: '#333',
                         font: {
-                            size: 16
+                            size: 20
                         }
                     },
-                    grid: {
-                        drawBorder: false,
-                        color: 'rgba(200, 200, 200, 0.3)'
+                    legend: {
+                        labels: {
+                            color: '#555',
+                            font: {
+                                size: 14
+                            }
+                        }
                     }
                 },
-                x: {
-                    ticks: {
-                        color: '#000',
-                        font: {
-                            size: 12
+                layout: {
+                    padding: {
+                        top: 20,
+                        bottom: 20,
+                        left: 20,
+                        right: 20
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: '#000',
+                            font: {
+                                size: 12
+                            },
+                            padding: 10
                         },
-                        padding: 10
-                    },
-                    title: {
-                        display: true,
-                        text: 'Bulan',
-                        color: '#000',
-                        font: {
-                            size: 16
+                        title: {
+                            display: true,
+                            text: 'Jumlah Pengajuan',
+                            color: '#000',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        grid: {
+                            drawBorder: false,
+                            color: 'rgba(200, 200, 200, 0.3)'
                         }
                     },
-                    grid: {
-                        drawBorder: false,
-                        color: 'rgba(200, 200, 200, 0.3)'
+                    x: {
+                        ticks: {
+                            color: '#000',
+                            font: {
+                                size: 12
+                            },
+                            padding: 10
+                        },
+                        title: {
+                            display: true,
+                            text: 'Bulan',
+                            color: '#000',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        grid: {
+                            drawBorder: false,
+                            color: 'rgba(200, 200, 200, 0.3)'
+                        }
                     }
                 }
             }
-        }
-    });
-</script>
-                  
-                    <script src="{{ asset('assets/dist/js/dashboard.js') }}"></script>
-                    <script>
-                      document.addEventListener('DOMContentLoaded', function () {
-    function fetchActivities() {
-        fetch('/activities') // Pastikan endpoint ini mengembalikan aktivitas untuk pengguna yang sedang login
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Data aktivitas yang diterima:', data); // Debugging: Tampilkan data yang diterima
-                renderActivities(data);
-            })
-            .catch(error => {
-                console.error('Error fetching activities:', error); // Debugging: Menampilkan kesalahan di konsol
+        });
+    </script>
+
+    <script src="{{ asset('assets/dist/js/dashboard.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function fetchActivities() {
+                fetch(
+                    '/activities') // Pastikan endpoint ini mengembalikan aktivitas untuk pengguna yang sedang login
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Data aktivitas yang diterima:',
+                        data); // Debugging: Tampilkan data yang diterima
+                        renderActivities(data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching activities:',
+                        error); // Debugging: Menampilkan kesalahan di konsol
+                        const activityTable = document.getElementById('activity-table');
+                        activityTable.innerHTML =
+                            '<p>Tidak dapat mengambil data aktivitas. Silakan coba lagi nanti.</p>';
+                    });
+            }
+
+            function renderActivities(activities) {
                 const activityTable = document.getElementById('activity-table');
-                activityTable.innerHTML = '<p>Tidak dapat mengambil data aktivitas. Silakan coba lagi nanti.</p>';
-            });
-    }
+                activityTable.innerHTML = ''; // Menghapus konten lama
 
-    function renderActivities(activities) {
-        const activityTable = document.getElementById('activity-table');
-        activityTable.innerHTML = ''; // Menghapus konten lama
+                if (!activities || activities.length === 0) {
+                    activityTable.innerHTML = '<p>Tidak ada aktivitas terbaru.</p>';
+                    return;
+                }
 
-        if (!activities || activities.length === 0) {
-            activityTable.innerHTML = '<p>Tidak ada aktivitas terbaru.</p>';
-            return;
-        }
+                // Menampilkan aktivitas tanpa nama pengguna
+                activities.forEach(activity => {
+                    const activityItem = document.createElement('div');
+                    activityItem.classList.add('activity-item');
 
-        // Menampilkan aktivitas tanpa nama pengguna
-        activities.forEach(activity => {
-            const activityItem = document.createElement('div');
-            activityItem.classList.add('activity-item');
-
-            activityItem.innerHTML = `
+                    activityItem.innerHTML = `
                 <h4>${activity.activity_name}</h4>
                 <small>Waktu: ${new Date(activity.activity_time).toLocaleString()}</small>
                 <p>Detail: ${activity.activity_details}</p>
             `;
 
-            activityTable.appendChild(activityItem);
-        });
-    }
+                    activityTable.appendChild(activityItem);
+                });
+            }
 
-    // Memanggil fungsi untuk mengambil aktivitas saat halaman dimuat
-    fetchActivities();
-});
-                        </script>
-                                            
-                <script>
-                    function addCommentToList(comment) {
-                        // Create new comment element
-                        let newComment = document.createElement('div');
-                        newComment.classList.add('comment');
-                
-                        // Add comment text
-                        let commentText = document.createElement('p');
-                        commentText.textContent = comment;
-                        newComment.appendChild(commentText);
-                
-                        // Add delete button
-                        let deleteButton = document.createElement('button');
-                        deleteButton.classList.add('delete-btn');
-                        deleteButton.textContent = 'Hapus';
-                        deleteButton.addEventListener('click', function() {
-                            newComment.remove();
-                            removeCommentFromLocalStorage(comment);
-                        });
-                        newComment.appendChild(deleteButton);
-                
-                        // Add new comment to the list
-                        document.getElementById('commentList').appendChild(newComment);
-                    }
-                
-                    function saveCommentToLocalStorage(comment) {
-                        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-                        comments.push(comment);
-                        localStorage.setItem('comments', JSON.stringify(comments));
-                    }
-                
-                    function removeCommentFromLocalStorage(comment) {
-                        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-                        comments = comments.filter(c => c !== comment);
-                        localStorage.setItem('comments', JSON.stringify(comments));
-                    }
-                    document.addEventListener("DOMContentLoaded", function() {
+            // Memanggil fungsi untuk mengambil aktivitas saat halaman dimuat
+            fetchActivities();
+        });
+    </script>
+
+    <script>
+        function addCommentToList(comment) {
+            // Create new comment element
+            let newComment = document.createElement('div');
+            newComment.classList.add('comment');
+
+            // Add comment text
+            let commentText = document.createElement('p');
+            commentText.textContent = comment;
+            newComment.appendChild(commentText);
+
+            // Add delete button
+            let deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-btn');
+            deleteButton.textContent = 'Hapus';
+            deleteButton.addEventListener('click', function() {
+                newComment.remove();
+                removeCommentFromLocalStorage(comment);
+            });
+            newComment.appendChild(deleteButton);
+
+            // Add new comment to the list
+            document.getElementById('commentList').appendChild(newComment);
+        }
+
+        function saveCommentToLocalStorage(comment) {
+            let comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+
+        function removeCommentFromLocalStorage(comment) {
+            let comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments = comments.filter(c => c !== comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+        }
+        document.addEventListener("DOMContentLoaded", function() {
             const welcomeTextElement = document.getElementById('welcome-text');
             const serviceTextElement = document.getElementById('service-text');
-            
+
             const welcomeText = welcomeTextElement.textContent;
             const serviceText = serviceTextElement.textContent;
 
             welcomeTextElement.textContent = '';
             serviceTextElement.textContent = '';
 
-            let i = 0, j = 0;
+            let i = 0,
+                j = 0;
 
             function typeWriter() {
                 if (i < welcomeText.length) {
@@ -614,7 +633,7 @@ const loginChart = new Chart(loginCtx, {
                     j++;
                     setTimeout(typeWriter, 50); // Adjust typing speed here
                 } else {
-            // Setelah semua teks selesai diketik, hapus kursor
+                    // Setelah semua teks selesai diketik, hapus kursor
                     welcomeTextElement.classList.add('no-cursor');
                     serviceTextElement.classList.add('no-cursor');
                 }
@@ -622,13 +641,18 @@ const loginChart = new Chart(loginCtx, {
 
             typeWriter();
         });
-                </script>
-        </main> <!--end::App Main--> <!--begin::Footer-->
+    </script>
+    </main> <!--end::App Main--> <!--begin::Footer-->
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="{{asset('assets')}}/dist/js/adminlte.js"></script> <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js"
+        integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha256-YMa+wAM6QkVyz999odX7lPRxkoYAan8suedu4k2Zur8=" crossorigin="anonymous"></script> <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="{{ asset('assets') }}/dist/js/adminlte.js"></script> <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
         const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
         const Default = {
@@ -652,7 +676,8 @@ const loginChart = new Chart(loginCtx, {
             }
         });
     </script> <!--end::OverlayScrollbars Configure--> <!-- OPTIONAL SCRIPTS --> <!-- sortablejs -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js" integrity="sha256-ipiJrswvAR4VAx/th+6zWsdeYmVae0iJuiR+6OqHJHQ=" crossorigin="anonymous"></script> <!-- sortablejs -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+        integrity="sha256-ipiJrswvAR4VAx/th+6zWsdeYmVae0iJuiR+6OqHJHQ=" crossorigin="anonymous"></script> <!-- sortablejs -->
     <script>
         const connectedSortables =
             document.querySelectorAll(".connectedSortable");
@@ -670,7 +695,8 @@ const loginChart = new Chart(loginCtx, {
             cardHeader.style.cursor = "move";
         });
     </script> <!-- apexcharts -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js" integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script> <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
+        integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8=" crossorigin="anonymous"></script> <!-- ChartJS -->
     <script>
         // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
         // IT'S ALL JUST JUNK FOR DEMO
@@ -728,8 +754,10 @@ const loginChart = new Chart(loginCtx, {
         );
         sales_chart.render();
     </script> <!-- jsvectormap -->
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js" integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js" integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY=" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
+        integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
+        integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY=" crossorigin="anonymous"></script>
     <!-- jsvectormap -->
     <script>
         const visitorsData = {
@@ -846,11 +874,13 @@ const loginChart = new Chart(loginCtx, {
     color: rgb(0, 0, 0);
     font-size: 14px;
 ">
-    <strong>Copyright &copy; 2024 <a href="/sesi" style="color: rgb(50, 77, 196); text-decoration: none;">SIMedia</a>.</strong>
-    All rights reserved.
-    <div style="float: right; display: inline-block;">
-        <b>Version</b> 3.2.0
-    </div>
-</footer>
+        <strong>Copyright &copy; 2024 <a href="/sesi"
+                style="color: rgb(50, 77, 196); text-decoration: none;">SIMedia</a>.</strong>
+        All rights reserved.
+        <div style="float: right; display: inline-block;">
+            <b>Version</b> 3.2.0
+        </div>
+    </footer>
 </body><!--end::Body-->
-</html> 
+
+</html>
