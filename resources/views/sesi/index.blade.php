@@ -20,7 +20,7 @@
     font-style: normal;
     }
      body {
-    background-color: #02293b; 
+    background-color: #160944; 
     background-image:url('{{ asset('assets/dist/assets/img/indonesia.png') }}'); 
     background-size: 90% 60%; 
     background-position: center;
@@ -63,7 +63,7 @@ body::before {
         .card-header {
             display: flex;
             align-items: center;
-            background-color: #02293b; 
+            background-color: #160944; 
             padding: 20px; 
             color: #ffffff;
         }
@@ -158,12 +158,12 @@ body::before {
 }
 
 .form-control:focus {
-    border-color: #102C57; 
+    border-color: #160944; 
     box-shadow: 0 0 5px rgba(16, 44, 87, 0.5); 
 }
 
 .btn-custom {
-    background-color: #02293b; 
+    background-color: #160944; 
     color: #ffffff; 
     border: none;
     padding: 12px 20px; 
@@ -174,7 +174,7 @@ body::before {
 }
 
 .btn-custom:hover {
-    background-color: #02293b; 
+    background-color: #160944; 
 }
 
 .mb-3 {

@@ -32,7 +32,7 @@ body {
     margin-right: 30px; 
 }
 .btn-orange {
-    background-color: #02293b; 
+    background-color: #160944; 
     border: none; 
     padding: 8px 35px; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
@@ -44,7 +44,7 @@ body {
 }
 .dropdown-menu-custom {
     background-color: #ffffff;
-    border: 1px solid #5f615d;
+    border: 1px solid #160944;
     border-radius: 0.5rem; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     min-width: 400px; 
@@ -181,7 +181,7 @@ body {
 }
 
 .sidebar {
-    background: #02293b; 
+    background: #160944; 
     width: 300px; 
     transition: transform 0.4s;
     padding: 24px;
@@ -203,7 +203,7 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #E2F1E7;
-    border-bottom: 8px solid #02293b;
+    border-bottom: 8px solid #160944;
     z-index: 100; 
     transition: margin-left 0.2s; 
     margin-left: 300px; 
@@ -229,7 +229,7 @@ body {
     padding-left: 40px;
 }
 .header-top h1 {
-   color: #02293b;
+   color: #160944;
 }
 .header-title {
     font-size: 25px;
@@ -246,7 +246,7 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #02293b;
+    background-color: #160944;
 }
 
 #menu-label:after, #menu-label:before {
@@ -267,7 +267,7 @@ body {
     top: 5px;
     right: 0;
     left: 0;
-    color: #02293b;
+    color: #160944;
     font-size: 10px;
     font-weight: bold;
     text-align: center;
@@ -341,7 +341,7 @@ body {
 .header-button-input {
     display: flex; 
     align-items: center; 
-    background-color: #02293b;
+    background-color: #777838;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -353,7 +353,7 @@ body {
 
 .header-button-dashboard:hover,
 .header-button-input:hover {
-    background-color: #02293b;
+    background-color: #777838;
 }
 
 .bi {
@@ -362,12 +362,13 @@ body {
 .dropdown-menu {
     background-color: #f8f9fa; 
     border-radius: 15px; 
+    gap: 10px;
 }
 
 .dropdown-item {
     color: #333; 
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 20px 30px;
 }
 
 .dropdown-item:hover {
@@ -378,6 +379,8 @@ body {
 .dropdown-toggle {
     padding: 10px 46px;
     border-radius: 15px;
+    background-color: #160944;
+    color: white;
 }
 
 .box-container {
@@ -391,7 +394,7 @@ body {
 }
 
 .box {
-    background: #02293b;
+    background: #160944;
     padding: 30px;
     border-radius: 30px;
     text-align: left;
@@ -433,7 +436,7 @@ body {
 
 
 .box2 {
-    background: linear-gradient(to bottom, #02293b, #387478); 
+    background: linear-gradient(to bottom, #160944, #387478); 
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -443,7 +446,7 @@ body {
 }
 .box3 {
     align-items: flex-start;
-    background: #02293b; 
+    background: #160944; 
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -481,7 +484,7 @@ body {
 }
 
 .box4 {
-    background: #02293b; 
+    background: #160944; 
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -520,7 +523,7 @@ body {
     border-radius: 5px;
 }
 .box5 {
-    background: #02293b; 
+    background: #160944; 
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -605,7 +608,7 @@ body {
     position: relative; 
     z-index: 1; 
     margin: 0; 
-    color: #02293b;
+    color: #160944;
 }
 
 .box p {
@@ -619,7 +622,7 @@ body {
 .box-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #387478;
+    background-color: #777838;
     color: white;
     border: none;
     border-radius: 20px;
@@ -741,7 +744,7 @@ canvas {
     height: 100% !important;
 }
 .box-ujian {
-    background: #02293b;
+    background: #160944;
     padding: 30px;
     border-radius: 5px;
     text-align: left;
@@ -898,13 +901,13 @@ canvas {
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #2c3e50; /* Warna lebih gelap untuk kontras */
+    color: #333; /* Warna lebih gelap untuk kontras */
 }
 .welcome-text h1 {
     font-size: 20px;
     font-weight: 700;
     margin-top: 5px;
-    color: #d35400; /* Warna yang menarik */
+    color: #777838; /* Warna yang menarik */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
 }
 /* Responsif saat sidebar ditutup */
@@ -923,11 +926,11 @@ canvas {
     padding: 20px; /* Memberikan padding di sekitar tombol */
     display: flex;
     align-items: center; /* Posisikan elemen di tengah secara vertikal */
-    margin-left: 60%;
+    margin-left: 55%;
 }
 
 .button-sim {
-    background-color: #d35400; /* Warna latar oranye */
+    background-color: #777838; /* Warna latar oranye */
     color: #fff; /* Warna teks putih */
     border: none; /* Menghilangkan border */
     border-radius: 10px; /* Sudut membulat */
@@ -941,7 +944,7 @@ canvas {
 }
 
 .button-sim:hover {
-    background-color: #b03a00; /* Warna lebih gelap saat di-hover */
+    background-color: #777838; /* Warna lebih gelap saat di-hover */
     transform: translateY(-3px); /* Efek mengangkat */
     box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat */
     outline: none;
@@ -1042,20 +1045,174 @@ canvas {
 .modal-footer .btn-primary:hover {
     background-color: #2980b9;
 }
-/* Overlay untuk meredupkan latar belakang */
+/* Style untuk overlay */
 .overlay {
-    display: none;
+    display: none; /* Mulai dengan overlay tersembunyi */
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Warna gelap transparan */
-    z-index: 999; /* Pastikan ini berada di belakang modal */
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
+/* Style untuk modal */
+.modal-card {
+    display: none; /* Mulai dengan modal tersembunyi */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden; /* Sembunyikan modal dengan visibility */
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Animasi untuk modal muncul */
+.modal-card.show {
+    display: block; /* Tampilkan modal */
+    opacity: 1; /* Modal menjadi terlihat */
+    visibility: visible; /* Modal terlihat */
+    transform: translate(-50%, -50%) scale(1.05); /* Efek zoom-in */
+}
+
+/* Efek untuk overlay muncul */
+.overlay.show {
+    display: block; /* Tampilkan overlay */
+    opacity: 1; /* Overlay menjadi terlihat */
+}
+
+/* Animasi untuk tombol close */
+.closes {
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.closes:hover {
+    color: #000;
+}
+
+.my-custom-confirm-button {
+    outline: none !important;
+}
+.swal2-confirm {
+    outline: none !important;
+}
+/* Overlay untuk background */
+.overlay {
+    display: none; /* Mulai dengan overlay tersembunyi */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Modal Card */
+.modal-card {
+    display: none; /* Mulai dengan modal tersembunyi */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: #fff;
+    width: 70%;
+    max-width: 700px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Modal Header */
+.modal-cons h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-cons h3 {
+    font-size: 18px;
+    color: #ff4d4d; /* Warna merah untuk teks peringatan */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Divider between text and content */
+.divider-item {
+    margin: 15px 0;
+    height: 2px;
+    background-color: #ddd;
+    width: 100%;
+}
+
+/* Image Styling */
+.modal-image {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Text in modal */
+.modal-cons p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    text-align: center;
+}
+
+/* Close Button Styling */
+.closes {
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: color 0.3s ease;
+}
+
+.closes:hover {
+    color: #000;
+}
+
+/* Animasi Modal Muncul */
+.modal-card.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Animasi Overlay */
 .overlay.show {
     display: block;
     opacity: 1;
 }
+

@@ -103,7 +103,7 @@
         }
 
         .modal-header {
-            background-color: #243642;
+            background-color: #160944;
             color: white;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;

@@ -31,7 +31,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        background-color: #02293b;
+        background-color: #160944;
         color: white;
         padding: 10px 10px;
         font-weight: bold;
@@ -122,7 +122,7 @@
                         margin-left: 15px;
                     }
                     .navbar-bg-brown {
-                        background-color: #02293b; /* Warna latar belakang navbar */
+                        background-color: #160944; /* Warna latar belakang navbar */
                     }
 
                     /* Styling untuk logo di navbar */
@@ -178,7 +178,7 @@ form h2 {
 }
 .form-control, .form-select {
     border-radius: 4px;
-    border: 1px solid #021526;
+    border: 1px solid #160944;
     padding: 15px;
     font-size: 16px;
     margin-bottom: 10px; /* Tambahkan jarak bawah untuk input */
@@ -213,7 +213,7 @@ form h2 {
 }
 
 .btn-primary {
-    background-color: #243642; 
+    background-color: #777838; 
     border: none;
     padding: 10px 10px;
     font-size: 14px;
@@ -223,7 +223,7 @@ form h2 {
 }
 
 .btn-primary:hover {
-    background-color: #243642; 
+    background-color: #777838; 
 }
 .mb-3 {
     margin-bottom: 20px;

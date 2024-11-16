@@ -29,9 +29,15 @@
                         </div>
                         <div class="user-info">
                             <div class="description-header">{{ session('user_name', 'Nama Lengkap') }}</div>
-                            <div class="description-sub">pengguna</div>
+                            <div class="description-sub">
+                                @if (Auth::user()->role == 'admin')
+                                    Admin
+                                @else
+                                    Pengguna
+                                @endif
+                            </div>
                             <!-- Teks "pengguna" tepat di bawah nama user -->
-                        </div>
+                        </div>                        
                     </a>
                 </div>
             </div>
@@ -49,18 +55,22 @@
                         <span class="description">Profile</span>
                     </a>
                 </div>
+                @if (Auth::user()->role === 'admin')
                 <div class="list-item">
                     <a href="registered-users">
                         <img src="{{ asset('assets/dist/assets/img/human.svg') }}" alt="" class="icon">
                         <span class="description">Client</span>
                     </a>
                 </div>
+                @endif
+                @if (Auth::user()->role === 'admin')
                 <div class="list-item">
                     <a href="history">
                         <img src="{{ asset('assets/dist/assets/img/data.svg') }}" alt="" class="icon">
                         <span class="description">Data Pengajuan</span>
                     </a>
                 </div>
+                @endif
                 <div class="list-item">
                     <a href="activity-details">
                         <img src="{{ asset('assets/dist/assets/img/activity.svg') }}" alt="" class="icon">
@@ -119,9 +129,8 @@
                             Data Input
                         </button>
                     @endif
-
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-people"></i>
                             KORLANTAS POLRI
@@ -146,35 +155,41 @@
                 <img src="assets/dist/assets/img/simfile.png" alt="SIM File">
             </div>
             <div class="welcome-text">
-                <h2>Selamat Datang di Layanan SIM Digital Korlantas Polri! </h2>
-                <h1>Sim Media: Inovasi Layanan, Kenyamanan Berkendara</h1>
-            </div>
-
+                @if (Auth::user()->role === 'admin')
+                    <h2>Selamat Datang, Admin, di Layanan SIM Digital Korlantas Polri!</h2>
+                    <h1>Admin Dashboard: Kelola Layanan dan Data dengan Mudah</h1>
+                @else
+                    <h2>Selamat Datang, di Layanan SIM Digital Korlantas Polri!</h2>
+                    <h1>Sim Media: Inovasi Layanan, Kenyamanan Berkendara</h1>
+                @endif
+            </div>            
             <div class="button-container">
                 <button class="button-sim" data-target="#modal-sim-internasional">Internasional</button>
                 <button class="button-sim" data-target="#modal-sim-nasional">Nasional</button>
                 <button class="button-sim" data-target="#modal-memperpanjang">Perpanjang</button>
             </div>
             <div class="overlay"></div>
+            
+            <!-- Modal Internasional -->
             <div id="modal-sim-internasional" class="modal-card">
                 <div class="modal-cons">
                     <span class="closes" data-modal="#modal-sim-internasional">&times;</span>
                     <h2><i class="fas fa-globe"></i> SIM Internasional</h2>
                     <div class="divider-item"></div>
-                    <img src="{{ asset('assets/dist/assets/img/intern.png') }}" alt="SIM Internasional"
-                        class="modal-image">
+                    <img src="{{ asset('assets/dist/assets/img/intern.png') }}" alt="SIM Internasional" class="modal-image">
                     <p>Layanan Belum Tersedia</p>
                     <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
                 </div>
             </div>
-
+            
+            <!-- Modal Nasional -->
             <div id="modal-sim-nasional" class="modal-card">
                 <div class="modal-cons">
                     <span class="closes" data-modal="#modal-sim-nasional">&times;</span>
                     <h2><i class="fas fa-id-card"></i> SIM Nasional</h2>
                     <div class="divider-item"></div>
                     <div class="procedure-content">
-                        <h3> Tata Cara Pengajuan SIM</h3>
+                        <h3>Tata Cara Pengajuan SIM</h3>
                         <ol>
                             <li>Lengkapi formulir pendaftaran secara online atau di kantor kepolisian.</li>
                             <li>Siapkan dokumen pendukung seperti KTP, pas foto, dan bukti pembayaran.</li>
@@ -184,24 +199,23 @@
                         </ol>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn-primary" onclick="window.location.href='create-sim'">Ajukan
-                            Sekarang!</button>
+                        <button class="btn-primary" onclick="window.location.href='create-sim'">Ajukan Sekarang!</button>
                         <button class="btn-primary">Cek Status Pengajuan</button>
                     </div>
                 </div>
             </div>
-
+            
+            <!-- Modal Memperpanjang -->
             <div id="modal-memperpanjang" class="modal-card">
                 <div class="modal-cons">
                     <span class="closes" data-modal="#modal-memperpanjang">&times;</span>
                     <h2><i class="fas fa-redo-alt"></i> Memperpanjang SIM</h2>
                     <div class="divider-item"></div>
-                    <img src="{{ asset('assets/dist/assets/img/perpanjang.jpg') }}" alt="Memperpanjang SIM"
-                        class="modal-image">
+                    <img src="{{ asset('assets/dist/assets/img/perpanjang.jpg') }}" alt="Memperpanjang SIM" class="modal-image">
                     <p>Layanan Belum Tersedia</p>
                     <h3>Maaf, Layanan yang Anda pilih sedang dalam proses pengembangan.</h3>
                 </div>
-            </div>
+            </div>            
             <div class="box-container flex-layout">
                 <div class="box">
                     <div class="flex">
@@ -227,12 +241,14 @@
                         <i class="bi bi-patch-question"></i>
                     </a>
                 </div>
+                @if (Auth::user()->role === 'admin')
                 <div class="box3">
                     <a href="{{ route('registered-users') }}" class="client-link" style="text-decoration: none;">
                         <p>Client</p>
                         <i class="bi bi-person-check"></i>
                     </a>
                 </div>
+                @endif
                 <div class="box4">
                     <a href="#" class="client-link" id="takeQueueNumber">
                         <p>Nomor Antrian</p>
@@ -246,14 +262,16 @@
                 @if (session('error'))
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
-                <div class="box">
+                <div class="box" onclick="handleBoxClick()">
                     <div class="box-header">
                         <p style="display: inline; margin-left: 8px;">File E-KTP</p> <!-- Teks judul -->
                         <i class="bi bi-database-add"></i> <!-- Ikon diletakkan di sini -->
                     </div>
-                    <a href="{{ route('show_ektp') }}" class="box-button">
-                        Identitas Pengaju
-                    </a>
+                    @if (Auth::user()->role === 'admin')
+                        <a href="{{ route('show_ektp') }}" class="box-button">
+                            Identitas Pengaju
+                        </a>
+                    @endif
                 </div>
                 <div class="box4">
                     <a href="{{ route('pembayaran.form') }}" class="client-link">
@@ -267,59 +285,77 @@
                         <i class="bi bi-arrow-down-left-circle"></i>
                     </a>
                 </div>
-            </div>
-            <!-- Chart for progress data -->
-            <div class="chart-container" style="height:450px; width:700px;">
-                <canvas id="progressChart"></canvas>
+                @if (Auth::user()->role !== 'admin')
+                <div class="box4">
+                    <a href="#" class="client-link">
+                        <p>Data Input Anda</p>
+                        <i class="bi bi-arrow-down-left-circle"></i>
+                    </a>
+                </div>
+            @endif            
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // Ambil elemen overlay
-        const overlay = document.querySelector('.overlay');
-
-        // Ambil semua tombol dengan class 'button-sim' dan tambahkan event listener
-        document.querySelectorAll('.button-sim').forEach(button => {
-            button.addEventListener('click', () => {
-                const targetModal = button.getAttribute('data-target');
-                const modal = document.querySelector(targetModal);
-                if (modal) {
-                    modal.style.display = 'block'; // Tampilkan modal
-                    overlay.classList.add('show'); // Tampilkan overlay
-                }
-            });
-        });
-
-        // Ambil semua tombol close dan tambahkan event listener
-        document.querySelectorAll('.closes').forEach(closeBtn => {
-            closeBtn.addEventListener('click', () => {
-                const modal = document.querySelector(closeBtn.getAttribute('data-modal'));
-                if (modal) {
-                    modal.style.display = 'none'; // Sembunyikan modal
-                    overlay.classList.remove('show'); // Sembunyikan overlay
-                }
-            });
-        });
-
-        // Menutup modal ketika klik di luar modal (overlay)
-        overlay.addEventListener('click', () => {
-            document.querySelectorAll('.modal-card').forEach(modal => {
-                modal.style.display = 'none'; // Sembunyikan modal
-            });
-            overlay.classList.remove('show'); // Sembunyikan overlay
-        });
-
-        // Menutup modal jika klik di luar elemen modal (untuk klik di window)
-        window.addEventListener('click', (event) => {
-            document.querySelectorAll('.modal-card').forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = 'none'; // Sembunyikan modal
-                    overlay.classList.remove('show'); // Sembunyikan overlay
-                }
-            });
-        });
+        function handleBoxClick() {
+            // Cek peran pengguna di sisi server (masukkan variabel peran ke dalam JavaScript)
+            var userRole = "{{ Auth::user()->role }}";
+        
+            if (userRole === 'admin') {
+                // Jika pengguna adalah admin, arahkan ke halaman yang diinginkan
+                window.location.href = "{{ route('show_ektp') }}";
+            } else {
+                // Jika pengguna bukan admin, tampilkan SweetAlert dengan styling kustom
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Data Private',
+                    text: 'Hanya admin yang dapat mengakses data!',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        popup: 'swal-popup', // Styling untuk popup
+                        title: 'swal-title', // Styling untuk title
+                        content: 'swal-content', // Styling untuk content
+                        confirmButton: 'swal-btn' // Styling untuk tombol konfirmasi
+                    },
+                    backdrop: true, // Tampilan latar belakang gelap
+                    allowOutsideClick: false // Mencegah klik di luar modal
+                });
+            }
+        }
     </script>
+    <script>
+  document.querySelectorAll('.button-sim').forEach(button => {
+    button.addEventListener('click', function () {
+        const targetModal = document.querySelector(this.getAttribute('data-target')); // Modal yang terkait dengan tombol
+        const overlay = document.querySelector('.overlay'); // Overlay untuk menutupi konten lainnya
+        
+        // Menambahkan class .show untuk modal dan overlay agar muncul dengan animasi
+        targetModal.classList.add('show');
+        overlay.classList.add('show');
+    });
+});
 
+document.querySelectorAll('.closes').forEach(closeButton => {
+    closeButton.addEventListener('click', function () {
+        const modal = document.querySelector(this.getAttribute('data-modal')); // Modal yang perlu ditutup
+        const overlay = document.querySelector('.overlay'); // Overlay
+        
+        // Menghapus class .show untuk modal dan overlay agar menghilang dengan animasi
+        modal.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+});
+
+// Menutup modal jika klik di luar modal
+document.querySelector('.overlay').addEventListener('click', function () {
+    const modals = document.querySelectorAll('.modal-card');
+    modals.forEach(modal => {
+        modal.classList.remove('show');
+    });
+    this.classList.remove('show');
+});
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -353,7 +389,7 @@
                     } else {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Tidak Bisa',
+                            title: 'Anda Sudah Mengambil Nomor',
                             text: data.message,
                             customClass: {
                                 popup: 'my-custom-popup',
@@ -361,7 +397,7 @@
                                 text: 'my-custom-text',
                                 confirmButton: 'my-custom-confirm-button'
                             },
-                            confirmButtonColor: '#d33'
+                            confirmButtonColor: '#d33' 
                         });
                     }
                 })
@@ -381,144 +417,6 @@
                 });
         });
     </script>
-
-
-    <script>
-        // Progress Chart
-        const progressCtx = document.getElementById('progressChart').getContext('2d');
-        const progressChart = new Chart(progressCtx, {
-            type: 'line', // Example: line chart for progress
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Example data
-                datasets: [{
-                    label: 'Progress Data',
-                    data: [65, 59, 80, 81, 56, 55], // Example progress data
-                    borderColor: 'rgba(36, 54, 66, 0.8)',
-                    backgroundColor: 'rgba(36, 54, 66, 0.3)',
-                    fill: true,
-                    lineTension: 0.4,
-                }]
-            },
-            options: {
-                responsive: true,
-            }
-        });
-
-        // Login Chart
-        const loginCtx = document.getElementById('loginChart').getContext('2d');
-        const loginChart = new Chart(loginCtx, {
-            type: 'doughnut', // Doughnut chart for login percentage
-            data: {
-                labels: ['Logged In', 'Not Logged In'],
-                datasets: [{
-                    label: 'Login Data',
-                    data: [75, 25], // Example login data, 75% logged in
-                    backgroundColor: ['#243642', '#e0e0e0'], // Color for each portion
-                    borderColor: '#ffffff', // White border between sections
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-            }
-        });
-    </script>
-    <script>
-        var ctx = document.getElementById('progressChart').getContext('2d');
-        var progressChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June'], // Ubah sesuai data bulan kamu
-                datasets: [{
-                    label: 'Pengajuan SIM',
-                    data: [10, 20, 15, 25, 30, 40], // Ubah sesuai data jumlah pengajuan dari database
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
-                    borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
-                    borderWidth: 3, // Lebar garis
-                    pointBackgroundColor: '#fff',
-                    pointBorderColor: 'rgba(75, 192, 192, 1)',
-                    pointHoverBackgroundColor: '#ff6384',
-                    pointHoverBorderColor: 'rgba(220, 220, 220, 1)',
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Persentase Pengajuan SIM Per Bulan',
-                        color: '#333',
-                        font: {
-                            size: 20
-                        }
-                    },
-                    legend: {
-                        labels: {
-                            color: '#555',
-                            font: {
-                                size: 14
-                            }
-                        }
-                    }
-                },
-                layout: {
-                    padding: {
-                        top: 20,
-                        bottom: 20,
-                        left: 20,
-                        right: 20
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            color: '#000',
-                            font: {
-                                size: 12
-                            },
-                            padding: 10
-                        },
-                        title: {
-                            display: true,
-                            text: 'Jumlah Pengajuan',
-                            color: '#000',
-                            font: {
-                                size: 16
-                            }
-                        },
-                        grid: {
-                            drawBorder: false,
-                            color: 'rgba(200, 200, 200, 0.3)'
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color: '#000',
-                            font: {
-                                size: 12
-                            },
-                            padding: 10
-                        },
-                        title: {
-                            display: true,
-                            text: 'Bulan',
-                            color: '#000',
-                            font: {
-                                size: 16
-                            }
-                        },
-                        grid: {
-                            drawBorder: false,
-                            color: 'rgba(200, 200, 200, 0.3)'
-                        }
-                    }
-                }
-            }
-        });
-    </script>
-
     <script src="{{ asset('assets/dist/js/dashboard.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -574,74 +472,6 @@
         });
     </script>
 
-    <script>
-        function addCommentToList(comment) {
-            // Create new comment element
-            let newComment = document.createElement('div');
-            newComment.classList.add('comment');
-
-            // Add comment text
-            let commentText = document.createElement('p');
-            commentText.textContent = comment;
-            newComment.appendChild(commentText);
-
-            // Add delete button
-            let deleteButton = document.createElement('button');
-            deleteButton.classList.add('delete-btn');
-            deleteButton.textContent = 'Hapus';
-            deleteButton.addEventListener('click', function() {
-                newComment.remove();
-                removeCommentFromLocalStorage(comment);
-            });
-            newComment.appendChild(deleteButton);
-
-            // Add new comment to the list
-            document.getElementById('commentList').appendChild(newComment);
-        }
-
-        function saveCommentToLocalStorage(comment) {
-            let comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments.push(comment);
-            localStorage.setItem('comments', JSON.stringify(comments));
-        }
-
-        function removeCommentFromLocalStorage(comment) {
-            let comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments = comments.filter(c => c !== comment);
-            localStorage.setItem('comments', JSON.stringify(comments));
-        }
-        document.addEventListener("DOMContentLoaded", function() {
-            const welcomeTextElement = document.getElementById('welcome-text');
-            const serviceTextElement = document.getElementById('service-text');
-
-            const welcomeText = welcomeTextElement.textContent;
-            const serviceText = serviceTextElement.textContent;
-
-            welcomeTextElement.textContent = '';
-            serviceTextElement.textContent = '';
-
-            let i = 0,
-                j = 0;
-
-            function typeWriter() {
-                if (i < welcomeText.length) {
-                    welcomeTextElement.textContent += welcomeText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 50); // Adjust typing speed here
-                } else if (j < serviceText.length) {
-                    serviceTextElement.textContent += serviceText.charAt(j);
-                    j++;
-                    setTimeout(typeWriter, 50); // Adjust typing speed here
-                } else {
-                    // Setelah semua teks selesai diketik, hapus kursor
-                    welcomeTextElement.classList.add('no-cursor');
-                    serviceTextElement.classList.add('no-cursor');
-                }
-            }
-
-            typeWriter();
-        });
-    </script>
     </main> <!--end::App Main--> <!--begin::Footer-->
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js"

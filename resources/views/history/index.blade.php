@@ -50,7 +50,7 @@
 
 /* Gaya untuk header tabel */
 .table thead th {
-    background-color: #02293b;
+    background-color: #160944;
     color: #fff;
     padding: 12px;
     border: none;
@@ -131,7 +131,7 @@
                     } 
                     /* Styling untuk navbar dengan latar belakang coklat */
                     .navbar-bg-brown {
-                        background-color: #02293b;
+                        background-color: #160944;
                         display: flex; /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
                         align-items: center; /* Menyelaraskan item secara vertikal di tengah */
                     }
@@ -170,7 +170,7 @@
                     }
                     .dropdown-menu-custom {
                         background-color: transparent; /* Warna latar belakang dropdown */
-                        border: 1px solid #02293b; /* Warna border */
+                        border: 1px solid #160944; /* Warna border */
                         border-radius: 0.5rem; /* Radius border */
                         padding: 10px; /* Padding dalam dropdown */
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan dropdown */
@@ -425,6 +425,7 @@
                 </div> <!--end::Container-->
                 
             </div> <!--end::App Content-->
+
             
         </main> <!--end::App Main--> <!--begin::Footer-->
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
