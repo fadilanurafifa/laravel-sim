@@ -29,7 +29,13 @@
                         </div>
                         <div class="user-info">
                             <div class="description-header">{{ session('user_name', 'Nama Lengkap') }}</div>
-                            <div class="description-sub">pengguna</div>
+                            <div class="description-sub">
+                                @if (Auth::user()->role == 'admin')
+                                    Admin
+                                @else
+                                    Pengguna
+                                @endif
+                            </div>
                             <!-- Teks "pengguna" tepat di bawah nama user -->
                         </div>
                     </a>
@@ -205,7 +211,11 @@
             <div class="box-container flex-layout">
                 <div class="box">
                     <div class="flex">
+                        @if (Auth::user()->role == 'admin')
                         <p id="jumlah-pengajuan">{{ $jumlahPengajuan }}</p>
+                        @else
+                        <p id="jumlah-pengajuan">{{ Auth::user()->catatan->count() }}</p>
+                        @endif
                         <i class="bi bi-plus-circle"></i> <!-- Ikon tambah data diletakkan di sini -->
                     </div>
                     <h1>Miliki SIM Sekarang!</h1>
@@ -261,12 +271,14 @@
                         <i class="bi bi-credit-card"></i>
                     </a>
                 </div>
-                <div class="box4">
-                    <a href="/payment-proof" class="client-link">
-                        <p>Bukti Pendaftaran</p>
-                        <i class="bi bi-arrow-down-left-circle"></i>
-                    </a>
-                </div>
+                @if (Auth::user()->role != 'admin')
+                    <div class="box4">
+                        <a href="{{route('history')}}" class="client-link">
+                            <p>Bukti Pendaftaran</p>
+                            <i class="bi bi-arrow-down-left-circle"></i>
+                        </a>
+                    </div>
+                @endif
             </div>
             <!-- Chart for progress data -->
             <div class="chart-container" style="height:450px; width:700px;">
@@ -277,7 +289,6 @@
     <script>
         // Ambil elemen overlay
         const overlay = document.querySelector('.overlay');
-
         // Ambil semua tombol dengan class 'button-sim' dan tambahkan event listener
         document.querySelectorAll('.button-sim').forEach(button => {
             button.addEventListener('click', () => {
@@ -524,7 +535,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             function fetchActivities() {
                 fetch(
-                    '/activities') // Pastikan endpoint ini mengembalikan aktivitas untuk pengguna yang sedang login
+                        '/activities'
+                    ) // Pastikan endpoint ini mengembalikan aktivitas untuk pengguna yang sedang login
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -533,12 +545,12 @@
                     })
                     .then(data => {
                         console.log('Data aktivitas yang diterima:',
-                        data); // Debugging: Tampilkan data yang diterima
+                            data); // Debugging: Tampilkan data yang diterima
                         renderActivities(data);
                     })
                     .catch(error => {
                         console.error('Error fetching activities:',
-                        error); // Debugging: Menampilkan kesalahan di konsol
+                            error); // Debugging: Menampilkan kesalahan di konsol
                         const activityTable = document.getElementById('activity-table');
                         activityTable.innerHTML =
                             '<p>Tidak dapat mengambil data aktivitas. Silakan coba lagi nanti.</p>';

@@ -4,7 +4,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"
+                        style="
                         background-color: #02293b; /* Warna latar belakang biru */
                         color: white; /* Warna teks putih */
                         padding: 10px 20px; /* Padding di sekitar teks (atas/bawah, kiri/kanan) */
@@ -16,10 +17,10 @@
                         Edit Data Pengajuan
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>                
+                </div>
                 <div class="modal-body">
                     <form id="modalForm" action="editcatatan/{{ $item->id }}" method="POST">
-                  @csrf
+                        @csrf
 
                         <div>
                             <label for="name" class="form-label">Name</label>
@@ -63,7 +64,7 @@
                         <div>
                             <label for="pendidikan" class="form-label">Pendidikan</label>
                             <select class="form-select" id="pendidikan" name="pendidikan" required>
-                                <option value="{{ $item->pendidikan }}">{{$item->pendidikan}}</option>
+                                <option value="{{ $item->pendidikan }}">{{ $item->pendidikan }}</option>
                                 <option value="SD">SD</option>
                                 <option value="SMP">SMP</option>
                                 <option value="SMA">SMA</option>
@@ -95,6 +96,29 @@
                             <button type="summit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{-- modal lihat foto --}}
+    <div class="modal fade" id="foto{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">file pengajuan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-row justify-content-between">
+                    <img src="{{ asset('fileCatatan/' . $item->ktp) }}" class="img-fluid" style="max-width: 33.33%; max-height: 400px;" alt="KTP">
+                    <img src="{{ asset('fileCatatan/' . $item->kk) }}" class="img-fluid " style="max-width: 33.33%; max-height: 400px;" alt="KK">
+                    <img src="{{ asset('fileCatatan/' . $item->pas_foto) }}" class="img-fluid" style="max-width: 33.33%; max-height: 400px;" alt="Pas Foto">
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

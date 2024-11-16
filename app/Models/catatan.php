@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class catatan extends Model
 {
     protected $fillable = [
+        'user_id',
         'name',
         'nomor_ktp',
         'tempat_lahir',
@@ -18,9 +19,16 @@ class catatan extends Model
         'pendidikan',
         'jenis_sim',
         'tanggal_pengajuan',
+        'kk',
+        'ktp',
+        'pas_foto',
     ];
-    
+
     public $timestamps = true;
-    
-    
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
