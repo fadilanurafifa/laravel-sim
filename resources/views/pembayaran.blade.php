@@ -22,7 +22,7 @@
             background-color: #E2F1E7;
             padding: 0;
             margin: 0;
-            background: linear-gradient(135deg, #02293b, #387478); 
+            background: linear-gradient(135deg, #160944, #777838); 
         }  
 
         /* Background Elements */
@@ -74,7 +74,7 @@
 
         .left-section h1 {
             font-size: 40px;
-            color: #02293b; /* Warna tema Polri */
+            color: #160944; 
             margin-bottom: 15px;
             text-align: center;
         }
@@ -114,7 +114,7 @@
 
         .transaction-summary p strong,
         .order-details p strong {
-            color: #02293b;
+            color: #160944;
         }
 
         .right-section {
@@ -130,7 +130,7 @@
 
 .right-section h2 {
     font-size: 20px;
-    color: #02293b;
+    color: #160944;
     margin-bottom: 15px;
     font-weight: bold;
     border-bottom: 2px solid #387478;
@@ -145,7 +145,7 @@
 
 .input-group label {
     font-size: 15px;
-    color: #02293b;
+    color: #160944;
     margin-bottom: 6px;
 }
 
@@ -194,12 +194,12 @@
 }
 
 .payment-button {
-    background:  #02293b;
+    background:  #160944;
     color: #fff;
 }
 
 .payment-button:hover {
-    background: #02293b;
+    background: #160944;
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -280,7 +280,6 @@
 
                 <!-- Button Group -->
                 <div class="button-group">
-                    <button type="button" class="cancel-button">Batal</button>
                     <button type="submit" class="payment-button">Lanjutkan Pembayaran</button>
                 </div>
             </form>

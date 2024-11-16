@@ -6,147 +6,141 @@
     <title>Detail Transaksi</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #160944, #777838);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #160944;
+            margin-bottom: 20px;
+        }
+
+        .status-icon {
+            font-size: 80px;
+            color: #388e3c;
+            margin-bottom: 30px;
+            animation: bounce 1.5s infinite;
+            padding-top: 20px;
+        }
+        .transaction-details .card {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #160944;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #160944;
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #e8f5e9;
+        }
+
+        .action-btns {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            background: #777838;
+            color: #fff;
+            border-radius: 30px;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .action-btn:hover {
+            background: #565726;
+            transform: translateY(-3px);
+        }
+
+        .card-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #757575;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .status-icon {
+                font-size: 60px;
+            }
+
+            th, td {
+                font-size: 14px;
+                padding: 10px 8px;
+            }
+        }
+        .notifikasi-foto {
+            color: rgb(240, 36, 36);
+            font-size: 13px;
+        }
+    </style>
 </head>
-<style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background: linear-gradient(to right, #6a11cb, #2575fc);
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .container {
-        max-width: 850px;
-        width: 100%;
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    h2 {
-        font-size: 36px;
-        color: #007bff;
-        margin-bottom: 20px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .status-icon {
-        font-size: 80px;
-        color: #28a745;
-        margin-bottom: 20px;
-        animation: bounce 1.5s infinite;
-    }
-
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-
-    .card {
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
-        background-color: #f9f9f9;
-        margin-bottom: 30px;
-    }
-
-    .card-body {
-        padding: 30px;
-    }
-
-    .card-title {
-        font-size: 26px;
-        color: #333;
-        margin-bottom: 25px;
-        font-weight: bold;
-    }
-
-    table {
-        width: 100%;
-        margin-top: 15px;
-        border-collapse: collapse;
-        text-align: left;
-    }
-
-    .table th {
-        background-color: #007bff;
-        color: #fff;
-        padding: 12px 15px;
-        font-size: 18px;
-    }
-
-    .table td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #ddd;
-        font-size: 16px;
-    }
-
-    .table-striped tbody tr:nth-child(odd) {
-        background-color: #f8f9fa;
-    }
-
-    .action-btns {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .action-btn {
-        padding: 14px 30px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 30px;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .action-btn:hover {
-        background-color: #0056b3;
-        transform: scale(1.1);
-    }
-
-    .action-btn:active {
-        background-color: #003f6b;
-        transform: scale(1);
-    }
-
-    .card-footer {
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .card-footer small {
-        color: #777;
-        font-size: 14px;
-    }
-
-</style>
 <body>
     <div class="container">
         <h2>Transaksi Berhasil</h2>
-
-        <!-- Ikon Centang dengan Animasi -->
         <div class="status-icon">
             <i class="fas fa-check-circle"></i>
         </div>
-
-        <!-- Detail Transaksi -->
         <div class="transaction-details">
             <div class="card">
                 <div class="card-body">
@@ -175,19 +169,22 @@
                     </table>
                 </div>
             </div>
+            <div class="notifikasi-foto">
+                <h1>
+                    PENTING
+                    <i class="bi bi-exclamation-triangle" style="color: yellow;"></i>
+                </h1>
+                
+                <h3>Silahkan foto menggunakan handphone anda, lalu kirim dan perlihatkan bukti pada petugas kami!</h3>
+            </div>
         </div>
-
-        <!-- Tombol Aksi Lanjutan -->
         <div class="action-btns">
             <a href="/dashboard" class="action-btn">Kembali ke Dashboard</a>
-            <a href="/transactions" class="action-btn">Lihat Transaksi Lain</a>
         </div>
-        
         <div class="card-footer">
             <small>Terima kasih telah menggunakan layanan kami!</small>
         </div>
     </div>
-
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

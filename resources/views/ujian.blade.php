@@ -24,7 +24,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 30px;
-            background-color: #243642; /* warna latar header */
+            background-color: #160944; /* warna latar header */
         }
 
         .logo {
@@ -102,7 +102,7 @@
             width: 45px;
             height: 45px;
             margin: 5px;
-            background-color: #243642;
+            background-color: #160944;
             border: none;
             border-radius: 5px;
             color: #fff;

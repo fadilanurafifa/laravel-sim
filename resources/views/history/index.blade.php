@@ -68,6 +68,7 @@
             /* Pastikan konten tidak melampaui border-radius */
         }
 
+
         /* Gaya untuk header tabel */
         .table thead th {
             background-color: #02293b;
@@ -75,6 +76,17 @@
             padding: 12px;
             border: none;
             text-transform: uppercase;
+            =======
+
+            /* Gaya untuk header tabel */
+            .table thead th {
+                background-color: #160944;
+                color: #fff;
+                padding: 12px;
+                border: none;
+                text-transform: uppercase;
+
+            }
 
         }
 
@@ -120,7 +132,28 @@
         .app-footer {
             background-color: #343a40;
 
-            padding: 20px 0;
+            =======* {
+                font-family: "Ubuntu", system-ui;
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            body {
+                background-color: #E2F1E7;
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Styling untuk navbar dengan latar belakang coklat */
+            .navbar-bg-brown {
+                background-color: #160944;
+                display: flex;
+                /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
+                align-items: center;
+                /* Menyelaraskan item secara vertikal di tengah */
+            }
+
+            >>>>>>>531eb1395f22169e7bec525090c2178eab54c92a padding: 20px 0;
             text-align: center;
             font-size: 14px;
         }
@@ -144,7 +177,80 @@
             min-width: 100px;
         }
 
-        * {
+        =======
+
+        /* Styling untuk teks profil */
+        .profile-text {
+            font-weight: bold;
+            color: #ffffff;
+            /* Warna teks profil */
+        }
+
+        .dropdown-menu-custom {
+            background-color: transparent;
+            /* Warna latar belakang dropdown */
+            border: 1px solid #160944;
+            /* Warna border */
+            border-radius: 0.5rem;
+            /* Radius border */
+            padding: 10px;
+            /* Padding dalam dropdown */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Bayangan dropdown */
+        }
+
+        /* Styling untuk item dalam dropdown */
+        .dropdown-item-custom {
+            color: #ffffff;
+            /* Warna teks item */
+            padding: 8px 12px;
+            /* Padding item */
+            border-radius: 0.3rem;
+            /* Radius border item */
+            transition: background-color 0.2s ease, color 0.2s ease;
+            /* Animasi transisi */
+        }
+
+        .dropdown-item-custom {
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 0.3rem;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            background-color: #dc3545;
+            /* Warna background default */
+            text-align: center;
+            /* Menengahkan teks */
+            margin-bottom: 8px;
+            /* Jarak antar item */
+            font-weight: 500;
+            /* Tebal font */
+        }
+
+        .navbar-nav {
+            margin-left: 65%;
+        }
+
+        .nav-item {
+            margin-left: 260px;
+        }
+
+        .dashboard-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-left: 10px;
+
+        }
+
+        .search-dropdown-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            /* Memastikan dropdown-content terletak dengan benar relatif terhadap kontainer ini */
+            margin-right: 20px;
+        }
+
+        >>>>>>>531eb1395f22169e7bec525090c2178eab54c92a * {
             font-family: "Ubuntu", system-ui;
             font-weight: 500;
             font-style: normal;
@@ -444,7 +550,8 @@
                                         <button type="button" class="btn btn-danger delete-button"
                                             data-id="{{ $history->id }}">Hapus</button>
 
-                                        <button type="button" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#foto{{$history->id}}">
+                                        <button type="button" type="button" class="btn btn-success"
+                                            data-bs-toggle="modal" data-bs-target="#foto{{ $history->id }}">
                                             <i class="bi bi-eye"></i>
                                         </button>
 
@@ -504,7 +611,9 @@
 
     </div> <!--end::App Content-->
 
-    </main> <!--end::App Main--> <!--begin::Footer-->
+    </div>
+
+
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
 
     @include('history/modal')
@@ -527,7 +636,7 @@
                 @foreach ($catatan as $history)
                     const pengajuanTanggal{{ $history->id }} = "{{ $history->tanggal_pengajuan }}";
                     console.log("Pengajuan Tanggal ID {{ $history->id }}:",
-                    pengajuanTanggal{{ $history->id }}); // Log tanggal pengajuan
+                        pengajuanTanggal{{ $history->id }}); // Log tanggal pengajuan
                     if (pengajuanTanggal{{ $history->id }}) {
                         const pengajuanDate{{ $history->id }} = new Date(pengajuanTanggal{{ $history->id }});
                         if (isNaN(pengajuanDate{{ $history->id }}.getTime())) {
@@ -545,7 +654,7 @@
                                 'id-ID', options);
 
                             console.log("Due Date for ID {{ $history->id }}:",
-                            formattedDueDate{{ $history->id }}); // Log tanggal tes
+                                formattedDueDate{{ $history->id }}); // Log tanggal tes
                             document.getElementById("due-date-{{ $history->id }}").textContent =
                                 formattedDueDate{{ $history->id }};
                         }

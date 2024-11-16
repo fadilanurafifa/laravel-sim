@@ -7,6 +7,7 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel"
                         style="
                         background-color: #02293b; /* Warna latar belakang biru */
+
                         color: white; /* Warna teks putih */
                         padding: 10px 20px; /* Padding di sekitar teks (atas/bawah, kiri/kanan) */
                         border-radius: 5px; /* Membuat sudut membulat */
@@ -103,7 +104,7 @@
 
 
     {{-- modal lihat foto --}}
-    <div class="modal fade" id="foto{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="foto{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -112,15 +113,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex flex-row justify-content-between">
-                    <img src="{{ asset('fileCatatan/' . $item->ktp) }}" class="img-fluid" style="max-width: 33.33%; max-height: 400px;" alt="KTP">
-                    <img src="{{ asset('fileCatatan/' . $item->kk) }}" class="img-fluid " style="max-width: 33.33%; max-height: 400px;" alt="KK">
-                    <img src="{{ asset('fileCatatan/' . $item->pas_foto) }}" class="img-fluid" style="max-width: 33.33%; max-height: 400px;" alt="Pas Foto">
-                <div class="modal-body">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <img src="{{ asset('fileCatatan/' . $item->ktp) }}" class="img-fluid"
+                        style="max-width: 33.33%; max-height: 400px;" alt="KTP">
+                    <img src="{{ asset('fileCatatan/' . $item->kk) }}" class="img-fluid "
+                        style="max-width: 33.33%; max-height: 400px;" alt="KK">
+                    <img src="{{ asset('fileCatatan/' . $item->pas_foto) }}" class="img-fluid"
+                        style="max-width: 33.33%; max-height: 400px;" alt="Pas Foto">
+                    <div class="modal-body">
+                    
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 @endforeach

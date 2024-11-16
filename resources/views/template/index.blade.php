@@ -42,11 +42,37 @@
         }
     </script>
     <style>
+<<<<<<< HEAD
         * {
             font-family: "Ubuntu", system-ui;
             font-weight: 500;
             font-style: normal;
         }
+=======
+                    *{
+                font-family: "Ubuntu", system-ui;
+                font-weight: 500;
+                font-style: normal;
+                    }
+                    body {
+                        background-color: #E2F1E7;
+                        padding: 0;
+                        margin: 0;
+                    }
+                .navbar-brand {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .navbar-logo {
+                        max-height: 60px; 
+                        height: auto;
+                        width: auto;
+                        margin-left: 15px;
+                    }
+                    .navbar-bg-brown {
+                        background-color: #160944; /* Warna latar belakang navbar */
+                    }
+>>>>>>> 531eb1395f22169e7bec525090c2178eab54c92a
 
         body {
             background-color: #E2F1E7;
@@ -77,6 +103,7 @@
             height: 60px;
         }
 
+<<<<<<< HEAD
         /* Styling untuk teks logo */
         .text-logo {
             font-size: 18px;
@@ -85,6 +112,29 @@
             /* Warna teks logo */
             margin-left: 10px;
         }
+=======
+form h2 {
+    color: rgb(0, 0, 0); 
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px; /* Jarak bawah heading */
+}
+.form-control, .form-select {
+    border-radius: 4px;
+    border: 1px solid #160944;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 10px; /* Tambahkan jarak bawah untuk input */
+}
+.form-check-label {
+    color: rgb(0, 0, 0);
+}
+.form-control:focus, .form-select:focus {
+    border-color: white; 
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+>>>>>>> 531eb1395f22169e7bec525090c2178eab54c92a
 
         /* Styling untuk link dalam navbar */
         .nav-link p {
@@ -112,6 +162,7 @@
             margin-left: 62%;
         }
 
+<<<<<<< HEAD
         form {
             background: #ffffff;
         }
@@ -124,6 +175,29 @@
             margin-bottom: 20px;
             /* Jarak bawah heading */
         }
+=======
+.btn-primary {
+    background-color: #777838; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #777838; 
+}
+.mb-3 {
+    margin-bottom: 20px;
+}
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+>>>>>>> 531eb1395f22169e7bec525090c2178eab54c92a
 
         .form-control,
         .form-select {

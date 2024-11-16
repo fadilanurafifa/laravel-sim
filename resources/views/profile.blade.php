@@ -12,13 +12,13 @@
             font-style: normal;
         }
         body {
-            background-color: #E2F1E7;
+            background-color: #160944;
             padding: 0;
             margin: 0;
         } 
         
         .navbar {
-            background-color: #02293b;
+            background-color: #160944;
             padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -47,8 +47,8 @@
             max-width: 1500px;
             margin: 0 auto;
             padding: 5px;
-            margin-top: 20px;
-            background-color: #fff;
+            margin-top: 70px;
+            background-color: transparent;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
@@ -57,8 +57,8 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: #02293b;
-            color: white;
+            background-color: white;
+            color: #160944;
             font-size: 100px;
             display: flex;
             align-items: center;
@@ -73,13 +73,13 @@
         
         .profile-details h2 {
             font-size: 26px;
-            color: #333;
+            color: white;
             margin-bottom: 10px;
         }
         
         .profile-details p {
             font-size: 20px;
-            color: #555;
+            color: white;
             margin: 5px 0;
         }
 
@@ -90,7 +90,7 @@
 
         .social-links a {
             margin: 0 8px;
-            color: #555;
+            color: white;
             font-size: 24px;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -107,7 +107,7 @@
         }
 
         .profile-box h3 {
-            color: #333;
+            color: white;
             font-size: 20px;
         }
         
@@ -150,20 +150,20 @@
             text-align: center;
             padding: 20px;
             width: 45%;
-            background-color: #f9f9f9;
+            background-color: #777838;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         .stat-box h4 {
             font-size: 18px;
-            color: #333;
+            color: #ffffff;
             margin-bottom: 5px;
         }
         
         .stat-box p {
             font-size: 24px;
-            color: #007bff;
+            color: #ffffff;
         }
         .alert-success {
         background-color: #d4edda;  /* Light green background */
@@ -182,11 +182,16 @@
         color: #28a745; /* Green icon color */
         font-size: 18px;
     }
-
+    .password {
+        color: white;
+    }
+    .confirm {
+        color: white;
+    }
     </style>
 </head>
 <body>
-    <div class="navbar">
+    {{-- <div class="navbar">
         <div class="navcon">
             <p>Profil</p>
         </div>
@@ -194,7 +199,7 @@
             <i class="fas fa-home"></i>
             <span>/ Profil</span>
         </a>
-    </div>
+    </div> --}}
     
     <div class="profile-container">
         <div class="profile-icon">
@@ -236,9 +241,9 @@
         @endif        
             <form action="{{ route('profile.updatePassword') }}" method="POST">
                 @csrf
-                <label for="password">New Password:</label>
+                <label for="password" class="password">New Password:</label>
                 <input type="password" id="password" name="password" required>
-                <label for="password_confirmation">Confirm Password:</label>
+                <label for="password_confirmation" class="confirm">Confirm Password:</label>
                 <input type="password" id="password_confirmation" name="password_confirmation" required>
                 <button type="submit">
                     <i class="fas fa-lock"></i> Update Password

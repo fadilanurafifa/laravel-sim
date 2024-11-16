@@ -50,7 +50,13 @@ class User extends Authenticatable
         return $this->hasMany(Activity::class);
     }
 
-    public function catatan(){
+    public function catatan()
+    {
         return $this->hasMany(catatan::class);
+    }
+    
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }
