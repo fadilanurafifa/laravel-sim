@@ -28,6 +28,7 @@ Route::resource('penduduk', PendudukController::class);
 
 Route::post('/catatan', [SessionController::class, 'store'])->name('catatan.store');
 Route::get('/history', [SessionController::class, 'history'])->name('history');
+Route::get('/history/user', [SessionController::class, 'historyuser'])->name('historyuser');
 
 Route::get('/sesi', [SessionController::class, 'index']);
 Route::post('/sesi/login', [SessionController::class, 'login']);
@@ -105,7 +106,3 @@ Route::get('/payment-proof', [PaymentController::class, 'showPaymentProof'])->na
 Route::post('/store-payment', [PaymentController::class, 'storePayment'])->name('store-payment');
 
 Route::post('/submit-payment', [PaymentController::class, 'submitPayment'])->name('submit-payment');
-
-Route::view('/data-input', 'data-input-pengguna')->name('data-input');
-
-

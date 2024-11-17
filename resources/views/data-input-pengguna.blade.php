@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        *{
+        * {
             font-family: "Ubuntu", system-ui;
             font-weight: 500;
             font-style: normal;
         }
+
         body {
             background-color: #f5f7fa;
             height: 100vh;
@@ -132,61 +134,103 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>DATA MILIK ANDA!</h2>
-        
-        <!-- Card for the User -->
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4"><strong>Nama:</strong></div>
-                    <div class="col-8">Fadila Cantik</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Nomor KTP:</strong></div>
-                    <div class="col-8">1234567890</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Tempat Lahir:</strong></div>
-                    <div class="col-8">Jakarta</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Tanggal Lahir:</strong></div>
-                    <div class="col-8">01/01/1990</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Jenis Kelamin:</strong></div>
-                    <div class="col-8">Laki-laki</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Golongan Darah:</strong></div>
-                    <div class="col-8">A</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Pendidikan:</strong></div>
-                    <div class="col-8">S1</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Jenis SIM:</strong></div>
-                    <div class="col-8">SIM A</div>
-                </div>
-                <div class="row">
-                    <div class="col-4"><strong>Tanggal Pengajuan:</strong></div>
-                    <div class="col-8">15/11/2024</div>
-                </div>
 
-                <div class="action-buttons">
-                    <button class="btn btn-warning btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm">Delete</button>
-                    <button class="btn btn-info btn-sm">
-                        <i class="fas fa-eye"></i> <!-- Icon only, no text -->
-                    </button>
+        <!-- Card for the User -->
+        @foreach ($catatan as $catatans)
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4"><strong>Nama:</strong></div>
+                        <div class="col-8">{{ $catatans->name }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Nomor KTP:</strong></div>
+                        <div class="col-8">{{ $catatans->nomor_ktp }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Tempat Lahir:</strong></div>
+                        <div class="col-8">{{ $catatans->tempat_lahir }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Tanggal Lahir:</strong></div>
+                        <div class="col-8">{{ $catatans->tanggal_lahir }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Jenis Kelamin:</strong></div>
+                        <div class="col-8">{{ $catatans->jenis_kelamin }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Golongan Darah:</strong></div>
+                        <div class="col-8">{{ $catatans->golongan_darah }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Pendidikan:</strong></div>
+                        <div class="col-8">{{ $catatans->pendidikan }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Jenis SIM:</strong></div>
+                        <div class="col-8">{{ $catatans->jenis_sim }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><strong>Tanggal Pengajuan:</strong></div>
+                        <div class="col-8">{{ $catatans->tanggal_pengajuan }}</div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#edit{{ $catatans->id }}">Edit</button>
+
+                        <button type="button" class="btn btn-danger delete-button" data-id="{{ $catatans->id }}"><i
+                                class="fas fa-trash"></i></button>
+                        <form id="delete-form-{{ $catatans->id }}"
+                            action="{{ route('history.destroy', $catatans->id) }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        <button type="button" type="button" class="btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#foto{{ $catatans->id }}">
+                            <i class="fas fa-eye"></i> <!-- Icon only, no text -->
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 
+    @include('history/modal')
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script>
+        document.querySelectorAll('.delete-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var historyId = this.getAttribute('data-id');
+
+                Swal.fire({
+                    title: 'Yakin ingin menghapus?',
+                    text: "Data yang sudah dihapus tidak bisa dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('delete-form-' + historyId).submit();
+                    }
+                });
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

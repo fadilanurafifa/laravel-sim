@@ -240,13 +240,18 @@ class SessionController extends Controller
             'activity_time' => now(),
         ]);
     }
+    public function historyuser()
+    {
+        $catatan = catatan::where('user_id', Auth::user()->id)->get();
+        return view('data-input-pengguna', ['catatan' => $catatan]);
+    }
 
     public function history()
     {
         if (Auth::user()->role == 'admin') {
             $catatan = catatan::all();
         } else {
-            $catatan = catatan::where('user_id', Auth::user()->id)->get();
+            return redirect('/history/user');
         }
 
         return view('history.index', ['catatan' => $catatan]);
