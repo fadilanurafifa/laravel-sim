@@ -287,32 +287,23 @@
                         <i class="bi bi-credit-card"></i>
                     </a>
                 </div>
-                @if (Auth::user()->role != 'admin')
+                @if (Auth::user()->role !== 'admin')
                     <div class="box4">
-                        <a href="{{ route('history') }}" class="client-link">
+                        <a href="payment-proof" class="client-link">
                             <p>Bukti Pendaftaran</p>
                             <i class="bi bi-arrow-down-left-circle"></i>
                         </a>
                     </div>
                 @endif
-            </div>
-            <!-- Chart for progress data -->
-            <div class="chart-container" style="height:450px; width:700px;">
-                <canvas id="progressChart"></canvas>
-                <div class="box4">
-                    <a href="/payment-proof" class="client-link">
-                        <p>Bukti Pendaftaran</p>
-                        <i class="bi bi-arrow-down-left-circle"></i>
-                    </a>
-                </div>
                 @if (Auth::user()->role !== 'admin')
                     <div class="box4">
-                        <a href="#" class="client-link">
+                        <a href="{{ route('history') }}" class="client-link">
                             <p>Data Input Anda</p>
                             <i class="bi bi-arrow-down-left-circle"></i>
                         </a>
                     </div>
                 @endif
+            </div>
             </div>
         </div>
     </div>
