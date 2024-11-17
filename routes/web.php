@@ -105,3 +105,7 @@ Route::get('/payment-proof', [PaymentController::class, 'showPaymentProof'])->na
 Route::post('/store-payment', [PaymentController::class, 'storePayment'])->name('store-payment');
 
 Route::post('/submit-payment', [PaymentController::class, 'submitPayment'])->name('submit-payment');
+
+Route::view('/data-input', 'data-input-pengguna')->name('data-input');
+
+

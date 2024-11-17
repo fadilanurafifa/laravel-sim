@@ -71,23 +71,11 @@
 
         /* Gaya untuk header tabel */
         .table thead th {
-            background-color: #02293b;
+            background-color: #160944;
             color: #fff;
             padding: 12px;
             border: none;
             text-transform: uppercase;
-            =======
-
-            /* Gaya untuk header tabel */
-            .table thead th {
-                background-color: #160944;
-                color: #fff;
-                padding: 12px;
-                border: none;
-                text-transform: uppercase;
-
-            }
-
         }
 
         /* Gaya untuk sel tabel */
@@ -130,9 +118,9 @@
         }
 
         .app-footer {
-            background-color: #343a40;
+            background-color: #160944;
 
-            =======* {
+            *{
                 font-family: "Ubuntu", system-ui;
                 font-weight: 500;
                 font-style: normal;
@@ -143,21 +131,7 @@
                 padding: 0;
                 margin: 0;
             }
-
-            /* Styling untuk navbar dengan latar belakang coklat */
-            .navbar-bg-brown {
-                background-color: #160944;
-                display: flex;
-                /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
-                align-items: center;
-                /* Menyelaraskan item secara vertikal di tengah */
-            }
-
-            >>>>>>>531eb1395f22169e7bec525090c2178eab54c92a padding: 20px 0;
-            text-align: center;
-            font-size: 14px;
         }
-
         .app-footer a:hover {
             text-decoration: underline;
         }
@@ -176,59 +150,13 @@
         .modal-footer .btn {
             min-width: 100px;
         }
-
-        =======
-
         /* Styling untuk teks profil */
         .profile-text {
             font-weight: bold;
             color: #ffffff;
             /* Warna teks profil */
         }
-
-        .dropdown-menu-custom {
-            background-color: transparent;
-            /* Warna latar belakang dropdown */
-            border: 1px solid #160944;
-            /* Warna border */
-            border-radius: 0.5rem;
-            /* Radius border */
-            padding: 10px;
-            /* Padding dalam dropdown */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Bayangan dropdown */
-        }
-
-        /* Styling untuk item dalam dropdown */
-        .dropdown-item-custom {
-            color: #ffffff;
-            /* Warna teks item */
-            padding: 8px 12px;
-            /* Padding item */
-            border-radius: 0.3rem;
-            /* Radius border item */
-            transition: background-color 0.2s ease, color 0.2s ease;
-            /* Animasi transisi */
-        }
-
-        .dropdown-item-custom {
-            color: #ffffff;
-            padding: 8px 12px;
-            border-radius: 0.3rem;
-            transition: background-color 0.2s ease, color 0.2s ease;
-            background-color: #dc3545;
-            /* Warna background default */
-            text-align: center;
-            /* Menengahkan teks */
-            margin-bottom: 8px;
-            /* Jarak antar item */
-            font-weight: 500;
-            /* Tebal font */
-        }
-
-        .navbar-nav {
-            margin-left: 65%;
-        }
+       
 
         .nav-item {
             margin-left: 260px;
@@ -250,21 +178,11 @@
             margin-right: 20px;
         }
 
-        >>>>>>>531eb1395f22169e7bec525090c2178eab54c92a * {
-            font-family: "Ubuntu", system-ui;
-            font-weight: 500;
-            font-style: normal;
-        }
-
-        body {
-            background-color: #E2F1E7;
-            padding: 0;
-            margin: 0;
-        }
+      
 
         /* Styling untuk navbar dengan latar belakang coklat */
         .navbar-bg-brown {
-            background-color: #02293b;
+            background-color: #160944;
             display: flex;
             /* Menggunakan Flexbox untuk menyelaraskan item secara horizontal */
             align-items: center;
@@ -313,18 +231,7 @@
             /* Warna teks profil */
         }
 
-        .dropdown-menu-custom {
-            background-color: transparent;
-            /* Warna latar belakang dropdown */
-            border: 1px solid #02293b;
-            /* Warna border */
-            border-radius: 0.5rem;
-            /* Radius border */
-            padding: 10px;
-            /* Padding dalam dropdown */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Bayangan dropdown */
-        }
+       
 
         /* Styling untuk item dalam dropdown */
         .dropdown-item-custom {
@@ -442,7 +349,6 @@
 
         .gap-2 {
             gap: 0.5rem;
-            /* Memberikan jarak antara tombol */
         }
 
         /* Tambahan styling untuk tombol */

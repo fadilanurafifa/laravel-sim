@@ -303,6 +303,14 @@
                         </a>
                     </div>
                 @endif
+                @if (Auth::user()->role == 'admin')
+                <div class="box4">
+                    <a href="{{ route('history') }}" class="client-link">
+                        <p>Inputan Pengguna</p>
+                        <i class="bi bi-arrow-down-left-circle"></i>
+                    </a>
+                </div>
+            @endif
             </div>
             </div>
         </div>
