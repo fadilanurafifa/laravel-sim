@@ -20,7 +20,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="modalForm" action="editcatatan/{{ $item->id }}" method="POST">
+                    <form id="modalForm" action="{{ url('editcatatan/' . $item->id)}}" method="POST">
                         @csrf
 
                         <div>
